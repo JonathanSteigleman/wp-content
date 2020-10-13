@@ -40,3 +40,30 @@ header .main-menu li:first-child a{
 header .main-menu li:last-child a{
     padding-right: 0;
 }
+
+header .main-menu li{
+    position: relative;
+}
+
+header .main-menu li .sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #e8e8e8;
+    box-shadow: 2px 2px 2px #DEDCDC;
+    padding: .25rem 1rem;
+    list-style-type: none;
+    width: 300px;
+    border-radius: 9px;
+}
+
+header .main-menu li .sub-menu a{
+    padding: .25rem;
+    line-height: 2rem;
+}
+
+header .main-menu .menu-item-has-children:hover .sub-menu {
+    display: block;
+    text-decoration: none;
+}
