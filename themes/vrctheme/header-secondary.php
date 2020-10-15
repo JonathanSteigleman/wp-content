@@ -10,7 +10,14 @@
 
 </head>
 <body>
+
+<!--
     
+    The Secondary Header will be used for the Front Page of the website.
+    The nav should stay consistent between pages
+
+ -->
+
 <header>
     <div class="container">
     <?php

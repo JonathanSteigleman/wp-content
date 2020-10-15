@@ -11,6 +11,13 @@
 </head>
 <body>
     
+<!--
+    
+    The Header will be used for all pages except the front-page.
+    The nav should stay consistent between pages
+
+ -->
+
 <header>
     <div class="container">
     <?php
