@@ -25,7 +25,7 @@ header .container{
 
 header .main-menu li a {
     display: block;
-    padding: .25rem 1rem;
+    padding: 1rem 1rem;
     color: #707070;
     text-decoration: none;
     border-bottom: solid transparent;
@@ -57,6 +57,7 @@ header .main-menu li .sub-menu {
 header .main-menu li .sub-menu a{
     padding: .25rem;
     line-height: 2rem;
+    border-bottom: solid 1px transparent;
 }
 
 header .main-menu li .sub-menu a:hover{
