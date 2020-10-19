@@ -68,3 +68,43 @@ header .main-menu li .sub-menu a:hover{
 header .main-menu .menu-item-has-children:hover .sub-menu {
     display: block;  
 }
+/* Contact us appearence */
+div.elem-group {
+    margin: 40px 0;
+  }
+  
+  label {
+    display: block;
+    font-family: 'Georgia';
+    padding-bottom: 4px;
+    font-size: 1.25em;
+  }
+  
+  input, select, textarea {
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 1.25em;
+    font-family: 'Georgia';
+    width: 500px;
+    padding: 8px;
+  }
+  
+  textarea {
+    height: 250px;
+  }
+  
+  button {
+    height: 50px;
+    background: green;
+    color: white;
+    border: 2px solid darkgreen;
+    font-size: 1.25em;
+    font-family: 'Georgia';
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    border: 2px solid black;
+  }
