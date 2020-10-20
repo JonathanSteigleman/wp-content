@@ -75,17 +75,13 @@ div.elem-group {
   
   label {
     display: block;
-    font-family: '';
     padding-bottom: 4px;
-    font-size: 1.25em;
   }
   
   input, select, textarea {
     border-radius: 2px;
     border: 1px solid #ccc;
     box-sizing: border-box;
-    font-size: 1.25em;
-    font-family: '';
     width: 500px;
     padding: 8px;
   }
@@ -98,13 +94,11 @@ div.elem-group {
     height: 50px;
     background: green;
     color: white;
-    border: 2px solid darkgreen;
-    font-size: 1.25em;
-    font-family: '';
+    border: 3px solid darkgreen;
     border-radius: 4px;
     cursor: pointer;
   }
   
   button:hover {
-    background: 2px solid black;
+    background: 3px solid black;
   }
