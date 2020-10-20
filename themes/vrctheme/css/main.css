@@ -101,4 +101,5 @@ div.elem-group {
   
   button:hover {
     background-color: black;
+    border: none;
   }
