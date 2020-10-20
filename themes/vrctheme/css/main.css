@@ -75,7 +75,7 @@ div.elem-group {
   
   label {
     display: block;
-    font-family: 'Georgia';
+    font-family: '';
     padding-bottom: 4px;
     font-size: 1.25em;
   }
@@ -85,7 +85,7 @@ div.elem-group {
     border: 1px solid #ccc;
     box-sizing: border-box;
     font-size: 1.25em;
-    font-family: 'Georgia';
+    font-family: '';
     width: 500px;
     padding: 8px;
   }
@@ -100,11 +100,11 @@ div.elem-group {
     color: white;
     border: 2px solid darkgreen;
     font-size: 1.25em;
-    font-family: 'Georgia';
+    font-family: '';
     border-radius: 4px;
     cursor: pointer;
   }
   
   button:hover {
-    border: 2px solid black;
+    background: 2px solid black;
   }

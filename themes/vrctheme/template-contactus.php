@@ -21,9 +21,9 @@ Template Name: Contact Us
 
               <div class="elem-group">
                 <label for="name">Your Name</label>
-                <input type="text" id="name" name="visitor_name" placeholder="John Doe" pattern=[A-Z\sa-z]{3,20} required>
-                <label for="email">Your E-mail</label>
-                <input type="email" id="email" name="visitor_email" placeholder="john.doe@email.com" required>
+                <input type="text" id="name" name="visitor_name" placeholder="John Doe" pattern=[A-Z\sa-z]{3,20} required> <label for="email">Your E-mail</label> <input type="email" id="email" name="visitor_email" placeholder="john.doe@email.com" required>
+                
+                
               </div>
 
               <!-- <div class="elem-group">
