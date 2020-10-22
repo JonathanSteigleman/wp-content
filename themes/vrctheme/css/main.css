@@ -144,7 +144,7 @@ header .main-menu .menu-item-has-children:hover .sub-menu {
       background-color: #DEDCDC;
       border-radius: 2px;
       padding: .5rem .75rem;
-      box-shadow: inset -1px -1px 3px 0 #ccc, inset 1px 1px 3px 0 #F5F5F5, -1px -1px 3px 0 #F5F5F5, 1px 1px 3px 0 #ccc;
+      box-shadow: inset -1px -1px 3px 0 #ccc 20%, inset 1px 1px 3px 0 #F5F5F5 70%, -1px -1px 3px 0 #F5F5F5 70%, 1px 1px 3px 0 #ccc 20%;
       cursor: pointer;
     }
 
@@ -162,10 +162,6 @@ header .main-menu .menu-item-has-children:hover .sub-menu {
         display: none;
     }
 }
-
-
-
-
 
 
 /* Contact us appearence */
