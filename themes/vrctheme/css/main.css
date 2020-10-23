@@ -110,6 +110,7 @@ header .main-menu .menu-item-has-children:hover .sub-menu {
         position: absolute;
         right: 0;
         box-shadow: -2px 0px 10px 0 #707070;
+        z-index: 999;
     }
 
     #responsiveMenu li {
