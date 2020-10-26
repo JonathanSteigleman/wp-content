@@ -23,6 +23,10 @@ function load_js()
     wp_register_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', 'jquery', false, true);
     wp_enqueue_script('bootstrap');
 
+    //Our team's additional js file
+    wp_register_script('main', get_template_directory_uri() . '/js/main.js' , 'jquery', false, true);
+    wp_enqueue_script('main');
+
 }
 //makes the load_js function run
 add_action('wp_enqueue_scripts', 'load_js');

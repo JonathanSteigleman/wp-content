@@ -41,33 +41,17 @@
                 );
             ?>       
         
-    
-    
-        <a class="icon" onclick="showMobileNav()">
-        <i class="fa fa-bars"></i>
-        </a>
-    
-        </div>
-    
-        <div id="responsiveMenu">
+        <a class="icon" onclick="showMobileNav()"><i class="fa fa-bars"></i></a>
+        <!--<a class="closeIcon" onclick=""></a><i class="fa fa-times" aria-hidden="true"></i>-->
         <?php
             wp_nav_menu(
                 array(
                     'theme_location' => 'top-menu',
-                    'menu_class' => 'main-menu-responsive'
+                    'menu_class' => 'main-menu-responsive',
+                    'menu_id' => 'responsiveMenu'
                 )
             );
-        ?>
+        ?> 
         </div>
     
-        <script>
-            function showMobileNav() {
-                var x = document.getElementById("responsiveMenu");
-                if (x.style.display === "block") {
-                    x.style.display = "none";
-                } else {
-                    x.style.display = "block";
-                }
-            }
-        </script>
 </header>
