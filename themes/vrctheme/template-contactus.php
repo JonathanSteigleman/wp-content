@@ -93,7 +93,7 @@ if($_POST) {
             <head>
                 <meta charset="UTF-8">
                 <title>Responsive Contact us form Using HTML and CSS</title>
-                <link rel="stylesheet" href="styles.css">
+                <link rel="stylesheet" href="main.css">
             </head>
             <body>
                 
