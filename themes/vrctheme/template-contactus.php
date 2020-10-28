@@ -89,7 +89,7 @@ if($_POST) {
         
             <!-- Contact Form -->
 
-            <!--
+          
 
             <!DOCTYPE html>
             <html lang="en">
@@ -121,11 +121,10 @@ if($_POST) {
             </body>
             </html>
 
-            -->
+          
 
-            <!-- OLD HTML, TRYING SOMETHING NEW -->
+            <!-- OLD HTML, TRYING SOMETHING NEW 
 
-            
               <form action="contact.php" method="post">
 
               <div class="elem-group">
@@ -166,6 +165,6 @@ if($_POST) {
 
 </div>
 
-
+-->
 
 <?php get_footer();?>
