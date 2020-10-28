@@ -1,7 +1,78 @@
 <?php
 /*
-Template Name: Contact Us
-*/
+if($_POST) {
+  $visitor_name = "";
+  $visitor_email = "";
+  $email_title = "";
+  $concerned_department = "";
+  $visitor_message = "";
+  $email_body = "<div>";
+    
+  if(isset($_POST['visitor_name'])) {
+      $visitor_name = filter_var($_POST['visitor_name'], FILTER_SANITIZE_STRING);
+      $email_body .= "<div>
+                         <label><b>Visitor Name:</b></label>&nbsp;<span>".$visitor_name."</span>
+                      </div>";
+  }
+
+  if(isset($_POST['visitor_email'])) {
+      $visitor_email = str_replace(array("\r", "\n", "%0a", "%0d"), '', $_POST['visitor_email']);
+      $visitor_email = filter_var($visitor_email, FILTER_VALIDATE_EMAIL);
+      $email_body .= "<div>
+                         <label><b>Visitor Email:</b></label>&nbsp;<span>".$visitor_email."</span>
+                      </div>";
+  }
+    
+  if(isset($_POST['email_title'])) {
+      $email_title = filter_var($_POST['email_title'], FILTER_SANITIZE_STRING);
+      $email_body .= "<div>
+                         <label><b>Reason For Contacting Us:</b></label>&nbsp;<span>".$email_title."</span>
+                      </div>";
+  }
+    
+  if(isset($_POST['concerned_department'])) {
+      $concerned_department = filter_var($_POST['concerned_department'], FILTER_SANITIZE_STRING);
+      $email_body .= "<div>
+                         <label><b>Concerned Department:</b></label>&nbsp;<span>".$concerned_department."</span>
+                      </div>";
+  }
+    
+  if(isset($_POST['visitor_message'])) {
+      $visitor_message = htmlspecialchars($_POST['visitor_message']);
+      $email_body .= "<div>
+                         <label><b>Visitor Message:</b></label>
+                         <div>".$visitor_message."</div>
+                      </div>";
+  }
+    
+  if($concerned_department == "billing") {
+      $recipient = "billing@domain.com";
+  }
+  else if($concerned_department == "marketing") {
+      $recipient = "marketing@domain.com";
+  }
+  else if($concerned_department == "technical support") {
+      $recipient = "tech.support@domain.com";
+  }
+  else {
+      $recipient = "contact@domain.com";
+  }
+    
+  $email_body .= "</div>";
+
+  $headers  = 'MIME-Version: 1.0' . "\r\n"
+  .'Content-type: text/html; charset=utf-8' . "\r\n"
+  .'From: ' . $visitor_email . "\r\n";
+    
+  if(mail($recipient, $email_title, $email_body, $headers)) {
+      echo "<p>Thank you for contacting us, $visitor_name. You will get a reply within 24 hours.</p>";
+  } else {
+      echo '<p>We are sorry but the email did not go through.</p>';
+  }
+    
+} else {
+  echo '<p>Something went wrong</p>';
+} */
 ?>
 
 <?php get_header();?>
@@ -17,7 +88,39 @@ Template Name: Contact Us
         <div class="col-lg-8">
         
             <!-- Contact Form -->
-            <form action="contact.php" method="post">
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <title>Responsive Contact us form Using HTML and CSS</title>
+                <link rel="stylesheet" href="styles.css">
+            </head>
+            <body>
+                
+            <div class="wrapper">
+              <div class="title">
+                <h1>contact us form</h1>
+              </div>
+              <div class="contact-form">
+                <div class="input-fields">
+                  <input type="text" class="input" placeholder="Name">
+                  <input type="text" class="input" placeholder="Email Address">
+                  <input type="text" class="input" placeholder="Phone">
+                  <input type="text" class="input" placeholder="Subject">
+                </div>
+                <div class="msg">
+                  <textarea placeholder="Message"></textarea>
+                  <div class="btn">send</div>
+                </div>
+              </div>
+            </div>
+                
+            </body>
+            </html>
+            <!-- OLD HTML, TRYING SOMETHING NEW -->
+
+            <!-- 
+              <form action="contact.php" method="post">
 
               <div class="elem-group">
                 <label for="name">Your Name</label>
@@ -25,27 +128,6 @@ Template Name: Contact Us
                 
                 
               </div>
-
-              <!-- <div class="elem-group">
-                <label for="email">Your E-mail</label>
-                <input type="email" id="email" name="visitor_email" placeholder="john.doe@email.com" required>
-              </div> -->
-
-              <!-- Remove Drop down field, commented out in case necessary -->
-
-              <!-- <div class="elem-group">
-                <label for="category-selection">Choose Concerned Category</label>
-                <select id="category-selection" name="concerned_category" required>
-                    <option value="">Select a Category</option>
-                    <option value="physical_health">Physical Health</option>
-                    <option value="mental_health">Mental Health</option>
-                    <option value="spiritual_health">Spiritual Health</option>
-                    <option value="economic_health">Economic Health</option>
-                    <option value="education">Education</option>
-                    <option value="social_services">Social Services</option>
-                    <option value="technical_support">Technical Support</option>
-                </select>
-              </div> -->
 
               <div class="elem-group">
                 <label for="title">Reason For Contacting Us</label>
@@ -77,5 +159,7 @@ Template Name: Contact Us
 </div>
 
 </div>
+-->
+
 
 <?php get_footer();?>
