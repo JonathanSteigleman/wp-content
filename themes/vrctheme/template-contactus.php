@@ -88,18 +88,21 @@ if($_POST) {
         <div class="col-lg-8">
         
             <!-- Contact Form -->
+
+            <!--
+
             <!DOCTYPE html>
             <html lang="en">
             <head>
                 <meta charset="UTF-8">
-                <title>Responsive Contact us form Using HTML and CSS</title>
+                <title>Contact Us</title>
                 <link rel="stylesheet" href="style.css">
             </head>
             <body>
                 
             <div class="wrapper">
               <div class="title">
-                <h1>contact us form</h1>
+                
               </div>
               <div class="contact-form">
                 <div class="input-fields">
@@ -117,9 +120,12 @@ if($_POST) {
                 
             </body>
             </html>
+
+            -->
+
             <!-- OLD HTML, TRYING SOMETHING NEW -->
 
-            <!-- 
+            
               <form action="contact.php" method="post">
 
               <div class="elem-group">
@@ -149,7 +155,7 @@ if($_POST) {
         
         <div class="col-lg-4">
             
-            <?php get_template_part('includes/section', 'content');?>    
+            <?php get_template_part('includes/section', 'content');?> 
         
         </div>
     
@@ -159,7 +165,7 @@ if($_POST) {
 </div>
 
 </div>
--->
+
 
 
 <?php get_footer();?>
