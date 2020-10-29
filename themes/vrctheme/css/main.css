@@ -93,8 +93,18 @@ header .main-menu .menu-item-has-children:hover .sub-menu {
     cursor: pointer;
 }
 
+/*Makes the responsive menu invisible when the screen is over 1200px wide*/
+@media (min-width: 1200px) {
+  .main-menu-responsive {
+      display: none;
+  }
 
-/*Nav For Smaller Screens*/
+  a.icon {
+      display: none;
+  }
+}
+
+/*Responsive Navigation Menu*/
 @media (max-width: 1200px) {
     header .main-menu {
         display: none;
@@ -163,18 +173,8 @@ header .main-menu .menu-item-has-children:hover .sub-menu {
     }
 }
 
-@media (min-width: 1200px) {
-    .main-menu-responsive {
-        display: none;
-    }
 
-    a.icon {
-        display: none;
-    }
-}
-
-
-/* Contact us appearence */
+/* Contact Us appearence */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 *{
