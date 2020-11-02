@@ -52,6 +52,118 @@ if (! function_exists('fa_custom_setup_kit') ) {
   }
   fa_custom_setup_kit('https://kit.fontawesome.com/fb620e246a.js');
 
+//
+// Add the Home Advanced Custom Fields to the page if it is there
+// Include attributes of the following
+//
+if( function_exists('acf_add_local_field_group') ):
+
+  acf_add_local_field_group(array(
+    'key' => 'group_5f9c469810592',
+    'title' => 'Home',
+    'fields' => array(
+      array(
+        'key' => 'field_5f9c469d82a5b',
+        'label' => 'Hero Heading',
+        'name' => 'hero_heading',
+        'type' => 'text',
+        'instructions' => '',
+        'required' => 1,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'default_value' => 'Announcements',
+        'placeholder' => '',
+        'prepend' => '',
+        'append' => '',
+        'maxlength' => 50,
+      ),
+      array(
+        'key' => 'field_5f9c46d182a5c',
+        'label' => 'Hero Content',
+        'name' => 'hero_content',
+        'type' => 'textarea',
+        'instructions' => 'Summary or Description of the content to be found in the hero',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'default_value' => 'This is the content of the homepage hero.',
+        'placeholder' => '',
+        'maxlength' => '',
+        'rows' => 4,
+        'new_lines' => '',
+      ),
+      array(
+        'key' => 'field_5f9c471282a5d',
+        'label' => 'Hero Image',
+        'name' => 'hero_image',
+        'type' => 'image',
+        'instructions' => 'Select a hero image',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'return_format' => 'url',
+        'preview_size' => 'medium',
+        'library' => 'all',
+        'min_width' => '',
+        'min_height' => '',
+        'min_size' => '',
+        'max_width' => '',
+        'max_height' => '',
+        'max_size' => 20,
+        'mime_types' => 'png, jpeg',
+      ),
+      array(
+        'key' => 'field_5f9c473f82a5e',
+        'label' => 'Hero Button',
+        'name' => 'hero_button',
+        'type' => 'url',
+        'instructions' => 'Place the URL to the page you would like this button to lead to',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'default_value' => '',
+        'placeholder' => '',
+      ),
+    ),
+    'location' => array(
+      array(
+        array(
+          'param' => 'page_type',
+          'operator' => '==',
+          'value' => 'front_page',
+        ),
+      ),
+    ),
+    'menu_order' => 0,
+    'position' => 'normal',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => '',
+    'active' => true,
+    'description' => '',
+  ));
+  
+  endif;
+
+    //add_filter('acf/settings/remove_wp_meta_box', '__return_false');
+
 
 //Theme Options
 add_theme_support('menus');
