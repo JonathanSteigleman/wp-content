@@ -220,7 +220,6 @@ body{
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
-<<<<<<< HEAD
 .wrapper .title h1{
   color: #c5ecfd;
   text-align: center;
@@ -292,7 +291,6 @@ body{
     width: 100%;
   }
 }
-=======
 /*Front Page CSS*/
 div .row {
     padding: 150px 150px 75px 150px !important;
@@ -310,7 +308,6 @@ div #announcements {
 
 
 
->>>>>>> Kali
 
 /* div.elem-group {
     margin: 40px 0;
