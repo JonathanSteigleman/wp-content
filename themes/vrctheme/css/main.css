@@ -173,6 +173,23 @@ header .main-menu .menu-item-has-children:hover .sub-menu {
     }
 }
 
+/*Front Page CSS*/
+div .row {
+    padding: 150px 150px 75px 150px !important;
+}
+
+div #announcements {
+    padding: 50px 50px 25px 25px;
+    border-radius: 20px;
+    background-color: #F5F5F5;
+    opacity: .75;
+    backdrop-filter: blur(10px); 
+    box-shadow: 2px 0px 10px 0 #707070;
+}
+
+
+
+
 
 /* Contact us appearence */
 div.elem-group {
