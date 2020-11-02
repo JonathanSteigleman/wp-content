@@ -25,7 +25,7 @@ header .container{
 
 header .main-menu li a {
     display: block;
-    padding: 1rem 1rem;
+    padding:1rem 1rem;
     color: #707070;
     text-decoration: none;
     border-bottom: solid transparent;
@@ -67,6 +67,22 @@ header .main-menu li .sub-menu a:hover{
 
 header .main-menu .menu-item-has-children:hover .sub-menu {
     display: block;  
+}
+
+.footer {
+  list-style-type: none;
+}
+
+.footer li{
+  padding: .25rem; 
+}
+
+.other-links{
+  list-style-type: none;
+}
+
+.other-links li{
+  padding: .25rem;
 }
 
 /*Header Logo Styles*/

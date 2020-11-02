@@ -63,6 +63,7 @@ register_nav_menus(
 
         'top-menu' => 'Main Menu Location',
         'footer-menu' => 'Footer Menu Location',
+        'other-links-menu' => 'Other Links',
 
     )
 

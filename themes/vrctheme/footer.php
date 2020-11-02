@@ -26,24 +26,13 @@
         <!-- Links -->
         <h6 class="text-uppercase font-weight-bold">Pages</h6>
         <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>
-          <a class="dark-grey-text" href="http://pccc.test:8888/economic-health/">Economic Health</a>
-        </p>
-        <p>
-          <a class="dark-grey-text" href="http://pccc.test:8888/social-services/">Social Services</a>
-        </p>
-        <p>
-          <a class="dark-grey-text" href="http://pccc.test:8888/education/">Education</a>
-        </p>
-        <p>
-          <a class="dark-grey-text" href="http://pccc.test:8888/mental-health/">Mental Health</a>
-        </p>
-        <p>
-        	<a class="dark-grey-text" href="http://pccc.test:8888/spiritual-health/">Spiritual Health</a>
-        </p>
-        <p>
-        	<a class="dark-grey-text" href="http://pccc.test:8888/physical-health/">Physical Health</a>
-        </p>
+        
+        <?php
+        wp_nav_menu( array(        
+            'theme_location' => 'footer-menu',        
+            'menu_class' => 'footer'        
+          ) );
+        ?>  
 
 
       </div>
@@ -52,18 +41,12 @@
 
         <h6 class="text-uppercase font-weight-bold">Other links</h6>
         <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>
-          <a class="dark-grey-text" href="#!">Request to be added to list</a>
-        </p>
-        <p>
-          <a class="dark-grey-text" href="#!">Make a change to a listing</a>
-        </p>
-        <p>
-          <a class="dark-grey-text" href="#!">Upcoming Events</a>
-        </p>
-        <p>
-          <a class="dark-grey-text" href="#!">Help</a>
-        </p>
+        <?php
+        wp_nav_menu( array(        
+            'theme_location' => 'other-links-menu',        
+            'menu_class' => 'other-links'        
+          ) );
+        ?>  
 
       </div>
 
