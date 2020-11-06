@@ -2,7 +2,7 @@ header {
     background: #F5F5F5;
     width: 100%;
     height: 60px;
-    box-shadow: 2px 2px 2px #DEDCDC;
+    box-shadow: 0px 2px 2px #DEDCDC;
 }
 
 .page-wrap{
@@ -69,21 +69,6 @@ header .main-menu .menu-item-has-children:hover .sub-menu {
     display: block;  
 }
 
-.footer {
-  list-style-type: none;
-}
-
-.footer li{
-  padding: .25rem; 
-}
-
-.other-links{
-  list-style-type: none;
-}
-
-.other-links li{
-  padding: .25rem;
-}
 
 /*Header Logo Styles*/
 .site-logo {
@@ -97,7 +82,6 @@ header .main-menu .menu-item-has-children:hover .sub-menu {
     display: block;
     height: 50px;
     overflow: hidden;
-    /*transition: box-shadow 200ms ease-in-out;*/
 }
   
 .site-logo .custom-logo-link .custom-logo {
@@ -177,8 +161,6 @@ header .main-menu .menu-item-has-children:hover .sub-menu {
     }
 
     a.icon:hover {
-      /*border-radius: 2px;
-      padding: .5rem .75rem;*/
       background-color: #e8e8e8;
       box-shadow: inset -2px -2px 5px 0 #DEDCDC 20%, inset 2px 2px 5px 0 #707070 70%, -2px -2px 5px 0 #707070 70%, 2px 2px 5px 0 #DEDCDC 20%;
       cursor: pointer;
@@ -189,157 +171,137 @@ header .main-menu .menu-item-has-children:hover .sub-menu {
     }
 }
 
+/*
+** Footer Styling
+** Completed by Jonathan
+*/
+.page-footer {
+    background-color: #F5F5F5;
+}
 
-/* Contact Us appearence */
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-
-*{
+footer ul{
+  list-style-type: none;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  outline: none;
-  font-family: 'Roboto', sans-serif;
+  display: block;
 }
 
-body{
-  background: url('bg.jpg') no-repeat top center;
-  background-size: cover;
-  height: 100vh;
+footer li{
+    padding: .25rem; 
 }
 
-.wrapper{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  max-width: 550px;
-  background: rgba(0,0,0,0.8);
-  padding: 30px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+.other-links li{
+    padding: .25rem;
 }
 
-.wrapper .title h1{
-  color: #c5ecfd;
-  text-align: center;
-  margin-bottom: 25px;
+footer li a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    text-align: left;
 }
 
+footer li a:hover {
+    color: #1E3B7C;
+    text-decoration: none;
+}
+/* End Footer Styling */
+
+
+/*
+** Front Page Styling
+** By Kali Crockett
+*/
+div.jumbotron-fluid .row {
+    padding: 100px 125px 50px 125px !important;
+}
+
+.row  {
+  margin: 0;
+}
+
+div #announcements {
+    padding: 75px 25px 25px 25px;
+    border-radius: 5px;
+    background: rgba( 232, 232, 232, .6);
+    backdrop-filter: blur(10px); 
+    box-shadow: 2px 0px 10px 0 #707070;
+}
+
+.card img.card-img-top {
+    max-height: 200px;
+    width: 100%;
+    background-size: cover;
+}
+
+h2.home-section-headings {
+    text-align: center;
+}
+
+/* End Front Page Styling*/
+
+
+/*
+** Contact Form Styling
+** By Jaxon Harvey
+*/
 .contact-form{
   display: flex;
+  background: rgba( 232, 232, 232, .3);
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px 0 #fff, 2px 2px 10px 0 #707070;
 }
 
-.input-fields{
+.contact-form .input-fields{
   display: flex;
   flex-direction: column;
   margin-right: 4%;
 }
 
-.input-fields,
+.contact-form .input-fields,
 .msg{
   width: 48%;
 }
 
-.input-fields .input,
+.contact-form .input-fields .input,
 .msg textarea{
   margin: 10px 0;
   background: transparent;
   border: 0px;
-  border-bottom: 2px solid #c5ecfd;
+  border-bottom: 1px solid #ccc;
   padding: 10px;
-  color: #c5ecfd;
+  color: #707070;
   width: 100%;
 }
 
-.msg textarea{
-  height: 212px;
+.contact-form .msg textarea{
+  height: 72%;
 }
 
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
-  color: #c5ecfd;
+  color: #707070;
 }
 ::-moz-placeholder {
   /* Firefox 19+ */
-  color: #c5ecfd;
+  color: #707070;
 }
 :-ms-input-placeholder {
   /* IE 10+ */
-  color: #c5ecfd;
-}
-
-.btn {
-    background: #39b7dd;
-    text-align: center;
-    padding: 15px;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    text-transform: uppercase;
+  color: #707070;
 }
 
 @media screen and (max-width: 600px){
   .contact-form{
     flex-direction: column;
   }
-  .msg textarea{
+  .contact-form .msg textarea{
     height: 80px;
   }
-  .input-fields,
+  .contact-form .input-fields,
   .msg{
     width: 100%;
   }
 }
-/*Front Page CSS*/
-div .row {
-    padding: 150px 150px 75px 150px !important;
-}
-
-div #announcements {
-    padding: 50px 50px 25px 25px;
-    border-radius: 20px;
-    background-color: #F5F5F5;
-    opacity: .75;
-    backdrop-filter: blur(10px); 
-    box-shadow: 2px 0px 10px 0 #707070;
-}
-
-
-
-
-
-/* div.elem-group {
-    margin: 40px 0;
-  }
-  
-  label {
-    display: block;
-    padding-bottom: 4px;
-  }
-  
-  input, select, textarea {
-    border-radius: 2px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    width: 500px;
-    padding: 8px;
-  }
-  
-  textarea {
-    height: 250px;
-  }
-  
-  button {
-    height: 50px;
-    background: green;
-    color: white;
-    border: 3px solid darkgreen;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: black;
-    border: 3px solid black;
-  } */
+/* End Contact Form Appearance*/
