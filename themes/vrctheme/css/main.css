@@ -238,6 +238,18 @@ h2.home-section-headings {
     text-align: center;
 }
 
+div.col-lg-6.left-side {
+    text-align: center;
+    background-color: #ccc;
+    padding: 10rem 5rem 8rem 5rem;
+}
+
+div.col-lg-6.right-side {
+    text-align: center;
+    background-color: #F5F5F5;
+    padding: 10rem 5rem 8rem 5rem;
+}
+
 /* End Front Page Styling*/
 
 

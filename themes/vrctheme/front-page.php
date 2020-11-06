@@ -2,6 +2,8 @@
 <?php
     get_header('secondary');
     acf_add_local_field_group('Home');
+    $left_side = get_field('left_side');
+    $right_side = get_field('right_side');
 ?>
 
 <div class="jumbotron-fluid" style="background:  linear-gradient(rgba(112, 112, 112, 0.45), rgba(245, 245, 245, 0.5)), url(<?php the_field('hero_image');?>); background-size:cover;">
@@ -15,7 +17,7 @@
 </div>
 
 
-<div class="page-wrap">
+<div class="page-wrap mb-0">
 <div class="container">
 
     <div class="pt-5 pb-5"><h2 class="home-section-headings"><?php the_field('section_1_header');?></h2></div>
@@ -49,7 +51,7 @@
     </div><!-- end row -->
 
     <!-- Row 1 of Categories -->
-    <div class="row">
+    <div class="row pb-5">
             <?php
                 $catNum = 4;
                 //$category = "category_" + $catnum;
@@ -76,12 +78,29 @@
                 <?php endwhile ?> 
     </div><!-- end row -->
 
+    
 
-    <h1><?php the_title();?></h1>
 
-    <?php get_template_part('includes/section', 'content');?>
 
-</div>
+    
+
+    
+</div><!-- end container -->
+
+        <!-- two sided section -->
+        <div class="row mt-5 no-gutters">
+            <div class="col-lg-6 left-side">
+                <h3 class="mb-4"><?php echo $left_side['title'];?></h3>
+                <p class="mb-4"><?php echo $left_side['description'];?></p>
+                <a href="<?php echo esc_url($left_side['button_link']);?>"><button class="btn btn-primary btn-block"><?php echo $left_side['button_text'];?></button></a>
+            </div><!-- end col -->
+            
+            <div class="col-lg-6 right-side">
+                <h3 class="mb-4"><?php echo $right_side['title'];?></h3>
+                <p class="mb-4"><?php echo $right_side['description'];?></p>
+                <a href="<?php echo esc_url($right_side['button_link']);?>"><button class="btn btn-primary btn-block"><?php echo $right_side['button_text'];?></button></a>
+            </div><!-- end col -->
+        </div><!-- end row -->
 </div>
 
 
