@@ -274,9 +274,8 @@ div #announcements {
 }
 
 .card img.card-img-top {
-    max-height: 200px;
     width: 100%;
-    background-size: cover;
+    height: inherit;
 }
 
 h2.home-section-headings {
