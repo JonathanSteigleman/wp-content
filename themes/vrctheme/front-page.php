@@ -8,8 +8,8 @@
 
 <div class="jumbotron-fluid" style="background:  linear-gradient(rgba(112, 112, 112, 0.45), rgba(245, 245, 245, 0.5)), url(<?php the_field('hero_image');?>); background-size:cover;">
     <div class="row align-items-end">
-        <div class="col-md-4" id="announcements">
-        <h2><?php the_field('hero_heading');?></h2>
+        <div class="col-lg-5 col-md-9 col-sm-12" id="announcements">
+        <h3><?php the_field('hero_heading');?></h3>
         <p class="mt-2"><?php the_field('hero_content');?></p>
         <a href="<?php the_field('hero_button');?>"><button type="button" class="btn btn-primary mt-2">Read More</button></a>
         </div>
@@ -17,7 +17,7 @@
 </div>
 
 
-<div class="page-wrap mb-0">
+<div class="page-wrap">
 <div class="container">
 
     <div class="pt-5 pb-5"><h2 class="home-section-headings"><?php the_field('section_1_header');?></h2></div>

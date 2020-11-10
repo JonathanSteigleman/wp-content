@@ -3,7 +3,7 @@
     <!-- WP Hook to make the footer usable with widgets and/or plugins -->
     <?php wp_footer();?>
 
-<footer class="page-footer mt-5">
+<footer class="page-footer no-gutters">
   <!--<div style="background-color: #F5F5F5;">-->
   <div class="row d-flex align-items-center">
   <div class="container text-center text-md-left mt-5">
