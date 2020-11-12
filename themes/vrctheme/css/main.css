@@ -28,6 +28,10 @@ h4 {
     color: #0F9647;
 }
 
+footer h4 {
+    color: #1E3B7C;
+}
+
 h5 {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 1.5rem;
@@ -220,7 +224,11 @@ header .main-menu .menu-item-has-children:hover .sub-menu {
 ** Completed by Jonathan
 */
 .page-footer {
-    background-color: #6C6C6C;
+    background-color: #bcbcbc;
+}
+
+footer {
+    color: #202020;
 }
 
 footer ul{
@@ -241,12 +249,12 @@ footer li{
 footer li a {
     display: block;
     text-decoration: none;
-    color: #F5F5F5;
+    color: #202020;
     text-align: left;
 }
 
 footer li a:hover {
-    color: #FFFFFF;
+    color: #707070;
     text-decoration: none;
     cursor: pointer;
 }
