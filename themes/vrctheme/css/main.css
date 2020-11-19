@@ -9,8 +9,8 @@ h1 {
 
 h2 {
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 3.5rem;
-    font-weight: 600;
+    font-size: 3rem;
+    font-weight: 500;
     color: #0F9647;
 }
 
@@ -266,7 +266,7 @@ footer li a:hover {
 ** By Kali Crockett
 */
 div.jumbotron-fluid .row {
-    padding: 100px 125px 50px 125px !important;
+    padding: 300px 125px 100px 125px !important;
 }
 
 .row  {
@@ -369,3 +369,13 @@ div.col-lg-6.right-side {
   }
 }
 /* End Contact Form Appearance*/
+
+button.btn.btn-primary {
+    background-color: #1E3B7C;
+    border: 1px solid #1E3B7C;
+}
+
+button.btn.btn-primary:hover {
+    background-color: #162c5a;
+    border: 1px solid #162c5a;
+}
