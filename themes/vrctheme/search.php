@@ -33,7 +33,10 @@
             <?php } ?>
 
 <?php/*
-Documentation on the get_search_form function -Elise
+Used the headers and footers, put the title in h2 to make it kinda fit and
+put the results in h4.
+Used page wrap, container, etc. from searchpage.php, which I believe got socket_recvfrom
+page.php
 Referenced: https://stackoverflow.com/questions/14802498/how-to-display-wordpress-search-results
 */?>
 </div>
