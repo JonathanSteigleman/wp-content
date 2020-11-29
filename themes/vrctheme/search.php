@@ -3,7 +3,7 @@
 <header class="page-header">
 
 <h2 class="page-title">
-  <?php _e( 'Search results for: ', 'twentynineteen' ); ?>
+  <?php _e( 'Search results for: ', 'vrctheme' ); ?>
   <span class="page-description"><?php echo get_search_query(); ?></span>
 </h2>
 </header>
@@ -34,8 +34,7 @@
 
 <?php/*
 Documentation on the get_search_form function -Elise
-To access this feature: Create a post or page and then where it says "Search Page" under the template section, select that.
-https://developer.wordpress.org/reference/functions/get_search_form/
+Referenced: https://stackoverflow.com/questions/14802498/how-to-display-wordpress-search-results
 */?>
 </div>
 </div>
