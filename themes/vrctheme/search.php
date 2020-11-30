@@ -2,23 +2,25 @@
 <?php get_header();?>
 <header class="page-header">
 
-<h2 class="page-title">
-  <?php _e( 'Search results for: ', 'vrctheme' ); ?>
-  <span class="page-description"><?php echo get_search_query(); ?></span>
-</h2>
+
 </header>
 
 <div class="page-wrap">
 <div class="container">
+
+  <h1 class="page-title">
+    <?php _e( 'Search results for: ', 'vrctheme' ); ?>
+    <span class="page-description"><?php echo get_search_query(); ?></span>
+  </h1>
 
     <?php if ( have_posts() ) { ?>
                 <ul>
                 <?php while ( have_posts() ) { the_post(); ?>
 
                    <li>
-                     <h4><a href="<?php echo get_permalink(); ?>">
+                     <h3><a href="<?php echo get_permalink(); ?>">
                        <?php the_title();  ?>
-                     </a></h4>
+                     </a></h3>
                      <?php  the_post_thumbnail('medium') ?>
                      <?php echo substr(get_the_excerpt(), 0,200); ?>
                      <div class="h-readmore"> <a href="<?php the_permalink(); ?>">Read More</a></div>
