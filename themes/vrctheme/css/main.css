@@ -1,5 +1,10 @@
 
-/* Styles for the entire site */
+/* 
+** Styles for the entire site
+** Allows all styling to be in one area and keeps the code cleaner
+*/
+
+/* Unviersal Styling */
 h1 {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 4rem;
@@ -45,6 +50,7 @@ body {
 }
 /* End styles for entire site */ 
 
+/* Styling for the site header */
 header {
     background: #F5F5F5;
     width: 100%;

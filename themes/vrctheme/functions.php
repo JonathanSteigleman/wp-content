@@ -1,6 +1,12 @@
 <?php
+////////////////////////////////////////////////////////////////////
+// The main file for any PHP functions for the site
+// This is used to enqueue style sheets and scripts from bootstrap
+// It also calls data from ACF and Font Awesome
+////////////////////////////////////////////////////////////////////
 
-//load stylesheet to be used throughout the site
+
+// load stylesheet to be used throughout the site
 function load_css()
 {
         
@@ -11,10 +17,10 @@ function load_css()
     wp_enqueue_style('main');
 
 }
-//makes the load_css function run
+// makes the load_css function run
 add_action('wp_enqueue_scripts', 'load_css');
 
-//load javascript
+// load javascript
 function load_js()
 {
 
@@ -28,10 +34,10 @@ function load_js()
     wp_enqueue_script('main');
 
 }
-//makes the load_js function run
+// makes the load_js function run
 add_action('wp_enqueue_scripts', 'load_js');
 
-//loading Google Fonts onto the site
+// loading Google Fonts onto the site
 function wpb_add_google_fonts() {
 
   wp_enqueue_style( 'wpb-google-fonts', 'href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap"', false );
@@ -71,9 +77,9 @@ if (! function_exists('fa_custom_setup_kit') ) {
 
 
 //Theme Options
-add_theme_support('menus');
-
 //Menus
+add_theme_support('menus');
+// Registering the Main Menu, Footer Menu, and Other menu
 register_nav_menus(
 
     array(
@@ -86,7 +92,8 @@ register_nav_menus(
 
 );
 
-//Custom logo
+// Custom logo
+// Setting it up so the user can have a custom logo added to their site
 add_theme_support( 'custom-logo' );
 
 function themename_custom_logo_setup() {
@@ -107,7 +114,7 @@ function themename_custom_logo_setup() {
  *
  */
 function arphabet_widgets_init() {
-
+  // Registering the Home Sidebar 1
 	register_sidebar( array(
 		'name'          => 'Home right sidebar',
 		'id'            => 'home_right_1',
@@ -117,6 +124,7 @@ function arphabet_widgets_init() {
 		'after_title'   => '</h4>',
   ) );
 
+  // Registering the First Footer Area
   register_sidebar( array(
     'name'          => 'Footer Area 1', 'footer',
     'id'            => 'footer_area_1',
@@ -127,6 +135,7 @@ function arphabet_widgets_init() {
     'after_title'   => '</h4>',
   ));
   
+  // Registering the Second Footer Area
   register_sidebar( array(
     'name'          => 'Footer Area 2', 'footer',
     'id'            => 'footer_area_2',
@@ -137,6 +146,7 @@ function arphabet_widgets_init() {
     'after_title'   => '</h4>',
   ));
 
+  // Registering the Third Footer Area
   register_sidebar( array(
     'name'          => 'Footer Area 3', 'footer',
     'id'            => 'footer_area_3',
@@ -147,6 +157,7 @@ function arphabet_widgets_init() {
     'after_title'   => '</h4>',
   ));
 
+  // Registering the Fourth Footer Area
   register_sidebar( array(
     'name'          => 'Footer Area 4', 'footer',
     'id'            => 'footer_area_4',
@@ -163,10 +174,9 @@ add_action( 'widgets_init', 'arphabet_widgets_init' );
 
 
 
-//
-// Add the Home Advanced Custom Fields to the page if it is there
-// Include attributes of the following
-//
+///////////////////////////////////////////////////////////////
+// Add the Home Advanced Custom Fields to the page if it exists
+///////////////////////////////////////////////////////////////
 if( function_exists('acf_add_local_field_group') ):
 
   acf_add_local_field_group(array(
