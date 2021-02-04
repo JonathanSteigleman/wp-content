@@ -133,7 +133,7 @@
                 <!-- call the description text of the left side -->
                 <p class="mb-4"><?php echo $left_side['description'];?></p>
                 <!-- call the button URL and text of the left side -->
-                <a href="<?php echo esc_url($left_side['button_link']);?>"><button class="btn btn-primary btn-block"><?php echo $left_side['button_text'];?></button></a>
+                <a href="<?php echo esc_url($left_side['button_link']);?>"><button class="btn btn-default"><?php echo $left_side['button_text'];?></button></a>
             </div><!-- end col -->
             
             <div class="col-lg-6 right-side">
@@ -142,7 +142,7 @@
                 <!-- call the description text of the right side -->
                 <p class="mb-4"><?php echo $right_side['description'];?></p>
                 <!-- call the button URL and text for the right side -->
-                <a href="<?php echo esc_url($right_side['button_link']);?>"><button class="btn btn-primary btn-block"><?php echo $right_side['button_text'];?></button></a>
+                <a href="<?php echo esc_url($right_side['button_link']);?>"><button class="btn btn-default"><?php echo $right_side['button_text'];?></button></a>
             </div><!-- end col -->
         </div><!-- end row -->
 </div>

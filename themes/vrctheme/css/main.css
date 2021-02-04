@@ -8,7 +8,7 @@
 h1 {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 4rem;
-    font-weight: 600;
+    font-weight: 400;
     color: #1E3B7C;
 }
 
@@ -21,14 +21,14 @@ h2 {
 
 h3 {
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight: 500;
     color: #0F9647;
 }
 
 h4 {
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 500;
     color: #0F9647;
 }
@@ -376,12 +376,14 @@ div.col-lg-6.right-side {
 }
 /* End Contact Form Appearance*/
 
-button.btn.btn-primary {
-    background-color: #1E3B7C;
-    border: 1px solid #1E3B7C;
+button.btn.btn-default {
+    border: 2px solid #162c5a;
+    width: 200px;
+    color: #162c5a;
 }
 
-button.btn.btn-primary:hover {
-    background-color: #162c5a;
-    border: 1px solid #162c5a;
+button.btn.btn-default:hover {
+    border: 2px solid #162c5a;
+    background-color: #1E3B7C;
+    color: #F5F5F5;
 }

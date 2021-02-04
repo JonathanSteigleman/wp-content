@@ -40,7 +40,7 @@ add_action('wp_enqueue_scripts', 'load_js');
 // loading Google Fonts onto the site
 function wpb_add_google_fonts() {
 
-  wp_enqueue_style( 'wpb-google-fonts', 'href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap"', false );
+  wp_enqueue_style( 'wpb-google-fonts', 'href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Source+Sans+Pro:wght@100;200;300;400;600;700;900&display=swap"', false );
 
   ///////////////////////////////////////////////
   // FONT FAMILIES TO BE USED IN CSS
