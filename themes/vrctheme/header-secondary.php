@@ -20,27 +20,7 @@
 
 <header>
 <div class="container">
-            
-            <div class="site-logo">
-                <!--Have the logo link to the home page of the website-->
-                <a class="home" href="<?php echo get_home_url(); ?>"> 
-                <?php 
-                    if ( function_exists( 'the_custom_logo' ) ) {
-                        the_custom_logo();
-                    }
-                ?>
-                </a>
-            </div>
-                
-            <?php
-                wp_nav_menu(        
-                    array(        
-                        'theme_location' => 'top-menu',        
-                        'menu_class' => 'main-menu'        
-                    )
-                );
-            ?>       
-        
+        <div class="container">    
         <a class="icon" onclick="showMobileNav()"><i class="fa fa-bars"></i></a>
         <!--<a class="closeIcon" onclick=""></a><i class="fa fa-times" aria-hidden="true"></i>-->
         <?php
@@ -52,6 +32,31 @@
                 )
             );
         ?> 
+        
+
+            <div class="site-logo small-screen-logo">
+                <!--Have the logo link to the home page of the website-->
+                <a class="home" href="<?php echo get_home_url(); ?>"> 
+                <?php 
+                    if ( function_exists( 'the_custom_logo' ) ) {
+                        the_custom_logo();
+                    }
+                ?>
+                </a>
+            </div>
+
+            <?php get_search_form(); ?>
         </div>
-    
+        </div>
+        
+        <div class="container">
+        <?php
+                wp_nav_menu(        
+                    array(        
+                        'theme_location' => 'top-menu',        
+                        'menu_class' => 'main-menu'        
+                    )
+                );
+            ?>       
+        </div>
 </header>
