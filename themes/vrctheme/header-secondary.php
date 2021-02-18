@@ -19,8 +19,8 @@
  -->
 
 <header>
-<div class="container">
-        <div class="container">    
+<div class="container-fluid pt-2">
+        
         <a class="icon" onclick="showMobileNav()"><i class="fa fa-bars"></i></a>
         <!--<a class="closeIcon" onclick=""></a><i class="fa fa-times" aria-hidden="true"></i>-->
         <?php
@@ -33,8 +33,8 @@
             );
         ?> 
         
-
-            <div class="site-logo small-screen-logo">
+        <div class="row">
+            <div class="site-logo small-screen-logo col-md-8 col-sm-6">
                 <!--Have the logo link to the home page of the website-->
                 <a class="home" href="<?php echo get_home_url(); ?>"> 
                 <?php 
@@ -47,9 +47,9 @@
 
             <?php get_search_form(); ?>
         </div>
-        </div>
         
-        <div class="container">
+        
+        <div class="container justify-content-center">
         <?php
                 wp_nav_menu(        
                     array(        
@@ -59,4 +59,5 @@
                 );
             ?>       
         </div>
+    </div>
 </header>
