@@ -1,9 +1,5 @@
 
 <?php get_header();?>
-<header class="page-header">
-
-
-</header>
 
 <div class="page-wrap">
 <div class="container">
