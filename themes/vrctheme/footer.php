@@ -63,9 +63,9 @@
       </div>
 
       <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-          <?php if ( is_active_sidebar( 'footer_area_3' ) ) : ?>
-              <div id="footer_area_3" class="widget-area" role="complementary">
-                <?php dynamic_sidebar( 'footer_area_3' ); ?>
+          <?php if ( is_active_sidebar( 'footer_area_4' ) ) : ?>
+              <div id="footer_area_4" class="widget-area" role="complementary">
+                <?php dynamic_sidebar( 'footer_area_4' ); ?>
               </div><!-- #primary-sidebar -->
           <?php endif; ?>
       </div>
