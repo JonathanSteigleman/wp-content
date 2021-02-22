@@ -174,11 +174,56 @@ add_action( 'widgets_init', 'arphabet_widgets_init' );
 
 
 
+
+
+
 ///////////////////////////////////////////////////////////////
 // Add the Home Advanced Custom Fields to the page if it exists
 ///////////////////////////////////////////////////////////////
 if( function_exists('acf_add_local_field_group') ):
 
+  acf_add_local_field_group(array(
+    'key' => 'group_60329edcb75fc',
+    'title' => 'Content_Page',
+    'fields' => array(
+      array(
+        'key' => 'field_60329ef8a5f71',
+        'label' => 'Google Maps 1',
+        'name' => 'google_maps_1',
+        'type' => 'google_map',
+        'instructions' => 'API Key: AIzaSyCDyzuJqCZ6afgP8QARQnBodnQewve5i2Y',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'center_lat' => '37.6145',
+        'center_lng' => '93.4105',
+        'zoom' => '',
+        'height' => '',
+      ),
+    ),
+    'location' => array(
+      array(
+        array(
+          'param' => 'post_type',
+          'operator' => '==',
+          'value' => 'post',
+        ),
+      ),
+    ),
+    'menu_order' => 0,
+    'position' => 'normal',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => '',
+    'active' => true,
+    'description' => '',
+  ));
+  
   acf_add_local_field_group(array(
     'key' => 'group_5f9c469810592',
     'title' => 'Home',
