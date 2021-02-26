@@ -4,22 +4,23 @@
 <div class="page-wrap">
 <div class="container">
 
-  <h1 class="page-title">
-    <?php _e( 'Search results for: ', 'vrctheme' ); ?>
+  <h2 class="page-title"><b> //title is bold, don't change. -Elise
+    <?php _e( 'Search results for: ', 'vrctheme' ); ?> //Title
     <span class="page-description"><?php echo get_search_query(); ?></span>
-  </h1>
-
+  </b></h2>
+<hr></hr>
     <?php if ( have_posts() ) { ?>
                 <ul>
-                <?php while ( have_posts() ) { the_post(); ?>
+                <?php while ( have_posts() ) { the_post(); ?> //loop until there are no more posts in the search to display
 
                    <li>
-                     <h3><a href="<?php echo get_permalink(); ?>">
-                       <?php the_title();  ?>
-                     </a></h3>
+                     <h5><b><a href="<?php echo get_permalink(); ?>">
+                       <?php the_title();  ?> //title of article, bold, please don't change.
+                     </a></b></h5>
                      <?php  the_post_thumbnail('medium') ?>
                      <?php echo substr(get_the_excerpt(), 0,200); ?>
-                     <div class="h-readmore"> <a href="<?php the_permalink(); ?>">Read More</a></div>
+                     <div class="h-readmore"> <a href="<?php the_permalink(); ?>">Read More</a></div> //put padding after with bootstrap classes
+                     <br></br> //replace with padding
                    </li>
 
                 <?php } ?>
