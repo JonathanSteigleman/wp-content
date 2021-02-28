@@ -22,7 +22,6 @@ Template Name: Individual Page
         <p>Some text..</p>
         <!-- Descriptiopn of the business under logo? -->
       </div>
-    </div>
   </div>
 
   <div id ="rightColumn" class="column">
@@ -34,7 +33,6 @@ Template Name: Individual Page
         <p>text detailing phone number and position at business and such...</p>
         <!-- further description of person -->
       </div>
-    </div>
   </div>
 </div>
 
