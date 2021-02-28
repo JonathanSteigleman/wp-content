@@ -389,14 +389,11 @@ button.btn.btn-primary:hover {
     Jaxon Harvey
 */
 
-.column 
+body 
 {
-    width: 50%;
-}
-
-.row
-{
-    width: 100%;
+    font-family: Arial;
+    padding: 20px;
+    background: #f1f1f1;
 }
 
 /* Header Title */
@@ -423,7 +420,7 @@ button.btn.btn-primary:hover {
     padding-right: 20px;
 }
 
-  /* Fake image */
+/* Fake image */
 .fakeImage 
 {
     background-color: #aaa;
@@ -431,28 +428,38 @@ button.btn.btn-primary:hover {
     padding: 20px;
 }
 
-  /* Add a card effect for articles */
+/* Add a card effect for articles */
 .card 
 {
     background-color: white;
     padding: 20px;
     margin-top: 20px;
 }
-
-  /* Clear floats after the columns */
+  
+/* Clear floats after the columns */
 .row:after 
 {
     content: "";
     display: table;
     clear: both;
 }
-
-  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+  
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) 
 {
     .leftColumn, .rightColumn 
     {
-      width: 100%;
-      padding: 0;
+    width: 100%;
+    padding: 0;
     }
+}
+
+.column 
+{
+    width: 50%;
+}
+
+.row
+{
+    width: 100%;
 }
