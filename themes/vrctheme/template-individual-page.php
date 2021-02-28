@@ -1,6 +1,10 @@
-<!DOCTYPE html>
+<?php 
+/*
+Template Name: Individual Page
+*/
+?>
 
-<!-- <?php include 'header.php'; ?> -->
+<!-- <?php get_header(); ?> -->
 <!-- Header for template -->
 
 <div class="header">
@@ -28,10 +32,6 @@
           <p>text detailing phone number and position at business and such...</p>
           <!-- further description of person -->
         </div>
-
-        <div class="footer">
-            <h2>Footer</h2>
-          </div>
 
 <!-- <?php get_footer();?> -->
 <!-- Include footer at bottom of page -->
