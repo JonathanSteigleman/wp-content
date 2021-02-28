@@ -32,6 +32,8 @@ Template Name: Individual Page
           <p>text detailing phone number and position at business and such...</p>
           <!-- further description of person -->
         </div>
+</div>
+
 
 <!-- <?php get_footer();?> -->
 <!-- Include footer at bottom of page -->
