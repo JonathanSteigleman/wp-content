@@ -389,24 +389,28 @@ button.btn.btn-primary:hover {
     Jaxon Harvey
 */
 
+.column 
+{
+    width: 50%
+}
+
 /* Create two unequal columns that floats next to each other */
 /* Left column */
 .leftColumn 
 {
     float: left;
-    width: 75%;
-}
-
-  /* Right column */
-.rightcolumn 
-{
-    float: left;
-    width: 25%;
     padding-left: 20px;
 }
 
+  /* Right column */
+.rightColumn 
+{
+    float: right;
+    padding-right: 20px;
+}
+
   /* Fake image */
-.fakeimg 
+.fakeImage 
 {
     background-color: #aaa;
     width: 100%;
@@ -424,15 +428,15 @@ button.btn.btn-primary:hover {
   /* Clear floats after the columns */
 .row:after 
 {
-     content: "";
+    content: "";
     display: table;
-     clear: both;
+    clear: both;
 }
 
   /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) 
 {
-    .leftcolumn, .rightcolumn 
+    .leftColumn, .rightColumn 
     {
       width: 100%;
       padding: 0;
