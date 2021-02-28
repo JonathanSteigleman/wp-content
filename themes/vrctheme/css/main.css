@@ -399,6 +399,15 @@ button.btn.btn-primary:hover {
     width: 100%;
 }
 
+/* Header Title */
+.header 
+{
+    padding: 30px;
+    font-size: 40px;
+    text-align: center;
+    background: white;
+}
+
 /* Create two unequal columns that floats next to each other */
 /* Left column */
 .leftColumn 
