@@ -22,6 +22,8 @@ Template Name: Individual Page
         <p>Some text..</p>
         <!-- Descriptiopn of the business under logo? -->
       </div>
+    </div>
+  </div>
 
   <div id ="rightColumn" class="column">
       <div class="card">
