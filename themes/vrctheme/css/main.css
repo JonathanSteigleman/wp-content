@@ -391,7 +391,12 @@ button.btn.btn-primary:hover {
 
 .column 
 {
-    width: 50%
+    width: 50%;
+}
+
+.row
+{
+    width: 100%;
 }
 
 /* Create two unequal columns that floats next to each other */
