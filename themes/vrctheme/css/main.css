@@ -387,4 +387,18 @@ button.btn.btn-primary:hover {
 }
 /* Indicidual page template CSS
     Jaxon Harvey
-/*
+*/
+.column 
+{
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+  
+  /* Clear floats after the columns */
+.row:after 
+{
+    content: "";
+    display: table;
+    clear: both;
+}

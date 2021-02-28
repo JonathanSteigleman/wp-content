@@ -12,7 +12,8 @@ Template Name: Individual Page
 </div>
   
 <div class="row">
-  <div class="leftcolumn">
+  <div class ="column">
+    <div id = "leftcol" >
       <div class="card">
         <h2>Business Name Here</h2>
         <!-- <h5>Title description, Dec 7, 2017</h5> --> 
@@ -23,7 +24,8 @@ Template Name: Individual Page
         <!-- Descriptiopn of the business under logo? -->
       </div>
 
-  <div class="rightcolumn">
+  <div class="column">
+    <div id = "rightcol" >
       <div class="card">
         <h2>Business Person Here</h2>
         <!-- Name for the person who they contact -->
