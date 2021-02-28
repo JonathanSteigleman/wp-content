@@ -100,6 +100,7 @@ function relevanssi_uninstall_free() {
 	delete_option( 'relevanssi_post_type_weights' );
 	delete_option( 'relevanssi_punctuation' );
 	delete_option( 'relevanssi_respect_exclude' );
+	delete_option( 'relevanssi_seo_noindex' );
 	delete_option( 'relevanssi_show_matches' );
 	delete_option( 'relevanssi_show_matches_text' );
 	delete_option( 'relevanssi_show_post_controls' );
@@ -131,6 +132,7 @@ function relevanssi_uninstall_free() {
 	delete_option( 'relevanssi_taxonomies_to_index' );
 	delete_option( 'relevanssi_highlight_docs_external' );
 	delete_option( 'relevanssi_word_boundaries' );
+	delete_option( 'relevanssi_expst' );
 
 	global $wpdb;
 	$wpdb->query( "DELETE FROM $wpdb->postmeta WHERE meta_key = '_relevanssi_noindex_reason'" );
