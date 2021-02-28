@@ -4,7 +4,7 @@ Template Name: Individual Page
 */
 ?>
 
-<!-- <?php get_header(); ?> -->
+<?php get_header(); ?>
 <!-- Header for template -->
 
 <div class="header">
@@ -37,5 +37,5 @@ Template Name: Individual Page
 </div>
 
 
-<!-- <?php get_footer();?> -->
+<?php get_footer();?>
 <!-- Include footer at bottom of page -->
