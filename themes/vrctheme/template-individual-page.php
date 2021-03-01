@@ -2,39 +2,58 @@
 /*
 Template Name: Individual Page
 */
+get_header();
 ?>
 
-<?php get_header(); ?>
-<!-- Header for template -->
 
-<div class="header">
-  <h2>Health</h2>
-</div>
-  
-<div class="row">
-  <div id="leftColumn" class="column">
-      <div class="card">
-        <h2>Business Name Here</h2>
-        <!-- <h5>Title description, Dec 7, 2017</h5> --> 
-        <!-- Could be the address portion underneath business name-->
-        <div class="fakeImage" style="height:100px;">Image</div>
-        <!-- Logo for the business? -->
-        <p>Some text..</p>
-        <!-- Descriptiopn of the business under logo? -->
-      </div>
-  </div>
+<div class="page-wrap">
+<div class="container">
+<h1><?php the_title();?></h1>
+    <?php get_template_part('includes/section', 'content');?>
 
-  <div id ="rightColumn" class="column">
-      <div class="card">
-        <h2>Business Person Here</h2>
-        <!-- Name for the person who they contact -->
-        <div class="fakeImage" style="height:50px;">Image</div>
-        <!-- Image of the person to contact? -->
-        <p>text detailing phone number and position at business and such...</p>
-        <!-- further description of person -->
-      </div>
-  </div>
-</div>
+    <!-- Row 1 of Categories -->
+    <div class="row pb-4">
+            <?php
+                // Initialize catNum to 1
+                // This will be used to incriment through categories in the while loop
+                $catNum = 1;
+
+                // while we are at a category number under 4
+                while ( $catNum < 4):
+                // set the value of $category equal to category_ plus the value of $catNum
+                $category = "category_".$catNum;
+                // set the current category to the ACF value with the name equal to $category
+                $currentCat = get_field($category);
+
+                //if there is content in this category
+                if ($currentCat): ?>
+                    <div class="col-lg-6 col-md-auto col-sm-auto">
+                        <div class="card">
+                            <!-- get the URL of the image added in this category -->
+                            
+                            <div class="card-body">
+                                <!-- get title added in this category -->
+                                <h4><?php echo $currentCat['title'];?></h4>
+                                <?php echo $currentCat['category_description'];?>
+                                <h4><?php echo $currentCat['contact_info'];?></h4>
+                                <img class="contact_image" src="<?php echo esc_url($currentCat['image']);?>"/>
+                                
+                                <?php echo $currentCat['name'];?>
+                                <?php echo $currentCat['address'];?>
+                                <?php echo $currentCat['number'];?>
+                            </div><!-- end card body div -->
+                        </div><!-- End card div -->
+                        </div><!-- End col -->
+                    <!-- end the if statement -->
+                    <?php endif ?>
+
+                    <!-- increase category number -->
+                    <?php $catNum++;?>
+
+                <!-- end the while loop -->
+                <?php endwhile ?> 
+    </div><!-- end row -->
+</div><!-- end container -->
 
 
 <?php get_footer();?>
