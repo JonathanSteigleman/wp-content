@@ -37,13 +37,17 @@ get_header();
                                 <?php echo $currentCat['category_description'];?>
                                 <h4><?php echo $currentCat['contact_info'];?></h4>
                                 <img class="contact_image" src="<?php echo esc_url($currentCat['image']);?>"/>
-                                
-                                <?php echo $currentCat['name'];?>
-                                <?php echo $currentCat['address'];?>
-                                <?php echo $currentCat['number'];?>
+
+                                <ul> <!-- Unordered list to provide spacing -->
+                                <li> <?php echo $currentCat['name'];?> </li>
+                                <li> <?php echo $currentCat['address'];?> </li>
+                                <li> <?php echo $currentCat['number'];?> </li>
+                                </ul> <!-- Unordered list to provide spacing -->
+
                             </div><!-- end card body div -->
                         </div><!-- End card div -->
                         </div><!-- End col -->
+
                     <!-- end the if statement -->
                     <?php endif ?>
 
@@ -52,6 +56,7 @@ get_header();
 
                 <!-- end the while loop -->
                 <?php endwhile ?> 
+                
     </div><!-- end row -->
 </div><!-- end container -->
 
