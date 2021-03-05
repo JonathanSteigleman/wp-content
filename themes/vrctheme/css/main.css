@@ -187,10 +187,6 @@ header .main-menu .menu-item-has-children:hover .sub-menu {
         display: none;
     }
 
-    header div.row{
-        display: flex;
-    }
-
     .site-logo.small-screen-logo {
         display: flex;
         max-height: 50px;
