@@ -467,12 +467,12 @@ form.search-form input.search-field:focus{
 
 form.search-form button.search-submit {
 	position: absolute;
-	height: 90%;
+	height: 100%;
 	right: 0;
 	top: 0;
 	border: none;
 	width: 50px;
-	/*padding-top: 5px;*/
+	padding-top: 5px;
 	color: #0F9647;
 	background-color: transparent;
 	cursor: pointer;
