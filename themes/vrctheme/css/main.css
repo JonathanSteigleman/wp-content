@@ -278,6 +278,13 @@ header .main-menu .menu-item-has-children:hover .sub-menu {
     }
 }
 
+@media (max-width: 800px) {
+    .search-form{
+        display: none;
+    }
+}
+
+
 /*
 ** Footer Styling
 ** Completed by Jonathan
@@ -471,12 +478,11 @@ form.search-form input.search-field:focus{
 
 form.search-form button.search-submit {
 	position: absolute;
-	height: 90%;
+	height: 89%;
 	right: 0;
 	top: 0;
 	border: none;
 	width: 50px;
-	/*padding-top: 5px;*/
 	color: #0F9647;
 	background-color: transparent;
 	cursor: pointer;
