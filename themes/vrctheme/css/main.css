@@ -476,6 +476,10 @@ form.search-form input.search-field:focus{
     border-radius: 20px;
 }
 
+footer form.search-form button.search-submit {
+    height: 100%;
+}
+
 form.search-form button.search-submit {
 	position: absolute;
 	height: 89%;
@@ -489,3 +493,4 @@ form.search-form button.search-submit {
 	-webkit-transform: rotateY(180deg);
 	        transform: rotateY(180deg);
 }
+
