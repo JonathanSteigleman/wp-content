@@ -44,8 +44,10 @@
                 ?>
                 </a>
             </div>
-
+        <div class="col-md-4">
             <?php get_search_form(); ?>
+        </div>
+        
         </div>
         
         
