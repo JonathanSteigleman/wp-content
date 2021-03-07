@@ -21,8 +21,8 @@
 <!-- The Hero area at the top of the Page -->
 <div class="jumbotron-fluid" style="background:  linear-gradient(rgba(112, 112, 112, 0.45), rgba(245, 245, 245, 0.5)), url(<?php the_field('hero_image');?>); background-size:cover;">
     <div class="row align-items-start">
-        <div class="container">
-            <div class="col-lg-5 col-md-9 col-sm-12" id="announcements">
+        <div class="container-fluid">
+            <div class="col-lg-5 col-md-10 col-sm-12" id="announcements">
                 <!-- Place the Heading from the Home ACF group -->
                 <h3><?php the_field('hero_heading');?></h3>
 
