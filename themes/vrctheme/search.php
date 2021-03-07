@@ -4,18 +4,18 @@
 <div class="page-wrap">
 <div class="container">
 
-  <h2 class="page-title"><b> //title is bold, don't change. -Elise
+  <h2 class="page-title"><b> <!-- Title is bold, please don't change. - Elise-->
     <?php _e( 'Search results for: ', 'vrctheme' ); ?> //Title
     <span class="page-description"><?php echo get_search_query(); ?></span>
   </b></h2>
 <hr></hr>
     <?php if ( have_posts() ) { ?>
                 <ul>
-                <?php while ( have_posts() ) { the_post(); ?> //loop until there are no more posts in the search to display
+                <?php while ( have_posts() ) { the_post(); ?> <!-- Loop until there are no more posts to display -->
 
                    <li>
                      <h5><b><a href="<?php echo get_permalink(); ?>">
-                       <?php the_title();  ?> //title of article, bold, please don't change.
+                       <?php the_title();  ?> <!-- Title of article, please don't change. -->
                      </a></b></h5>
                      <?php  the_post_thumbnail('medium') ?>
                      <?php echo substr(get_the_excerpt(), 0,200); ?>

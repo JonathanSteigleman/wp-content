@@ -1,4 +1,4 @@
-<?php 
+<?php
 //////////////////////////////////////////////////////////////////////////////
 // The generic page template
 // This simply calls the title of the page and any content added by the user
@@ -17,7 +17,7 @@ get_header();
 </div>
 </div>
 
-<?php 
+<?php
 // calls the footer
 get_footer();
 ?>

@@ -9,7 +9,7 @@
 // load stylesheet to be used throughout the site
 function load_css()
 {
-        
+
     wp_register_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), false, 'all');
     wp_enqueue_style('bootstrap');
 
@@ -55,7 +55,7 @@ add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
 
 /**
  * Font Awesome Kit Setup
- * 
+ *
  * This will add your Font Awesome Kit to the front-end, the admin back-end,
  * and the login screen area.
  */
@@ -103,7 +103,7 @@ function themename_custom_logo_setup() {
     'flex-height' => true,
     'flex-width'  => true,
     'header-text' => array( 'site-title', 'site-description' ),
-   'unlink-homepage-logo' => true, 
+   'unlink-homepage-logo' => true,
     );
     add_theme_support( 'custom-logo', $defaults );
    }
@@ -134,7 +134,7 @@ function arphabet_widgets_init() {
     'before_title'  => '<h4>',
     'after_title'   => '</h4>',
   ));
-  
+
   // Registering the Second Footer Area
   register_sidebar( array(
     'name'          => 'Footer Area 2', 'footer',
@@ -223,7 +223,7 @@ if( function_exists('acf_add_local_field_group') ):
     'active' => true,
     'description' => '',
   ));
-  
+
   acf_add_local_field_group(array(
     'key' => 'group_5f9c469810592',
     'title' => 'Home',
@@ -1416,5 +1416,76 @@ if( function_exists('acf_add_local_field_group') ):
     'active' => true,
     'description' => '',
   ));
-  
+
   endif;
+
+  if( function_exists('acf_add_local_field_group') ):
+
+acf_add_local_field_group(array(
+	'key' => 'group_6045119685af7',
+	'title' => 'Page Template Category Heading',
+	'fields' => array(
+		array(
+			'key' => 'field_6045203e39af7',
+			'label' => 'Background Header Image',
+			'name' => 'background_header_image',
+			'type' => 'image',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'url',
+			'preview_size' => 'medium',
+			'library' => 'all',
+			'min_width' => '',
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '',
+			'mime_types' => '',
+		),
+		array(
+			'key' => 'field_6045241a2e744',
+			'label' => 'Description',
+			'name' => 'description',
+			'type' => 'text',
+			'instructions' => 'Write a description of the category and/or contact information for someone relating to the category.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'page',
+				'operator' => '!=',
+				'value' => '231',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+));
+
+endif;

@@ -1,5 +1,5 @@
 
-/* 
+/*
 ** Styles for the entire site
 ** Allows all styling to be in one area and keeps the code cleaner
 */
@@ -48,7 +48,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: medium;
 }
-/* End styles for entire site */ 
+/* End styles for entire site */
 
 /* Styling for the site header */
 header {
@@ -130,7 +130,7 @@ header .main-menu li .sub-menu a:hover{
 }
 
 header .main-menu .menu-item-has-children:hover .sub-menu {
-    display: block;  
+    display: block;
 }
 
 
@@ -165,12 +165,12 @@ header .main-menu .menu-item-has-children:hover .sub-menu {
         height: 50px;
         overflow: hidden;
     }
-  
+
     .site-logo .custom-logo-link .custom-logo {
         max-height: 50px;
         width: inherit;
     }
-  
+
     .site-logo .custom-logo-link:hover, .site-logo .custom-logo-link:active, .site-logo .custom-logo-link:focus {
         cursor: pointer;
     }
@@ -179,7 +179,7 @@ header .main-menu .menu-item-has-children:hover .sub-menu {
 /*Responsive Navigation Menu*/
 @media (max-width: 1200px) {
     header {
-       
+
         height: 60px;
     }
 
@@ -195,7 +195,7 @@ header .main-menu .menu-item-has-children:hover .sub-menu {
         display: flex;
         max-height: 50px;
         width: inherit;
-        
+
     }
 
     .site-logo.small-screen-logo .custom-logo-link {
@@ -215,7 +215,7 @@ header .main-menu .menu-item-has-children:hover .sub-menu {
     .site-logo.small-screen-logo .custom-logo-link .custom-logo{
         max-height: 50px;
         width: inherit;
-    }    
+    }
 
     #responsiveMenu {
         display: none;
@@ -255,7 +255,7 @@ header .main-menu .menu-item-has-children:hover .sub-menu {
         background-color: #bcbcbc;
         border-bottom: solid 2px #1E3B7C;
     }
-    
+
     a.icon {
       position: absolute;
       z-index: 1000;
@@ -276,7 +276,7 @@ header .main-menu .menu-item-has-children:hover .sub-menu {
         box-shadow: -2px -2px 5px 0 #ccc, 2px 2px 5px 0 #F5F5F5;
     }
 
-    
+
 
 }
 
@@ -290,7 +290,7 @@ header .main-menu .menu-item-has-children:hover .sub-menu {
     }
 
     header div.jumbotron-fluid {
-        padding: 100px 50px 75px 50px !important; 
+        padding: 100px 50px 75px 50px !important;
     }
 }
 
@@ -315,7 +315,7 @@ footer ul{
 }
 
 footer li{
-    padding: .25rem; 
+    padding: .25rem;
 }
 
 .other-links li{
@@ -353,7 +353,7 @@ div #announcements {
     padding: 75px 25px 25px 25px;
     border-radius: 5px;
     background: rgba( 232, 232, 232, .6);
-    backdrop-filter: blur(10px); 
+    backdrop-filter: blur(10px);
     box-shadow: 2px 0px 10px 0 #707070;
 }
 
@@ -459,7 +459,7 @@ button.btn.btn-default:hover {
     color: #F5F5F5;
 }
 
-/* 
+/*
 ** STYLE SEARCH FORM
 ** Resource: https://5balloons.info/customise-search-widget-wordpress/
 ** Kali Crockett (Nowak)
@@ -503,4 +503,6 @@ form.search-form button.search-submit {
 	-webkit-transform: rotateY(180deg);
 	        transform: rotateY(180deg);
 }
-
+.bg-cover {
+    background-size: cover !important;
+}
