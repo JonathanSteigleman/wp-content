@@ -36,10 +36,6 @@ get_header();
                     
                     <div class="col-lg-6 col-md-auto col-sm-auto">
                         <div class="card">
-                            
-                            <!-- get title added in this category -->
-                                <h4><?php echo $currentCat['title'];?></h4>
-                                <?php echo $currentCat['category_description'];?>
 
                             <div class="card-body">
                                 <h4><?php echo $currentCat['contact_info'];?></h4>
@@ -54,16 +50,9 @@ get_header();
 
                             </div><!-- end card body div -->
                         </div><!-- End card div -->
-                        </div><!-- End col -->
-
-                        <div class="col-lg-6 col-md-auto col-sm-auto">
-                            <!-- get title added in this category -->
-                            <h4><?php echo $currentCat['title'];?></h4>
-                            <?php echo $currentCat['category_description'];?>
-                        </div>
-
+                    </div><!-- End col -->
                     <!-- end the if statement -->
-                    <?php endif ?>
+                <?php endif ?>
 
                     <!-- increase category number -->
                     <?php $catNum++;?>
