@@ -29,15 +29,22 @@ get_header();
                 //if there is content in this category
                 if ($currentCat): ?>
                     <div class="col-lg-6 col-md-auto col-sm-auto">
+                        <!-- get title added in this category -->
+                        <h4><?php echo $currentCat['title'];?></h4>
+                        <?php echo $currentCat['category_description'];?>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-auto col-sm-auto">
                         <div class="card">
-                            <!-- get the URL of the image added in this category -->
                             
-                            <div class="card-body">
-                                <!-- get title added in this category -->
+                            <!-- get title added in this category -->
                                 <h4><?php echo $currentCat['title'];?></h4>
                                 <?php echo $currentCat['category_description'];?>
+
+                            <div class="card-body">
                                 <h4><?php echo $currentCat['contact_info'];?></h4>
                                 <img class="contact_image" src="<?php echo esc_url($currentCat['image']);?>"/>
+                                <!-- get the URL of the image added in this category -->
 
                                 <ul> <!-- Unordered list to provide spacing -->
                                 <li> <?php echo $currentCat['name'];?> </li>
@@ -48,6 +55,12 @@ get_header();
                             </div><!-- end card body div -->
                         </div><!-- End card div -->
                         </div><!-- End col -->
+
+                        <div class="col-lg-6 col-md-auto col-sm-auto">
+                            <!-- get title added in this category -->
+                            <h4><?php echo $currentCat['title'];?></h4>
+                            <?php echo $currentCat['category_description'];?>
+                        </div>
 
                     <!-- end the if statement -->
                     <?php endif ?>
