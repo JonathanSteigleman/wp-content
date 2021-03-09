@@ -286,12 +286,20 @@ header .main-menu .menu-item-has-children:hover .sub-menu {
     }
 
     div #announcements h3 {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }
 
-    header div.jumbotron-fluid {
-        padding: 100px 50px 75px 50px !important; 
+    div #announcements p {
+        font-size: .90rem;
     }
+
+    header div.jumbotron-fluid .row {
+        padding: 100px 50px 75px 50px !important;
+    }
+
+    /*header div.jumbotron-fluid {
+        padding: 100px 50px 75px 50px !important; 
+    }*/
 }
 
 
