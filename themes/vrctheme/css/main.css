@@ -506,3 +506,81 @@ form.search-form button.search-submit {
 .bg-cover {
     background-size: cover !important;
 }
+/* Indicidual page template CSS
+    Jaxon Harvey (not being used currently)
+*/
+
+body
+{
+    font-family: Arial;
+    padding: 20px;
+    background: #f1f1f1;
+}
+
+/* Header Title */
+.header
+{
+    padding: 30px;
+    font-size: 40px;
+    text-align: center;
+    background: white;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftColumn
+{
+    float: left;
+    padding-left: 20px;
+}
+
+  /* Right column */
+.rightColumn
+{
+    float: right;
+    padding-right: 20px;
+}
+
+/* Fake image */
+.fakeImage
+{
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card
+{
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after
+{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px)
+{
+    .leftColumn, .rightColumn
+    {
+    width: 100%;
+    padding: 0;
+    }
+}
+
+.column
+{
+    width: 50%;
+}
+
+.row
+{
+    width: 100%;
+}

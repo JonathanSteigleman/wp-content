@@ -3,9 +3,9 @@ Contributors: msaari
 Donate link: https://www.relevanssi.com/buy-premium/
 Tags: search, relevance, better search, product search, woocommerce search
 Requires at least: 4.9
-Tested up to: 5.6.3
+Tested up to: 5.7
 Requires PHP: 7.0
-Stable tag: 4.12.0
+Stable tag: 4.12.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -131,6 +131,28 @@ Each document database is full of useless words. All the little words that appea
 * John Calahan for extensive 4.0 beta testing.
 
 == Changelog ==
+= 4.12.5 =
+* Changed behaviour: `relevanssi_excerpt_custom_field_content` now gets the post ID and list of custom field names as a parameter.
+* Minor fix: Makes sure Relevanssi options are not wiped when the free version is deleted while Premium is active.
+* Minor fix: Adds a trailing slash to the blog URL in Did you mean links.
+
+= 4.12.4 =
+* New feature: New action hooks `relevanssi_pre_the_content` and `relevanssi_post_the_content` fire before and after Relevanssi applies `the_content` filter to the post excerpts. Some Relevanssi default behaviour has been moved to these hooks so it can be modified.
+* Changed behaviour: The `relevanssi_do_not_index` gets the post object as a third parameter.
+* Minor fix: Remove errors from `relevanssi_strip_all_tags()` getting a `null` parameter.
+
+= 4.12.3 =
+* Major fix: Post type weights did not work; improving the caching had broken them.
+* Minor fix: Relevanssi works better with soft hyphens now, removing them in indexing and excerpt-building.
+* Minor fix: Stops indexing error messages in WPML.
+
+= 4.12.2 =
+* Major fix: Stops more problems with ACF custom field indexing.
+* Major fix: Fixes a bug in search result caching that caused Relevanssi to make lots of unnecessary database queries.
+
+= 4.12.1 =
+* Major fix: Stops TypeError crashes from null custom field indexing.
+
 = 4.12.0 =
 * New feature: New filter hook `relevanssi_phrase_queries` can be used to add phrase matching queries to support more content types.
 * New feature: New filter hook `relevanssi_excerpt_gap` lets you adjust the first line of excerpt optimization.
@@ -208,6 +230,21 @@ Each document database is full of useless words. All the little words that appea
 * Minor fix: The category inclusion and exclusion setting checkboxes on the Searching tab didn't work. The setting was saved, but the checkboxes wouldn't appear.
 
 == Upgrade notice ==
+= 4.12.5 =
+* Fixes minor bugs.
+
+= 4.12.4 =
+* Fixes minor bugs.
+
+= 4.12.3 =
+* Fixes post type weights and WPML indexing problems.
+
+= 4.12.2 =
+* Stops Relevanssi from crashing when saving posts with ACF fields, major performance boost.
+
+= 4.12.1 =
+* Stops TypeError crashes from null custom field indexing.
+
 = 4.12.0 =
 * New features and bug fixes.
 

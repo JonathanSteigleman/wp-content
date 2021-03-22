@@ -361,7 +361,7 @@ function relevanssi_build_index( $extend_offset = false, $verbose = null, $post_
 
 	if ( ( 0 === $size ) || ( count( $content ) < $size ) ) {
 		$complete = true;
-		update_option( 'relevanssi_indexed', 'done', false );
+		update_option( 'relevanssi_indexed', 'done' );
 
 		// To prevent empty indices.
 		$wpdb->query( "ANALYZE TABLE $relevanssi_table" ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared,WordPress.DB.PreparedSQL.InterpolatedNotPrepared
@@ -483,8 +483,9 @@ function relevanssi_index_doc( $index_post, $remove_first = false, $custom_field
 	 * can be a boolean, or a string containing an explanation for the
 	 * exclusion. Default false.
 	 * @param int            The post ID.
+	 * @param WP_Post        The post object.
 	 */
-	$do_not_index = apply_filters( 'relevanssi_do_not_index', false, $post->ID );
+	$do_not_index = apply_filters( 'relevanssi_do_not_index', false, $post->ID, $post );
 	if ( $do_not_index ) {
 		// Filter says no.
 		if ( true === $do_not_index ) {
@@ -615,7 +616,7 @@ function relevanssi_index_taxonomy_terms( &$insert_data, $post_id, $taxonomy, $d
 	$min_word_length     = get_option( 'relevanssi_min_word_length', 3 );
 	$post_taxonomy_terms = get_the_terms( $post_id, $taxonomy );
 
-	if ( false === $post_taxonomy_terms ) {
+	if ( false === $post_taxonomy_terms || is_wp_error( $post_taxonomy_terms ) ) {
 		return $n;
 	}
 
@@ -1266,6 +1267,10 @@ function relevanssi_index_custom_fields( &$insert_data, $post_id, $custom_fields
 
 			if ( $debug ) {
 				relevanssi_debug_echo( "\tKey: " . $field . ' - value: ' . $value );
+			}
+
+			if ( ! $value ) {
+				continue;
 			}
 
 			$context      = 'custom_field';
