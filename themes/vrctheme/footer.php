@@ -19,11 +19,11 @@
               <?php else: ?>
 
               <h6>Pages</h6>
-              
+
               <?php
-              wp_nav_menu( array(        
-                  'theme_location' => 'footer-menu',        
-                  'menu_class' => 'footer'        
+              wp_nav_menu( array(
+                  'theme_location' => 'footer-menu',
+                  'menu_class' => 'footer'
                 ) );
               ?>
           <?php endif; ?>
@@ -35,20 +35,20 @@
               <div id="footer_area_2" class="widget-area" role="complementary">
                 <?php dynamic_sidebar( 'footer_area_2' ); ?>
               </div><!-- #primary-sidebar -->
-            
+
           <?php else: ?>
           <!-- Links -->
           <h4>Pages</h4>
-          
+
           <?php
-          wp_nav_menu( array(        
-              'theme_location' => 'other-links-menu',        
-              'menu_class' => 'other-links'       
+          wp_nav_menu( array(
+              'theme_location' => 'other-links-menu',
+              'menu_class' => 'other-links'
             ) );
           ?>
 
           <?php endif; ?>
-        
+
 
 
       </div>
