@@ -14,14 +14,31 @@ get_header();
 acf_add_local_field_group('Page Template Category Heading');
 ?>
 
+
+
+<?php
+//ALL SUBFIELDS HAVE TO GO THROUGH HAVE_ROWS() . I JUST LEARNED THIS - ELISE
+      if( have_rows('header_area') ): //have rows goes through parent category
+          while ( have_rows('header_area') ) : the_row(); //have rows goes through parent category again
+            $bg_image = get_sub_field('background_header_image'); //var
+            $category_description = get_sub_field('category_description'); //var
+            $title_color = get_sub_field('header_title_color'); //var
+            $desc_color = get_sub_field('header_description_color'); //var
+          endwhile; //end while
+      else : //else
+          // no rows found
+      endif; //end if
+
+?>
+
 <!--Elise's Header-->
 <!--The user is able to input their own picture and text for the category header background and summary.-->
 <!--The category heading is pulled from the page title using single_post_title();-->
-<div class="jumbotron bg-cover text-white" style="background: url(<?php the_field('background_header_image');?>"> <!--https://www.web-eau.net/blog/examples-header-bootstrap-->
+<div class="jumbotron bg-cover text-white" style="background: url(<?php echo $bg_image ?>"> <!--https://www.web-eau.net/blog/examples-header-bootstrap-->
     <div class="container py-5 text-center">
-        <h1 style="color:black;" class="display-4 font-weight-bold"><?php single_post_title(); ?></h1> <!--https://stackoverflow.com/questions/27653694/how-to-get-page-title-in-wordpress-->
+        <h1 style="color:<?php echo $title_color ?>;" class="display-4 font-weight-bold"><?php single_post_title(); ?></h1> <!--https://stackoverflow.com/questions/27653694/how-to-get-page-title-in-wordpress-->
         <!--Grab description from ACF and display on picture for category heading.-->
-        <p class="font-italic mb-0" style="color:black"><?php the_field('category_description');?></p>
+        <p class="font-italic mb-0" style="color:<?php echo $desc_color ?>"><?php echo $category_description ?></p>
     </div>
 </div>
 
@@ -76,7 +93,8 @@ acf_add_local_field_group('Page Template Category Heading');
             $contact_image = get_sub_field('image'); //var
             $contact_name = get_sub_field('name'); //var
             $contact_address = get_sub_field('address'); //var
-            $contact_image = get_sub_field('image');
+            $contact_image = get_sub_field('image'); //var image
+            $contact_number = get_sub_field('number'); //var
             //number field will go here, the field is the wrong type, currently
             //this needs to be fixed at some point
             //^^^^^^^^^^^^^^^^^^^^^^
@@ -104,7 +122,7 @@ acf_add_local_field_group('Page Template Category Heading');
             <ul> <!-- Unordered list to provide spacing -->
                 <li> <p><?php echo $contact_name ?></p> </li>     <!-- display's contact name -->
                 <li> <p><?php echo $contact_address ?></p> </li>     <!-- display's conatact address -->
-                <li> <p>Need to fix number field</p></li>    <!-- should display phone number when fixed -->
+                <li> <p><?php echo $contact_number ?></p></li>    <!-- should display phone number when fixed -->
             </ul> <!-- Unordered list to provide spacing -->
 
 
@@ -141,8 +159,10 @@ acf_add_local_field_group('Page Template Category Heading');
                 if ($currentCat): ?>
 
                     <div class="col-lg-6 col-md-auto col-sm-auto" >
+                      <div class="card">
 
-                        <div class="container" style="background-color:<?php the_field('color_1'); ?>">
+                          <div class="card-body" style="background-color:<?php the_field('color_1'); ?>">
+
 
                             <h4><?php echo $currentCat['title'];?></h4>
 
@@ -150,8 +170,12 @@ acf_add_local_field_group('Page Template Category Heading');
                             <p class="card-text"><?php echo $currentCat['category_discription'];?></p>
 
 
-                            <a href="<?php echo $currentCat['location_1'];?>"><?php echo $currentCat['location_1'];?></a>
+                            <a href="<?php echo $currentCat['location_1'];?>"><?php echo $currentCat['location_1_title']; ?></a>
+                              <a href="<?php echo $currentCat['location_2'];?>"><?php echo $currentCat['location_2_title']; ?></a>
+                                <a href="<?php echo $currentCat['location_3'];?>"><?php echo $currentCat['location_3_title']; ?></a>
                         </div>
+
+
 
                         <div class="container" style="background-color:<?php the_field('color_2'); ?>">
                           <!-- I changed the heading and color for the below location title -->
@@ -169,6 +193,7 @@ acf_add_local_field_group('Page Template Category Heading');
                         <!--I added a br tag above to separate category sections -Elise -->
 
                     </div>
+                  </div>
                 <?php endif ?>
             <?php $catNum++;?>
                 <?php endwhile ?>
