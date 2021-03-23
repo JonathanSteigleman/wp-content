@@ -76,7 +76,11 @@ acf_add_local_field_group('Page Template Category Heading');
     <!-- displays header via contact_info (that is the field name) -->
 
 
-
+    <div class="col-lg-6 col-md-auto col-sm-auto">
+                            <!-- get title added in this category -->
+                            <h4><?php echo $category_description_title ?></h4>
+                            <p><?php echo $category_description ?></p>
+                        </div> <!-- End Col -->
 
 
 
