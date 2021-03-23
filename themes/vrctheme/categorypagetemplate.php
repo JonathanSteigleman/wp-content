@@ -28,26 +28,8 @@ acf_add_local_field_group('Page Template Category Heading');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!--Contact & Category Overview sections --->
+<!--- Jaxon's Code, edited by Elise -->
 
 <div class="page-wrap">
 <div class="container">
@@ -55,7 +37,7 @@ acf_add_local_field_group('Page Template Category Heading');
     <!-- Row 1 of Categories -->
     <div class="row pb-4">
 
-
+<!-- https://www.advancedcustomfields.com/resources/get_sub_field/ -->
       <?php
       //ALL SUBFIELDS HAVE TO GO THROUGH HAVE_ROWS() . I JUST LEARNED THIS - ELISE
             if( have_rows('category_10') ): //have rows goes through parent category
@@ -71,44 +53,21 @@ acf_add_local_field_group('Page Template Category Heading');
       ?>
 
 
+
+
 <div class="col-lg-6 col-md-auto col-sm-auto">
-    <!-- get title added in this category -->
-    <!-- displays header via contact_info (that is the field name) -->
+        <!-- title of description -->
+        <h4><?php echo $category_description_title ?></h4>
 
-
-    <div class="col-lg-6 col-md-auto col-sm-auto">
-                            <!-- get title added in this category -->
-                            <h4><?php echo $category_description_title ?></h4>
-                            <p><?php echo $category_description ?></p>
-                        </div> <!-- End Col -->
-
-
-
-
-
-
-
-
-
+        <!-- description of category -->
+        <p><?php echo $category_description ?></p>
 
 </div> <!-- End Col -->
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!--Beginning of column two -->
 <?php
 //ALL SUBFIELDS HAVE TO GO THROUGH HAVE_ROWS() . I JUST LEARNED THIS - ELISE
       if( have_rows('category_9') ): //have rows goes through parent category
@@ -132,26 +91,26 @@ acf_add_local_field_group('Page Template Category Heading');
 
 
 
-                    <div class="col-lg-6 col-md-auto col-sm-auto">
-                        <div class="card">
+  <div class="col-lg-6 col-md-auto col-sm-auto">
+      <div class="card">
 
-                            <div class="card-body">
+          <div class="card-body">
 
-                              <h4><?php echo $contact_info ?></h4>
+            <h4><?php echo $contact_info ?></h4>
 
-                              <img class="contact_image" src="<?php echo $contact_image ?>"/>
-
-
-                              <ul> <!-- Unordered list to provide spacing -->
-                              <li> <p><?php echo $contact_name ?></p> </li>     <!-- display's contact name -->
-                              <li> <p><?php echo $contact_address ?></p> </li>     <!-- display's conatact address -->
-                              <li> <p>Need to fix number field</p></li>    <!-- should display phone number when fixed -->
-                              </ul> <!-- Unordered list to provide spacing -->
+            <img class="contact_image" src="<?php echo $contact_image ?>"/>
 
 
-                            </div><!-- end card body div -->
-                        </div><!-- End card div -->
-                    </div><!-- End col -->
+            <ul> <!-- Unordered list to provide spacing -->
+                <li> <p><?php echo $contact_name ?></p> </li>     <!-- display's contact name -->
+                <li> <p><?php echo $contact_address ?></p> </li>     <!-- display's conatact address -->
+                <li> <p>Need to fix number field</p></li>    <!-- should display phone number when fixed -->
+            </ul> <!-- Unordered list to provide spacing -->
+
+
+          </div><!-- end card body div -->
+      </div><!-- End card div -->
+    </div><!-- End col -->
 
 
     </div><!-- end row -->
@@ -159,27 +118,8 @@ acf_add_local_field_group('Page Template Category Heading');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- Start of content with maps, businesses, and more! -->
+<!-- Jonathan's section --->
 <div class="page-wrap">
 <div class="container">
 	<div class="row pb-4">
@@ -376,28 +316,7 @@ $(document).ready(function(){
 
 })(jQuery);
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- end content section -->
 
 
 <?php
