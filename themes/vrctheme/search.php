@@ -4,25 +4,30 @@
 <div class="page-wrap">
 <div class="container">
 
-  <h2 class="page-title"><b> //title is bold, don't change. -Elise
-    <?php _e( 'Search results for: ', 'vrctheme' ); ?> //Title
+  <h2 class="page-title"><b> <!-- Title is bold, please don't change. - Elise-->
+    <?php _e( 'Search results for: ', 'vrctheme' ); ?>
     <span class="page-description"><?php echo get_search_query(); ?></span>
   </b></h2>
 <hr></hr>
     <?php if ( have_posts() ) { ?>
                 <ul>
-                <?php while ( have_posts() ) { the_post(); ?> //loop until there are no more posts in the search to display
+                <?php while ( have_posts() ) { the_post(); ?> <!-- Loop until there are no more posts to display -->
+                  <div class="card">
 
-                   <li>
-                     <h5><b><a href="<?php echo get_permalink(); ?>">
-                       <?php the_title();  ?> //title of article, bold, please don't change.
-                     </a></b></h5>
+                      <div class="card-body">
+
+
+                     <h4><b>
+                       <?php the_title();  ?> <!-- Title of article, please don't change. -->
+                     </b></h4>
                      <?php  the_post_thumbnail('medium') ?>
                      <?php echo substr(get_the_excerpt(), 0,200); ?>
-                     <div class="h-readmore"> <a href="<?php the_permalink(); ?>">Read More</a></div> //put padding after with bootstrap classes
-                     <br></br> //replace with padding
-                   </li>
+                     <br> <br>
+                   <a href="<?php the_permalink(); ?><button type="button" class="btn btn-primary">Read More</button></a>
+                     <br></br>
 
+</div>
+</div>
                 <?php } ?>
 
                 </ul>

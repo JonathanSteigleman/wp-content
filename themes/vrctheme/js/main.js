@@ -1,6 +1,6 @@
 /////////////////////////////////////////////////////////////
 // File for our team's JavaScript Functions
-///////////////////////////////////////////////////////////// 
+/////////////////////////////////////////////////////////////
 
 // Show the mobile navigation menu when you click on the icon
 // Contributer: Kali
@@ -12,6 +12,11 @@ function showMobileNav() {
         x.style.display = "block";
     }
 }
+
+
+
+
+
 
 // Kali's attempt to get the icon to change font awesome classes
 // Is not working
