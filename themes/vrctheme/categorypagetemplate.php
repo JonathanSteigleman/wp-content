@@ -56,37 +56,37 @@ acf_add_local_field_group('Page Template Category Heading');
     <div class="row pb-4">
 
 
+      <?php
+      //ALL SUBFIELDS HAVE TO GO THROUGH HAVE_ROWS() . I JUST LEARNED THIS - ELISE
+            if( have_rows('category_10') ): //have rows goes through parent category
+                while ( have_rows('category_10') ) : the_row(); //have rows goes through parent category again
+                  $category_description_title = get_sub_field('title'); //var
+                  $category_description = get_sub_field('category_description'); //var
+                  //^^^^^^^^^^^^^^^^^^^^^^
+                endwhile; //end while
+            else : //else
+                // no rows found
+            endif; //end if
 
-
-
-
-
-<?php
-                if( have_rows('category_9') ):
-                    while ( have_rows('category_9') ) : the_row();
-                        $contact_info = get_sub_field('contact_info');
-                        $contact_image = get_sub_field('image');
-                        $contact_name = get_sub_field('name');
-                        $contact_address = get_sub_field('address');
-                        //number field will go here
-
-                        
-                        // Do something...
-                    endwhile;
-                else :
-                    // no rows found
-                endif;
-
-?>
-
+      ?>
 
 
 <div class="col-lg-6 col-md-auto col-sm-auto">
     <!-- get title added in this category -->
-    <h4><?php echo $contact_info ?></h4>
-    <p><?php echo $contact_name ?></p>
-    <p><?php echo $contact_address ?></p>
-    <p>Need to fix number field</p>
+    <!-- displays header via contact_info (that is the field name) -->
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div> <!-- End Col -->
 
 
@@ -98,27 +98,57 @@ acf_add_local_field_group('Page Template Category Heading');
 
 
 
-                <?php
-                if ($category_10): ?>
+
+
+
+
+
+
+
+<?php
+//ALL SUBFIELDS HAVE TO GO THROUGH HAVE_ROWS() . I JUST LEARNED THIS - ELISE
+      if( have_rows('category_9') ): //have rows goes through parent category
+          while ( have_rows('category_9') ) : the_row(); //have rows goes through parent category again
+            $contact_info = get_sub_field('contact_info'); //puts contact info (the contact header) into a variable
+            $contact_image = get_sub_field('image'); //var
+            $contact_name = get_sub_field('name'); //var
+            $contact_address = get_sub_field('address'); //var
+            $contact_image = get_sub_field('image');
+            //number field will go here, the field is the wrong type, currently
+            //this needs to be fixed at some point
+            //^^^^^^^^^^^^^^^^^^^^^^
+            //^^^^^^^^^^^^^^^^^^^^^^
+          endwhile; //end while
+      else : //else
+          // no rows found
+      endif; //end if
+//Elise
+?>
+
+
+
+
                     <div class="col-lg-6 col-md-auto col-sm-auto">
                         <div class="card">
 
                             <div class="card-body">
-                                <h4><?php echo $category_10['contact_info'];?></h4>
-                                <img class="contact_image" src="<?php echo esc_url($category_10['image']);?>"/>
-                                <!-- get the URL of the image added in this category -->
 
-                                <ul> <!-- Unordered list to provide spacing -->
-                                <li> <?php echo $category_10['name'];?> </li>
-                                <li> <?php echo $category_10['address'];?> </li>
-                                <li> <?php echo $category_10['number'];?> </li>
-                                </ul> <!-- Unordered list to provide spacing -->
+                              <h4><?php echo $contact_info ?></h4>
+
+                              <img class="contact_image" src="<?php echo $contact_image ?>"/>
+
+
+                              <ul> <!-- Unordered list to provide spacing -->
+                              <li> <p><?php echo $contact_name ?></p> </li>     <!-- display's contact name -->
+                              <li> <p><?php echo $contact_address ?></p> </li>     <!-- display's conatact address -->
+                              <li> <p>Need to fix number field</p></li>    <!-- should display phone number when fixed -->
+                              </ul> <!-- Unordered list to provide spacing -->
+
 
                             </div><!-- end card body div -->
                         </div><!-- End card div -->
                     </div><!-- End col -->
-                    <!-- end the if statement -->
-                <?php endif ?>
+
 
     </div><!-- end row -->
 </div><!-- end container -->
