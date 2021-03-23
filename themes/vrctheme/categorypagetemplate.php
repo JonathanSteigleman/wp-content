@@ -40,9 +40,30 @@ acf_add_local_field_group('Page Template Category Heading');
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="page-wrap">
 <div class="container">
-
+<h1><?php the_title();?></h1>
+    <?php get_template_part('includes/section', 'content');?>
 
     <!-- Row 1 of Categories -->
     <div class="row pb-4">
@@ -52,7 +73,7 @@ acf_add_local_field_group('Page Template Category Heading');
                 $catNum = 1;
 
                 // while we are at a category number under 4
-                while ( $catNum < 4):
+                while ( $catNum < 2):
                 // set the value of $category equal to category_ plus the value of $catNum
                 $category = "category_".$catNum;
                 // set the current category to the ACF value with the name equal to $category
@@ -121,6 +142,14 @@ acf_add_local_field_group('Page Template Category Heading');
 
 
 
+
+
+
+
+
+
+
+
 <div class="page-wrap">
 <div class="container">
 	<div class="row pb-4">
@@ -144,15 +173,23 @@ acf_add_local_field_group('Page Template Category Heading');
                     <div class="col-lg-6 col-md-auto col-sm-auto" >
 
                         <div class="container" style="background-color:<?php the_field('color_1'); ?>">
+
                             <h4><?php echo $currentCat['title'];?></h4>
+
+
                             <p class="card-text"><?php echo $currentCat['category_discription'];?></p>
+
+
                             <a href="<?php echo $currentCat['location_1'];?>"><?php echo $currentCat['location_1'];?></a>
                         </div>
 
                         <div class="container" style="background-color:<?php the_field('color_2'); ?>">
-                            <?php echo $subCat['location_name'];?>
+                          <!-- I changed the heading and color for the below location tite -->
+                            <h5 style="color:#1E3B7C;"><?php echo $subCat['location_name'];?></h5>
                             <?php
                             if( $map): ?>
+
+
                                 <div class="acf-map" data-zoom="16">
                                     <div class="marker" data-lat="<?php echo esc_attr($map['lat']); ?>" data-lng="<?php echo esc_attr($map['lng']); ?>"></div>
                                  </div>
