@@ -197,7 +197,7 @@ if( function_exists('acf_add_local_field_group') ):
         'label' => 'Google Maps 1',
         'name' => 'google_maps_1',
         'type' => 'google_map',
-        'instructions' => 'API Key: AIzaSyCDyzuJqCZ6afgP8QARQnBodnQewve5i2Y',
+        'instructions' => 'API Key: AIzaSyBXIsJLL3X3SPSIH3pSoTtiBK4iTeMyu10',
         'required' => 0,
         'conditional_logic' => 0,
         'wrapper' => array(
@@ -1424,7 +1424,6 @@ if( function_exists('acf_add_local_field_group') ):
   ));
 
   endif;
-
   if( function_exists('acf_add_local_field_group') ):
 
   acf_add_local_field_group(array(
@@ -1477,7 +1476,7 @@ if( function_exists('acf_add_local_field_group') ):
   		array(
   			'key' => 'field_603d228c5903d',
   			'label' => 'Contact',
-  			'name' => 'category_2',
+  			'name' => 'category_9',
   			'type' => 'group',
   			'instructions' => '',
   			'required' => 0,
@@ -1596,7 +1595,7 @@ if( function_exists('acf_add_local_field_group') ):
   		array(
   			'key' => 'field_603d1d46fe5b7',
   			'label' => 'Description',
-  			'name' => 'category_1',
+  			'name' => 'category_10',
   			'type' => 'group',
   			'instructions' => '',
   			'required' => 0,
@@ -2105,5 +2104,19 @@ if( function_exists('acf_add_local_field_group') ):
   	'active' => true,
   	'description' => '',
   ));
+
+
+
+  function my_acf_init() {
+    acf_update_setting('google_api_key', 'AIzaSyBXIsJLL3X3SPSIH3pSoTtiBK4iTeMyu10');
+  }
+  add_action('acf/init', 'my_acf_init');
+
+
+
+
+
+
+
 
   endif;
