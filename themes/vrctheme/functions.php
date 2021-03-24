@@ -188,7 +188,7 @@ add_action( 'widgets_init', 'arphabet_widgets_init' );
 
 if( function_exists('acf_add_local_field_group') ):
 
-  acf_add_local_field_group(array(
+  /*acf_add_local_field_group(array(
     'key' => 'group_60329edcb75fc',
     'title' => 'Content_Page',
     'fields' => array(
@@ -228,7 +228,7 @@ if( function_exists('acf_add_local_field_group') ):
     'hide_on_screen' => '',
     'active' => true,
     'description' => '',
-  ));
+  ));*/
 
   acf_add_local_field_group(array(
     'key' => 'group_5f9c469810592',
@@ -1422,13 +1422,12 @@ if( function_exists('acf_add_local_field_group') ):
     'active' => true,
     'description' => '',
   ));
-
-  endif;
-
-
-
-
-  if( function_exists('acf_add_local_field_group') ):
+////
+////
+//// Second Field group for the Page Template category
+//// Collaborative Effort by Elise O'Bannion, Jaxon Harvery, and Jonathan Steigleman
+////
+////
 
   acf_add_local_field_group(array(
   	'key' => 'group_6045119685af7',
@@ -2284,7 +2283,7 @@ if( function_exists('acf_add_local_field_group') ):
   }
   add_action('acf/init', 'my_acf_init');
   
-  endif;
+//  endif;
 
   // Indivual Page Template JaxonHarvey
   if( function_exists('acf_add_local_field_group') ):
