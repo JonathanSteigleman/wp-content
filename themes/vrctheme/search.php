@@ -23,7 +23,7 @@
                      <?php  the_post_thumbnail('medium') ?>
                      <?php echo substr(get_the_excerpt(), 0,200); ?>
                      <br> <br>
-                   <a href="<?php the_permalink(); ?><button type="button" class="btn btn-primary">Read More</button></a>
+                   <a href="<?php the_permalink(); ?>"<button type="button" class="btn btn-primary">Read More</button></a>
                      <br></br>
 
 </div>

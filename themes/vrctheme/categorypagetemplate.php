@@ -159,15 +159,15 @@ acf_add_local_field_group('Page Template Category Heading');
                 if ($currentCat): ?>
 
                     <div class="col-lg-6 col-md-auto col-sm-auto" >
-                      <div class="card">
+                      <div>
 
-                          <div class="card-body" style="background-color:<?php the_field('color_1'); ?>">
+                          <div style="background-color:<?php the_field('color_1'); ?>">
 
 
                             <h4><?php echo $currentCat['title'];?></h4>
 
 
-                            <p class="card-text"><?php echo $currentCat['category_discription'];?></p>
+                            <p><?php echo $currentCat['category_discription'];?></p>
 
 
                             <a href="<?php echo $currentCat['location_1'];?>"><?php echo $currentCat['location_1_title']; ?></a>
