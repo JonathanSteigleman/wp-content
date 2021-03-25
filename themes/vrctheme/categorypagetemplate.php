@@ -36,7 +36,7 @@ acf_add_local_field_group('Page Template Category Heading');
 <!--The category heading is pulled from the page title using single_post_title();-->
 <div class="jumbotron bg-cover text-white" style="background: url(<?php echo $bg_image ?>"> <!--https://www.web-eau.net/blog/examples-header-bootstrap-->
     <div class="container py-5 text-center">
-        <h1 style="color:<?php echo $title_color ?>;" class="display-4 font-weight-bold"><?php single_post_title(); ?></h1> <!--https://stackoverflow.com/questions/27653694/how-to-get-page-title-in-wordpress-->
+        <h1 style="color: <?php echo $title_color ?>" class="display-4 font-weight-bold"><?php single_post_title(); ?></h1> <!--https://stackoverflow.com/questions/27653694/how-to-get-page-title-in-wordpress-->
         <!--Grab description from ACF and display on picture for category heading.-->
         <p class="font-italic mb-0" style="color:<?php echo $desc_color ?>"><?php echo $category_description ?></p>
     </div>
@@ -136,70 +136,196 @@ acf_add_local_field_group('Page Template Category Heading');
 
 
 
-<!-- Start of content with maps, businesses, and more! -->
-<!-- Jonathan's section --->
-<div class="page-wrap">
-<div class="container">
-	<div class="row pb-4">
-            <?php
-                // Initialize catNum to 1
-                // This will be used to incriment through categories in the while loop
-                $catNum = 1;
-
-                // while we are at a category number under 4
-                while ( $catNum < 5):
-                // set the value of $category equal to category_ plus the value of $catNum
-                $category = "category_".$catNum;
-                // set the current category to the ACF value with the name equal to $category
-                $currentCat = get_field($category);
-                $subCat = $currentCat['loc_details'];
-                $map = $subCat['address'];
-
-                //if there is content in this category
-                if ($currentCat): ?>
-
-                    <div class="col-lg-6 col-md-auto col-sm-auto" >
-                      <div>
-
-                          <div style="background-color:<?php the_field('color_1'); ?>">
-
-
-                            <h4><?php echo $currentCat['title'];?></h4>
-
-
-                            <p><?php echo $currentCat['category_discription'];?></p>
-
-
-                            <a href="<?php echo $currentCat['location_1'];?>"><?php echo $currentCat['location_1_title']; ?></a>
-                              <a href="<?php echo $currentCat['location_2'];?>"><?php echo $currentCat['location_2_title']; ?></a>
-                                <a href="<?php echo $currentCat['location_3'];?>"><?php echo $currentCat['location_3_title']; ?></a>
-                        </div>
 
 
 
-                        <div class="container" style="background-color:<?php the_field('color_2'); ?>">
-                          <!-- I changed the heading and color for the below location title -->
-                            <h5 style="color:#1E3B7C;"><?php echo $subCat['location_name'];?></h5>
-                            <?php
-                            if( $map): ?>
 
 
-                                <div class="acf-map" data-zoom="16">
-                                    <div class="marker" data-lat="<?php echo esc_attr($map['lat']); ?>" data-lng="<?php echo esc_attr($map['lng']); ?>"></div>
-                                 </div>
-                            <?php endif; ?>
-                            <?php echo $subCat['phone_number'];?>
-                        </div><br>
-                        <!--I added a br tag above to separate category sections -Elise -->
 
-                    </div>
-                  </div>
-                <?php endif ?>
-            <?php $catNum++;?>
-                <?php endwhile ?>
-    </div>
+
+
+
+
+<?php
+//ALL SUBFIELDS HAVE TO GO THROUGH HAVE_ROWS() . I JUST LEARNED THIS - ELISE
+      if( have_rows('category_1') ): //have rows goes through parent category
+          while ( have_rows('category_1') ) : the_row(); //have rows goes through parent category again
+
+            $titleC1 = get_sub_field('title'); //var
+            $category_descriptionC1 = get_sub_field('category_discription'); //var
+
+            $c1URLTITLE1 = get_sub_field('location_1_title'); //var
+            $c1URL1 = get_sub_field('location_1'); //var
+            $c1URLTITLE2 = get_sub_field('location_2_title'); //var image
+            $c1URL2 = get_sub_field('location_2'); //var
+            $c1URLTITLE3 = get_sub_field('location_3_title'); //var image
+            $c1URL3 = get_sub_field('location_3'); //var
+
+          endwhile; //end while
+      else : //else
+          // no rows found
+      endif; //end if
+//Elise
+?>
+
+
+
+
+<?php
+//ALL SUBFIELDS HAVE TO GO THROUGH HAVE_ROWS() . I JUST LEARNED THIS - ELISE
+      if( have_rows('category_2') ): //have rows goes through parent category
+          while ( have_rows('category_2') ) : the_row(); //have rows goes through parent category again
+
+
+
+            $c2PhoneNumber = get_sub_field('phone_number'); //var
+            $c2Address = get_sub_field('address'); //var
+            $c2LocationName = get_sub_field('location_name'); //var image
+
+
+          endwhile; //end while
+      else : //else
+          // no rows found
+      endif; //end if
+//Elise
+?>
+
+
+
+
+<div class="row mt-5 no-gutters">
+
+<div class="col-lg-6 left-side">
+        <!-- title of description -->
+        <h3 class="mb-4"><?php echo $titleC1;?></h3>
+
+        <!-- description of category -->
+        <p class="mb-4"><?php echo $category_descriptionC1;?></p>
+
+        <a href="<?php echo $c1URL1;?>"><?php echo $c1URLTITLE1; ?></a>
+        <a href="<?php echo $c1URL2;?>"><?php echo $c1URLTITLE2; ?></a>
+        <a href="<?php echo $c1URL3;?>"><?php echo $c1URLTITLE3; ?></a>
+
+</div> <!-- End Col -->
+
+<div class="col-lg-6 right-side">
+      <h3 class="mb-4"><?php echo $c2LocationName;?></h3>
+    <!-- call the description text of the right side -->
+    <p class="mb-4"><?php echo $c2PhoneNumber;?></p>
+
+    <?php
+    if( $c2Address): ?>
+        <div class="acf-map" data-zoom="16">
+            <div class="marker" data-lat="<?php echo esc_attr($c2Address['lat']); ?>" data-lng="<?php echo esc_attr($c2Address['lng']); ?>"></div>
+         </div>
+    <?php endif; ?>
+
+  </div><!-- end col -->
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <?php
+  //ALL SUBFIELDS HAVE TO GO THROUGH HAVE_ROWS() . I JUST LEARNED THIS - ELISE
+        if( have_rows('category_3') ): //have rows goes through parent category
+            while ( have_rows('category_3') ) : the_row(); //have rows goes through parent category again
+
+
+
+              $c3PhoneNumber = get_sub_field('phone_number'); //var
+              $where = get_sub_field('address'); //var
+              $c3LocationName = get_sub_field('location_name'); //var image
+
+
+            endwhile; //end while
+        else : //else
+            // no rows found
+        endif; //end if
+  //Elise
+  ?>
+
+<?php
+//ALL SUBFIELDS HAVE TO GO THROUGH HAVE_ROWS() . I JUST LEARNED THIS - ELISE
+      if( have_rows('category_4') ): //have rows goes through parent category
+          while ( have_rows('category_4') ) : the_row(); //have rows goes through parent category again
+
+            $titleC4 = get_sub_field('title'); //var
+            $category_descriptionC4 = get_sub_field('category_description'); //var
+
+            $c4URLTITLE1 = get_sub_field('location_1_title'); //var
+            $c4URL1 = get_sub_field('location_1'); //var
+            $c4URLTITLE2 = get_sub_field('location_2_title'); //var image
+            $c4URL2 = get_sub_field('location_2'); //var
+            $c4URLTITLE3 = get_sub_field('location_3_title'); //var image
+            $c4URL3 = get_sub_field('location_3'); //var
+
+          endwhile; //end while
+      else : //else
+          // no rows found
+      endif; //end if
+//Elise
+?>
+
+<div class="row no-gutters">
+
+  <div class="col-lg-6 right-side">
+        <h3 class="mb-4"><?php echo $c3LocationName;?></h3>
+      <!-- call the description text of the right side -->
+      <p class="mb-4"><?php echo $c3PhoneNumber;?></p>
+
+      <?php
+      if( $where): ?>
+          <div class="acf-map" data-zoom="16">
+              <div class="marker" data-lat="<?php echo esc_attr($where['lat']); ?>" data-lng="<?php echo esc_attr($where['lng']); ?>"></div>
+           </div>
+      <?php endif; ?>
+
+    </div><!-- end col -->
+
+<div class="col-lg-6 left-side">
+        <!-- title of description -->
+        <h2 class="mb-4"><b><?php echo $titleC4;?></b></h2>
+
+        <!-- description of category -->
+        <p class="mb-4"><?php echo $category_descriptionC4;?></p>
+
+        <a href="<?php echo $c4URL1;?>"><?php echo $c4URLTITLE1; ?></a>
+        <a href="<?php echo $c4URL2;?>"><?php echo $c4URLTITLE2; ?></a>
+        <a href="<?php echo $c4URL3;?>"><?php echo $c4URLTITLE3; ?></a>
+
+</div> <!-- End Col -->
 </div>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <style type="text/css">
 .acf-map {
