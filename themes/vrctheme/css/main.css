@@ -605,3 +605,8 @@ img.contact_image
 /*
 ** 404 Error Page centering
 */
+.page-404
+{
+    max-width: 960px;
+    margin: auto;
+}
