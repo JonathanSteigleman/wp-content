@@ -514,16 +514,11 @@ form.search-form button.search-submit {
 .bg-cover {
     background-size: cover !important;
 }
-/* Indicidual page template CSS
-    Jaxon Harvey (not being used currently)
-*/
 
-/*body
-{
-    font-family: Arial;
-    padding: 20px;
-    background: #f1f1f1;
-}*/
+/* style tags for posts */
+a.tag{
+    color:#1E3B7C;
+}
 
 /* Header Title */
 .header
