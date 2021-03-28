@@ -108,14 +108,15 @@ header .main-menu li{
 header .main-menu li .sub-menu {
     display: none;
     position: absolute;
+    z-index: 99999;
     top: 100%;
     left: 0;
-    background-color: #e8e8e8;
+    background-color: #FFFFFF;
     box-shadow: 2px 2px 2px #DEDCDC;
     padding: .25rem 1rem;
     list-style-type: none;
     width: 300px;
-    border-radius: 0px 20px 9px;
+    border: 1px solid #DEDCDC;
 }
 
 header .main-menu li .sub-menu a{
@@ -127,6 +128,7 @@ header .main-menu li .sub-menu a{
 header .main-menu li .sub-menu a:hover{
     border-bottom: solid 1px #DEDCDC;
     color: #1E3B7C;
+    font-weight: 600;
 }
 
 header .main-menu .menu-item-has-children:hover .sub-menu {
