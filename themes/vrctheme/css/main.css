@@ -515,11 +515,6 @@ form.search-form button.search-submit {
     background-size: cover !important;
 }
 
-/* style tags for posts */
-a.tag{
-    color:#1E3B7C;
-}
-
 /* Header Title */
 .header
 {
@@ -586,4 +581,13 @@ a.tag{
 .row
 {
     width: 100%;
+}
+
+/*
+**
+** Post Styles
+**
+*/
+p.post_details {
+    color:#707070;
 }
