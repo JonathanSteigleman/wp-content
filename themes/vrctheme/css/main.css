@@ -592,3 +592,16 @@ form.search-form button.search-submit {
 {
     width: 100%;
 }
+
+/*
+** Contact image control, no large images
+*/
+img.contact_image
+{
+    width: 20%;
+    height: auto;
+}
+
+/*
+** 404 Error Page centering
+*/
