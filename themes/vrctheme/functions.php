@@ -2178,11 +2178,19 @@ if( function_exists('acf_add_local_field_group') ):
   endif;
 
 
-
-
-
-
   function my_acf_init() {
     acf_update_setting('google_api_key', 'AIzaSyBXIsJLL3X3SPSIH3pSoTtiBK4iTeMyu10');
   }
   add_action('acf/init', 'my_acf_init');
+
+  function google_maps_scripts() {
+    if (!is_admin()) {
+      wp_register_script('googlemapsapi', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBXIsJLL3X3SPSIH3pSoTtiBK4iTeMyu10', array(), '', false);
+        wp_enqueue_script('googlemapsapi');
+        
+        wp_register_script('gmaps-init', get_stylesheet_directory_uri().'/js/google-maps.js', array(), '', false);
+        wp_enqueue_script('gmaps-init');
+    } 
+  }
+  
+  add_action('wp_enqueue_scripts', 'google_maps_scripts', 100);
