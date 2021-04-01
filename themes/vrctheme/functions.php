@@ -187,49 +187,6 @@ add_action( 'widgets_init', 'arphabet_widgets_init' );
 
 
 if( function_exists('acf_add_local_field_group') ):
-
-  acf_add_local_field_group(array(
-    'key' => 'group_60329edcb75fc',
-    'title' => 'Content_Page',
-    'fields' => array(
-      array(
-        'key' => 'field_60329ef8a5f71',
-        'label' => 'Google Maps 1',
-        'name' => 'google_maps_1',
-        'type' => 'google_map',
-        'instructions' => 'API Key: AIzaSyBXIsJLL3X3SPSIH3pSoTtiBK4iTeMyu10',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'center_lat' => '37.6145',
-        'center_lng' => '93.4105',
-        'zoom' => '',
-        'height' => '',
-      ),
-    ),
-    'location' => array(
-      array(
-        array(
-          'param' => 'post_type',
-          'operator' => '==',
-          'value' => 'post',
-        ),
-      ),
-    ),
-    'menu_order' => 0,
-    'position' => 'normal',
-    'style' => 'default',
-    'label_placement' => 'top',
-    'instruction_placement' => 'label',
-    'hide_on_screen' => '',
-    'active' => true,
-    'description' => '',
-  ));
-
   acf_add_local_field_group(array(
     'key' => 'group_5f9c469810592',
     'title' => 'Home',
@@ -2221,11 +2178,19 @@ if( function_exists('acf_add_local_field_group') ):
   endif;
 
 
-
-
-
-
   function my_acf_init() {
     acf_update_setting('google_api_key', 'AIzaSyBXIsJLL3X3SPSIH3pSoTtiBK4iTeMyu10');
   }
   add_action('acf/init', 'my_acf_init');
+
+  function google_maps_scripts() {
+    if (!is_admin()) {
+      wp_register_script('googlemapsapi', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBXIsJLL3X3SPSIH3pSoTtiBK4iTeMyu10', array(), '', false);
+        wp_enqueue_script('googlemapsapi');
+        
+        wp_register_script('gmaps-init', get_stylesheet_directory_uri().'/js/google-maps.js', array(), '', false);
+        wp_enqueue_script('gmaps-init');
+    } 
+  }
+  
+  add_action('wp_enqueue_scripts', 'google_maps_scripts', 100);
