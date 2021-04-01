@@ -1,7 +1,7 @@
 <?php
 //////////////////////////////////////////////////////////////////////////////
 // The archive page template
-// 
+//
 // Uses the main header
 //////////////////////////////////////////////////////////////////////////////
 get_header();
@@ -10,7 +10,7 @@ get_header();
 <div class="page-wrap pb-5">
 <div class="container">
 
-    
+
     <!-- get the content of the page -->
     <?php get_template_part('includes/section', 'archive');?>
 

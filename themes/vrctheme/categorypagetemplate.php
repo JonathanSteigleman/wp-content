@@ -180,7 +180,7 @@ acf_add_local_field_group('Page Template Category Heading');
 
             $c2PhoneNumber = get_sub_field('phone_number'); //var
             $c2Address = get_sub_field('address'); //var
-            $c2LocationName = get_sub_field('location_name'); //var image
+            $c2LocationName = get_sub_field('location_name'); //var
 
 
           endwhile; //end while
@@ -197,19 +197,19 @@ acf_add_local_field_group('Page Template Category Heading');
 
 <div class="col-lg-6 left-side">
         <!-- title of description -->
-        <h3 class="mb-4"><?php echo $titleC1;?></h3>
+        <h2 class="mb-4"><b><?php echo $titleC1;?></b></h2>
 
         <!-- description of category -->
         <p class="mb-4"><?php echo $category_descriptionC1;?></p>
 
-        <a href="<?php echo $c1URL1;?>"><?php echo $c1URLTITLE1; ?></a>
+        <p><a href="<?php echo $c1URL1;?>"><?php echo $c1URLTITLE1; ?></a></p>
         <a href="<?php echo $c1URL2;?>"><?php echo $c1URLTITLE2; ?></a>
         <a href="<?php echo $c1URL3;?>"><?php echo $c1URLTITLE3; ?></a>
 
 </div> <!-- End Col -->
 
 <div class="col-lg-6 right-side">
-      <h3 class="mb-4"><?php echo $c2LocationName;?></h3>
+      <h4 class="mb-4" style="color:#1E3B7C"><?php echo $c2LocationName;?></h4>
     <!-- call the description text of the right side -->
     <p class="mb-4"><?php echo $c2PhoneNumber;?></p>
 
@@ -222,14 +222,6 @@ acf_add_local_field_group('Page Template Category Heading');
 
   </div><!-- end col -->
   </div>
-
-
-
-
-
-
-
-
 
 
   <?php
@@ -257,7 +249,7 @@ acf_add_local_field_group('Page Template Category Heading');
           while ( have_rows('category_4') ) : the_row(); //have rows goes through parent category again
 
             $titleC4 = get_sub_field('title'); //var
-            $category_descriptionC4 = get_sub_field('category_description'); //var
+            $category_descriptionC4 = get_sub_field('category_discription'); //var
 
             $c4URLTITLE1 = get_sub_field('location_1_title'); //var
             $c4URL1 = get_sub_field('location_1'); //var
@@ -287,6 +279,7 @@ acf_add_local_field_group('Page Template Category Heading');
            </div>
       <?php endif; ?>
 
+
     </div><!-- end col -->
 
 <div class="col-lg-6 left-side">
@@ -294,6 +287,7 @@ acf_add_local_field_group('Page Template Category Heading');
         <h2 class="mb-4"><b><?php echo $titleC4;?></b></h2>
 
         <!-- description of category -->
+
         <p class="mb-4"><?php echo $category_descriptionC4;?></p>
 
         <a href="<?php echo $c4URL1;?>"><?php echo $c4URLTITLE1; ?></a>
