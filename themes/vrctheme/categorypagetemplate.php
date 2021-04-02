@@ -138,14 +138,6 @@ acf_add_local_field_group('Page Template Category Heading');
 
 
 
-
-
-
-
-
-
-
-
 <?php
 //ALL SUBFIELDS HAVE TO GO THROUGH HAVE_ROWS() . I JUST LEARNED THIS - ELISE
       if( have_rows('category_1') ): //have rows goes through parent category
@@ -212,25 +204,10 @@ acf_add_local_field_group('Page Template Category Heading');
       <h3 class="mb-4"><?php echo $c2LocationName;?></h3>
     <!-- call the description text of the right side -->
     <p class="mb-4"><?php echo $c2PhoneNumber;?></p>
-
-    <?php
-    if( $c2Address): ?>
-        <div class="acf-map" data-zoom="16">
-            <div class="marker" data-lat="<?php echo esc_attr($c2Address['lat']); ?>" data-lng="<?php echo esc_attr($c2Address['lng']); ?>"></div>
-         </div>
-    <?php endif; ?>
+    <p class="mb-4"><?php echo $c2Address;?></p>
 
   </div><!-- end col -->
   </div>
-
-
-
-
-
-
-
-
-
 
   <?php
   //ALL SUBFIELDS HAVE TO GO THROUGH HAVE_ROWS() . I JUST LEARNED THIS - ELISE
@@ -279,13 +256,7 @@ acf_add_local_field_group('Page Template Category Heading');
         <h3 class="mb-4"><?php echo $c3LocationName;?></h3>
       <!-- call the description text of the right side -->
       <p class="mb-4"><?php echo $c3PhoneNumber;?></p>
-
-      <?php
-      if( $where): ?>
-          <div class="acf-map" data-zoom="16">
-              <div class="marker" data-lat="<?php echo esc_attr($where['lat']); ?>" data-lng="<?php echo esc_attr($where['lng']); ?>"></div>
-           </div>
-      <?php endif; ?>
+      <p class="mb-4"><?php echo $where;?></p>
 
     </div><!-- end col -->
 
