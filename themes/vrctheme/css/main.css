@@ -593,3 +593,33 @@ form.search-form button.search-submit {
 p.post_details {
     color:#707070;
 }
+
+/*
+** Contact image control, no large images
+*/
+img.contact_image
+{
+    width: 20%;
+    height: auto;
+}
+
+/*
+** 404 Error Page centering
+*/
+.page-404
+{
+    max-width: 960px;
+    margin: auto;
+}
+
+.acf-map {
+    width: 100%;
+    height: 400px;
+    border: #ccc solid 1px;
+    margin: 20px 0;
+}
+
+/*Fixes potential theme css conflict.*/
+.acf-map img {
+   max-width: inherit !important;
+}
