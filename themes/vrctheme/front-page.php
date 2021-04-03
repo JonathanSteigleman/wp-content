@@ -134,6 +134,29 @@
                 <p class="mb-4"><?php echo $left_side['description'];?></p>
                 <!-- call the button URL and text of the left side -->
                 <a href="<?php echo esc_url($left_side['button_link']);?>"><button class="btn btn-default"><?php echo $left_side['button_text'];?></button></a>
+                
+                <!-- Messing with credit card images -->
+                <div class="row">
+                    <div class="col-8 justify-center">
+                        <div class="row">
+                        <?php
+                        $cardNum = 1;
+
+                        $card_type = $left_side['card_types'];
+                        
+                        while($cardNum < 7):
+                            $currentCard = ("card_".$cardNum);
+                            if($currentCard):
+                                $card = $card_type[$currentCard];
+                            ?>
+                            
+                            <img class="col-md-2 credit_card" src="<?php echo esc_url($card_type[$currentCard]['url'])?>" alt="<?php echo $card_type[$currentCard]['alt'] ?>"/>
+                            <?php endif;
+                                $cardNum++;
+                        endwhile;?>
+                        </div>
+                    </div>
+                </div>
             </div><!-- end col -->
             
             <div class="col-lg-6 right-side">
