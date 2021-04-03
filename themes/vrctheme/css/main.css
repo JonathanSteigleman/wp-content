@@ -135,6 +135,11 @@ header .main-menu .menu-item-has-children:hover .sub-menu {
     display: block;
 }
 
+.main-menu li.current_page_item  a {
+    color: #1E3B7C;
+    border-bottom: solid 3px #1E3B7C;
+}
+
 
 /*
 ** Footer Styling
