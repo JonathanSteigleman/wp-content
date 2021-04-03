@@ -36,7 +36,7 @@
         <div class="row">
             <div class="site-logo small-screen-logo col-md-8 col-sm-12 col-12">
                 <!--Have the logo link to the home page of the website-->
-                <a class="home" href="<?php echo get_home_url(); ?>"> 
+                <a class="home" href="<?php echo get_home_url(); ?>">
                 <?php 
                     if ( function_exists( 'the_custom_logo' ) ) {
                         the_custom_logo();
