@@ -20,7 +20,7 @@
  -->
 
 <header>
-<div class="container-fluid pt-2">
+<div class="container-xl pt-2">
         
         <a class="icon" onclick="showMobileNav()"><i class="fa fa-bars"></i></a>
         <!--<a class="closeIcon" onclick=""></a><i class="fa fa-times" aria-hidden="true"></i>-->
