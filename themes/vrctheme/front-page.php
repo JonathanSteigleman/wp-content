@@ -136,8 +136,8 @@
                 <a href="<?php echo esc_url($left_side['button_link']);?>"><button class="btn btn-default"><?php echo $left_side['button_text'];?></button></a>
                 
                 <!-- Messing with credit card images -->
-                <div class="row">
-                    <div class="col-8 justify-center">
+                <div class="row  justify-content-center mt-4">
+                    <div class="col-xl-9 col-lg-12 col-md-7">
                         <div class="row">
                         <?php
                         $cardNum = 1;
@@ -150,7 +150,7 @@
                                 $card = $card_type[$currentCard];
                             ?>
                             
-                            <img class="col-md-2 credit_card" src="<?php echo esc_url($card_type[$currentCard]['url'])?>" alt="<?php echo $card_type[$currentCard]['alt'] ?>"/>
+                            <img class="col-md-2 align-center pr-0 credit_card" src="<?php echo esc_url($card_type[$currentCard]['url'])?>" alt="<?php echo $card_type[$currentCard]['alt'] ?>"/>
                             <?php endif;
                                 $cardNum++;
                         endwhile;?>
