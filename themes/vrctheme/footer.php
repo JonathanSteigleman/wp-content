@@ -18,7 +18,7 @@
 
               <?php else: ?>
 
-              <h6>Pages</h6>
+              <h4>Pages</h4>
 
               <?php
               wp_nav_menu( array(
