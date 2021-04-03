@@ -277,32 +277,9 @@ header .main-menu .menu-item-has-children:hover .sub-menu {
     a.icon:active {
         box-shadow: -2px -2px 5px 0 #ccc, 2px 2px 5px 0 #F5F5F5;
     }
-
-
-
 }
 
-@media (max-width: 800px) {
-    .search-form{
-        display: none;
-    }
-
-    div #announcements h3 {
-        font-size: 1.75rem;
-    }
-
-    div #announcements p {
-        font-size: .90rem;
-    }
-
-    header div.jumbotron-fluid .row {
-        padding: 100px 50px 75px 50px !important;
-    }
-
-    /*header div.jumbotron-fluid {
-        padding: 100px 50px 75px 50px !important; 
-    }*/
-}
+/* End responsive Nav - - - move to end of file on clean-up*/
 
 
 /*
@@ -566,6 +543,9 @@ form.search-form button.search-submit {
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+/* THIS IS AUTO DONE WITH THE COLUMNS AND ROWS OF BOOTSTRAP
+** MESS WITH THE COL-MD AND COL-SM TO DO THIS WITHOUT HAVING TO UPDATE HERE
+*/
 @media screen and (max-width: 800px)
 {
     .leftColumn, .rightColumn
@@ -622,4 +602,32 @@ img.contact_image
 /*Fixes potential theme css conflict.*/
 .acf-map img {
    max-width: inherit !important;
+}
+
+/*
+**
+** Media Queries moved to the bottom of the file
+**
+*/
+
+@media (max-width: 800px) {
+    .search-form{
+        display: none;
+    }
+
+    div #announcements h3 {
+        font-size: 1.75rem;
+    }
+
+    div #announcements p {
+        font-size: .90rem;
+    }
+
+    /*header div.jumbotron-fluid .row {
+        padding: 100px 50px 75px 50px !important;
+    }*/
+
+    div.jumbotron-fluid .row {
+        padding: 100px 25px 25px 25px !important;
+    }
 }
