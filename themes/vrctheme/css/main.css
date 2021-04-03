@@ -136,152 +136,6 @@ header .main-menu .menu-item-has-children:hover .sub-menu {
 }
 
 
-
-
-/*Makes the responsive menu invisible when the screen is over 1200px wide*/
-@media (min-width: 1200px) {
-    div.container.main-menu-responsive {
-      display: none;
-      width: 0px;
-
-  }
-
-  .main-menu-responsive{
-      display: none;
-  }
-
-  a.icon {
-      display: none;
-  }
-
-  /*Header Logo Styles*/
-    .site-logo {
-        margin-right: auto;
-    }
-
-    .site-logo .custom-logo-link {
-        border-radius: 4px;
-        box-sizing: content-box;
-        box-shadow: 0 0 0 0 transparent;
-        display: block;
-        height: 50px;
-        overflow: hidden;
-    }
-
-    .site-logo .custom-logo-link .custom-logo {
-        max-height: 50px;
-        width: inherit;
-    }
-
-    .site-logo .custom-logo-link:hover, .site-logo .custom-logo-link:active, .site-logo .custom-logo-link:focus {
-        cursor: pointer;
-    }
-}
-
-/*Responsive Navigation Menu*/
-@media (max-width: 1200px) {
-    header {
-
-        height: 60px;
-    }
-
-    header .main-menu {
-        display: none;
-    }
-
-    header div.row{
-        display: flex;
-    }
-
-    .site-logo.small-screen-logo {
-        display: flex;
-        max-height: 50px;
-        width: inherit;
-
-    }
-
-    .site-logo.small-screen-logo .custom-logo-link {
-        border-radius: 4px;
-        box-sizing: content-box;
-        box-shadow: 0 0 0 0 transparent;
-        display: block;
-        height: 50px;
-        overflow: hidden;
-    }
-
-    .site-logo.small-screen-logo a{
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .site-logo.small-screen-logo .custom-logo-link .custom-logo{
-        max-height: 50px;
-        width: inherit;
-    }
-
-    #responsiveMenu {
-        display: none;
-        width: 100%;
-        height: 100%;
-        padding: 50px 50px 50px 50px;
-        text-align: left;
-        background-color: #DEDCDC;
-        position: absolute;
-        top: 0;
-        right: 0;
-        /*box-shadow: -2px 0px 10px 0 #707070;*/
-        z-index: 999;
-    }
-
-    #responsiveMenu li {
-        position: relative;
-        list-style-type: none;
-    }
-
-    #responsiveMenu a {
-        display: inline-block;
-        left: 0;
-        color: #1E3B7C;
-        padding: 1rem 2rem;
-        width: 100%;
-        text-decoration: none;
-        border-bottom: solid 1px #ccc;
-    }
-
-    #responsiveMenu a:hover {
-        background-color: #e8e8e8;
-        border-bottom: solid 2px #1E3B7C;
-    }
-
-    #responsiveMenu a:active {
-        background-color: #bcbcbc;
-        border-bottom: solid 2px #1E3B7C;
-    }
-
-    a.icon {
-      position: absolute;
-      z-index: 1000;
-      color: #1E3B7C;
-      background-color: #FFFFFF;
-      border-radius: 2px;
-      border: solid 1.5px #1E3B7C;
-      padding: .5rem .75rem;
-      text-decoration: none;
-    }
-
-    a.icon:hover {
-      background-color: #e8e8e8;
-      cursor: pointer;
-    }
-
-    a.icon:active {
-        box-shadow: -2px -2px 5px 0 #ccc, 2px 2px 5px 0 #F5F5F5;
-    }
-}
-
-/* End responsive Nav - - - move to end of file on clean-up*/
-
-
 /*
 ** Footer Styling
 ** Completed by Jonathan
@@ -610,6 +464,148 @@ img.contact_image
 **
 */
 
+/*Makes the responsive menu invisible when the screen is over 1200px wide*/
+@media (min-width: 1200px) {
+    div.container.main-menu-responsive {
+      display: none;
+      width: 0px;
+
+  }
+
+  .main-menu-responsive{
+      display: none;
+  }
+
+  a.icon {
+      display: none;
+  }
+
+  /*Header Logo Styles*/
+    .site-logo {
+        margin-right: auto;
+    }
+
+    .site-logo .custom-logo-link {
+        border-radius: 4px;
+        box-sizing: content-box;
+        box-shadow: 0 0 0 0 transparent;
+        display: block;
+        height: 50px;
+        overflow: hidden;
+    }
+
+    .site-logo .custom-logo-link .custom-logo {
+        max-height: 50px;
+        width: inherit;
+    }
+
+    .site-logo .custom-logo-link:hover, .site-logo .custom-logo-link:active, .site-logo .custom-logo-link:focus {
+        cursor: pointer;
+    }
+}
+
+/*Responsive Navigation Menu*/
+@media (max-width: 1200px) {
+    header {
+
+        height: 60px;
+    }
+
+    header .main-menu {
+        display: none;
+    }
+
+    header div.row{
+        display: flex;
+    }
+
+    .site-logo.small-screen-logo {
+        display: flex;
+        max-height: 50px;
+        width: inherit;
+
+    }
+
+    .site-logo.small-screen-logo .custom-logo-link {
+        border-radius: 4px;
+        box-sizing: content-box;
+        box-shadow: 0 0 0 0 transparent;
+        display: block;
+        height: 50px;
+        overflow: hidden;
+    }
+
+    .site-logo.small-screen-logo a{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .site-logo.small-screen-logo .custom-logo-link .custom-logo{
+        max-height: 50px;
+        width: inherit;
+    }
+
+    #responsiveMenu {
+        display: none;
+        width: 100%;
+        height: 100%;
+        padding: 50px 50px 50px 50px;
+        text-align: left;
+        background-color: #DEDCDC;
+        position: absolute;
+        top: 0;
+        right: 0;
+        /*box-shadow: -2px 0px 10px 0 #707070;*/
+        z-index: 999;
+    }
+
+    #responsiveMenu li {
+        position: relative;
+        list-style-type: none;
+    }
+
+    #responsiveMenu a {
+        display: inline-block;
+        left: 0;
+        color: #1E3B7C;
+        padding: 1rem 2rem;
+        width: 100%;
+        text-decoration: none;
+        border-bottom: solid 1px #ccc;
+    }
+
+    #responsiveMenu a:hover {
+        background-color: #e8e8e8;
+        border-bottom: solid 2px #1E3B7C;
+    }
+
+    #responsiveMenu a:active {
+        background-color: #bcbcbc;
+        border-bottom: solid 2px #1E3B7C;
+    }
+
+    a.icon {
+      position: absolute;
+      z-index: 1000;
+      color: #1E3B7C;
+      background-color: #FFFFFF;
+      border-radius: 2px;
+      border: solid 1.5px #1E3B7C;
+      padding: .5rem .75rem;
+      text-decoration: none;
+    }
+
+    a.icon:hover {
+      background-color: #e8e8e8;
+      cursor: pointer;
+    }
+
+    a.icon:active {
+        box-shadow: -2px -2px 5px 0 #ccc, 2px 2px 5px 0 #F5F5F5;
+    }
+}
+/* End responsive Nav - - - move to end of file on clean-up*/
+
 @media (max-width: 800px) {
     .search-form{
         display: none;
@@ -629,5 +625,18 @@ img.contact_image
 
     div.jumbotron-fluid .row {
         padding: 100px 25px 25px 25px !important;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .contact-form{
+      flex-direction: column;
+    }
+    .contact-form .msg textarea{
+      height: 80px;
+    }
+    .contact-form .input-fields,
+    .msg{
+      width: 100%;
     }
 }
