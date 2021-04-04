@@ -1585,7 +1585,7 @@ if( function_exists('acf_add_local_field_group') ):
   						'class' => '',
   						'id' => '',
   					),
-  					'return_format' => 'url',
+  					'return_format' => 'array',
   					'preview_size' => 'thumbnail',
   					'library' => 'all',
   					'min_width' => '',
