@@ -55,13 +55,14 @@
                 $category = "category_".$catNum;
                 // set the current category to the ACF value with the name equal to $category
                 $currentCat = get_field($category);
+                $image = $currentCat['image'];
 
                 //if there is content in this category
                 if ($currentCat): ?>
                     <div class="col-lg-4 col-md-auto col-sm-auto">
                         <div class="card">
                             <!-- get the URL of the image added in this category -->
-                            <img class="card-img-top" src="<?php echo esc_url($currentCat['image']);?>"/>
+                            <img class="card-img-top" src="<?php echo esc_url($image['url']);?>" title="<?php echo ($image['title']); ?>" alt="<?php echo ($image['alt']); ?>"/>
                             <div class="card-body">
                                 <!-- get title added in this category -->
                                 <h4><?php echo $currentCat['title'];?></h4>
@@ -96,13 +97,14 @@
                 $category = "category_".$catNum;
                 // set the current category to the ACF value with the name equal to $category
                 $currentCat = get_field($category);
+                $image = $currentCat['image'];
 
                 //if there is content in this category
                 if ($currentCat): ?>
                     <div class="col-lg-4 col-md-auto col-sm-auto">
                         <div class="card">
                             <!-- get the URL of the image added in this category -->
-                            <img class="card-img-top" src="<?php echo esc_url($currentCat['image']);?>"/>
+                            <img class="card-img-top" src="<?php echo($image['url']);?>" title="<?php echo ($image['title']); ?>" alt="<?php echo ($image['alt']); ?>"/>
                             <div class="card-body">
                                 <!-- get title added in this category -->
                                 <h4><?php echo $currentCat['title'];?></h4>
