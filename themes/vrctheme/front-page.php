@@ -136,6 +136,29 @@
                 <p class="mb-4"><?php echo $left_side['description'];?></p>
                 <!-- call the button URL and text of the left side -->
                 <a href="<?php echo esc_url($left_side['button_link']);?>"><button class="btn btn-default"><?php echo $left_side['button_text'];?></button></a>
+                
+                <!-- Messing with credit card images -->
+                <div class="row  justify-content-center mt-4">
+                    <div class="col-xl-9 col-lg-12 col-md-7">
+                        <div class="row">
+                        <?php
+                        $cardNum = 1;
+
+                        $card_type = $left_side['card_types'];
+                        
+                        while($cardNum < 7):
+                            $currentCard = ("card_".$cardNum);
+                            if(!empty($card_type[$currentCard])):?>
+                            
+                            <img class="col-md-2 align-center pr-0 credit_card" src="<?php echo esc_url($card_type[$currentCard]['url'])?>" alt="<?php echo $card_type[$currentCard]['alt'] ?>"/>
+                            <?php 
+                            
+                            endif;
+                                $cardNum++;
+                        endwhile;?>
+                        </div>
+                    </div>
+                </div>
             </div><!-- end col -->
             
             <div class="col-lg-6 right-side">
@@ -145,6 +168,28 @@
                 <p class="mb-4"><?php echo $right_side['description'];?></p>
                 <!-- call the button URL and text for the right side -->
                 <a href="<?php echo esc_url($right_side['button_link']);?>"><button class="btn btn-default"><?php echo $right_side['button_text'];?></button></a>
+
+                <!-- Messing with credit card images -->
+                <div class="row  justify-content-center mt-4">
+                    <div class="col-xl-9 col-lg-12 col-md-7">
+                        <div class="row">
+                        <?php
+                        $cardNum = 1;
+
+                        $card_type = $right_side['card_types'];
+                        
+                        while($cardNum < 7):
+                            $currentCard = ("card_".$cardNum);
+                            if(!empty($card_type[$currentCard])):?>
+                            
+                            <img class="col-md-2 align-center pr-0 credit_card" src="<?php echo esc_url($card_type[$currentCard]['url'])?>" alt="<?php echo $card_type[$currentCard]['alt'] ?>"/>
+                            <?php endif;
+                                $cardNum++;
+                        endwhile;?>
+                        </div>
+                    </div>
+                </div>
+
             </div><!-- end col -->
         </div><!-- end row -->
 </div>
