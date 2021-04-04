@@ -62,7 +62,7 @@
                     <div class="col-lg-4 col-md-auto col-sm-auto">
                         <div class="card">
                             <!-- get the URL of the image added in this category -->
-                            <img class="card-img-top" src="<?php echo esc_url($image['url']);?>" title="<?php echo ($currentCat['title']); ?>"/>
+                            <img class="card-img-top" src="<?php echo esc_url($image['url']);?>" title="<?php echo ($image['title']); ?>" alt="<?php echo ($image['alt']); ?>"/>
                             <div class="card-body">
                                 <!-- get title added in this category -->
                                 <h4><?php echo $currentCat['title'];?></h4>
@@ -104,7 +104,7 @@
                     <div class="col-lg-4 col-md-auto col-sm-auto">
                         <div class="card">
                             <!-- get the URL of the image added in this category -->
-                            <img class="card-img-top" src="<?php echo($image['url']);?>" title="<?php echo ($currentCat['title']); ?>"/>
+                            <img class="card-img-top" src="<?php echo($image['url']);?>" title="<?php echo ($image['title']); ?>" alt="<?php echo ($image['alt']); ?>"/>
                             <div class="card-body">
                                 <!-- get title added in this category -->
                                 <h4><?php echo $currentCat['title'];?></h4>
