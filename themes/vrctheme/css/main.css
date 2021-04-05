@@ -462,6 +462,16 @@ img.contact_image
     margin: auto;
 }
 
+/*
+FOR THE LIST OF CONTACT FIELD (no more bullets)
+**
+*/
+.page-categorypagetemplate
+{
+    list-style-type: none;
+}
+/* ----------------- */
+
 .acf-map {
     width: 100%;
     height: 400px;
