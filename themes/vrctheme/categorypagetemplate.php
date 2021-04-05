@@ -44,7 +44,6 @@ acf_add_local_field_group('Page Template Category Heading');
 
 
 
-
 <!--Contact & Category Overview sections --->
 <!--- Jaxon's Code, edited by Elise -->
 
@@ -71,7 +70,6 @@ acf_add_local_field_group('Page Template Category Heading');
 
 
 
-
 <div class="col-lg-6 col-md-auto col-sm-auto">
         <!-- title of description -->
         <h4><?php echo $category_description_title ?></h4>
@@ -80,7 +78,6 @@ acf_add_local_field_group('Page Template Category Heading');
         <p><?php echo $category_description ?></p>
 
 </div> <!-- End Col -->
-
 
 
 
@@ -118,13 +115,11 @@ acf_add_local_field_group('Page Template Category Heading');
 
             <img class="contact_image" src="<?php echo $contact_image['url'] ?>" title="<?php echo ($contact_image['title']); ?>" alt="<?php echo ($contact_image['alt']); ?>" />
 
-
             <ul> <!-- Unordered list to provide spacing -->
                 <li> <p><?php echo $contact_name ?></p> </li>     <!-- display's contact name -->
                 <li> <p><?php echo $contact_address ?></p> </li>     <!-- display's conatact address -->
                 <li> <p><?php echo $contact_number ?></p></li>    <!-- should display phone number when fixed -->
             </ul> <!-- Unordered list to provide spacing -->
-
 
           </div><!-- end card body div -->
       </div><!-- End card div -->
@@ -134,36 +129,28 @@ acf_add_local_field_group('Page Template Category Heading');
     </div><!-- end row -->
 </div><!-- end container -->
 
-  <?php
-  //ALL SUBFIELDS HAVE TO GO THROUGH HAVE_ROWS() . I JUST LEARNED THIS - ELISE
-  if (have_rows('category_2')) : //have rows goes through parent category
-    while (have_rows('category_2')) : the_row(); //have rows goes through parent category again
+<?php
+  function firstRow($num) {
+    if (have_rows('category_'.$num.'_locations')) : //have rows goes through parent category
+      while (have_rows('category_'.$num.'_locations')) : the_row(); //have rows goes through parent category again
+  
+        $c2PhoneNumber = get_sub_field('phone_number'); //var
+        $c2Address = get_sub_field('address'); //var
+        $c2LocationName = get_sub_field('location_name'); //var image
+  
+      endwhile; //end while
+    else : //else
+    // no rows found
+    endif; //end if
 
-
-
-      $c2PhoneNumber = get_sub_field('phone_number'); //var
-      $c2Address = get_sub_field('address'); //var
-      $c2LocationName = get_sub_field('location_name'); //var image
-
-
-    endwhile; //end while
-  else : //else
-  // no rows found
-  endif; //end if
-  //Elise
-  ?>
-
-
-  <?php
-  //ALL SUBFIELDS HAVE TO GO THROUGH HAVE_ROWS() . I JUST LEARNED THIS - ELISE
-  if (have_rows('category_1')) : //have rows goes through parent category
-    while (have_rows('category_1')) : the_row(); //have rows goes through parent category again
-
-      $count = count(get_field('category_1')); //Counts the number of fields in the group.
-      $i = 1; //var to count loops
-      $titleC1 = get_sub_field('title'); //var
-      $category_descriptionC1 = get_sub_field('category_discription'); //var ?>
-
+    if (have_rows('category_'.$num.'_name')) : //have rows goes through parent category
+      while (have_rows('category_'.$num.'_name')) : the_row(); //have rows goes through parent category again
+  
+        $count = count(get_field('category_'.$num.'_name')); //Counts the number of fields in the group.
+        $i = 1; //var to count loops
+        $titleC1 = get_sub_field('title'); //var
+        $category_descriptionC1 = get_sub_field('category_discription');
+?>
       <div class="row mt-5 no-gutters">
 
         <div class="col-lg-6 left-side">
@@ -176,10 +163,9 @@ acf_add_local_field_group('Page Template Category Heading');
           <?php while ($i <= ($count/2)-1) : //Loop and logic to remove unnecessary looping 
 
             $c1URLTITLE = get_sub_field('location_'.$i.'_title');
-            $c1URL = get_sub_field('location_'.$i.''); ?>
-
-             <h4><a href="<?php echo $c1URL; ?>"><?php echo $c1URLTITLE; ?></a></h4>
-
+            $c1URL = get_sub_field('location_'.$i.'');
+          ?>
+            <h4><a href="<?php echo $c1URL; ?>"><?php echo $c1URLTITLE; ?></a></h4>
             <?php $i++; ?><!-- increment loop counter -->
           <?php endwhile ?>
         </div> <!-- End Col -->
@@ -192,42 +178,39 @@ acf_add_local_field_group('Page Template Category Heading');
 
         </div><!-- end col -->
       </div>
-
     <?php endwhile ?>
-  <?php endif ?>
+  <?php endif?>
+<?php
+  }
+?>
 
 
 
-  <?php
-  //ALL SUBFIELDS HAVE TO GO THROUGH HAVE_ROWS() . I JUST LEARNED THIS - ELISE
-  if (have_rows('category_3')) : //have rows goes through parent category
-    while (have_rows('category_3')) : the_row(); //have rows goes through parent category again
+<?php
+  function secondRow($num){
+  
+    if (have_rows('category_'.$num.'_locations')) : //have rows goes through parent category
+      while (have_rows('category_'.$num.'_locations')) : the_row(); //have rows goes through parent category again
+  
+        $c3PhoneNumber = get_sub_field('phone_number'); //var
+        $where = get_sub_field('address'); //var
+        $c3LocationName = get_sub_field('location_name'); //var image
+  
+      endwhile; //end while
+    else : //else
+    // no rows found
+    endif; //end if
+    //Elise
 
-      $c3PhoneNumber = get_sub_field('phone_number'); //var
-      $where = get_sub_field('address'); //var
-      $c3LocationName = get_sub_field('location_name'); //var image
-
-    endwhile; //end while
-  else : //else
-  // no rows found
-  endif; //end if
-  //Elise
-  ?>
-
-  <?php
-  //ALL SUBFIELDS HAVE TO GO THROUGH HAVE_ROWS() . I JUST LEARNED THIS - ELISE
-
-
-  if (have_rows('category_4')) : //have rows goes through parent category
-    while (have_rows('category_4')) : the_row();  //have rows goes through parent category again
-    
-      $count = count(get_field('category_4')); //Counts the number of fields in the group.
-      $i = 1; //var to count loops
-      $titleC4 = get_sub_field('title'); //var
-      $category_descriptionC4 = get_sub_field('category_description'); //var
-  ?>
-
-      <div class="row no-gutters">
+    if (have_rows('category_'.$num.'_name')) : //have rows goes through parent category
+      while (have_rows('category_'.$num.'_name')) : the_row();  //have rows goes through parent category again
+  
+        $count = count(get_field('category_'.$num.'_name')); //Counts the number of fields in the group.
+        $i = 1; //var to count loops
+        $titleC4 = get_sub_field('title'); //var
+        $category_descriptionC4 = get_sub_field('category_discription'); //var
+?>
+        <div class="row no-gutters">
 
         <div class="col-lg-6 right-side">
           <h3 class="mb-4"><?php echo $c3LocationName; ?></h3>
@@ -240,7 +223,7 @@ acf_add_local_field_group('Page Template Category Heading');
 
         <div class="col-lg-6 left-side">
           <!-- title of description -->
-          <h2 class="mb-4"><b><?php echo $titleC4; ?></b></h2>
+          <h3 class="mb-4"><?php echo $titleC4; ?></h3>
 
           <!-- description of category -->
           <p class="mb-4"><?php echo $category_descriptionC4; ?></p>
@@ -258,6 +241,26 @@ acf_add_local_field_group('Page Template Category Heading');
       </div>
     <?php endwhile ?>
   <?php endif ?>
+<?php
+  }
+?>
+
+<?php
+
+$fields = count(acf_get_fields('group_6045119685af7'));
+$tracker = 1;
+for($i = 1; $i < $fields; $i++){
+    if(round($tracker % 2) == 1){
+      firstRow($tracker);
+    }
+    else{
+      secondRow($tracker);
+    }
+    $tracker++;
+  }
+
+?>
+      
   <!-- end content section -->
 
   <?php
