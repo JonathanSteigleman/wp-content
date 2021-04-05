@@ -120,9 +120,9 @@ acf_add_local_field_group('Page Template Category Heading');
 
 
             <ul> <!-- Unordered list to provide spacing -->
-                <li> <p><?php echo $contact_name ?></p> </li>     <!-- display's contact name -->
-                <li> <p><?php echo $contact_address ?></p> </li>     <!-- display's conatact address -->
-                <li> <p><?php echo $contact_number ?></p></li>    <!-- should display phone number when fixed -->
+                <li> <p><?php echo $contact_name ?></p> </li>         <!-- display's contact name -->
+                <li> <p><?php echo $contact_address ?></p> </li>      <!-- display's conatact address -->
+                <li> <p><?php echo $contact_number ?></p></li>        <!-- should display phone number when fixed -->
             </ul> <!-- Unordered list to provide spacing -->
 
 
