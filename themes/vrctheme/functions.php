@@ -1585,7 +1585,7 @@ if( function_exists('acf_add_local_field_group') ):
   						'class' => '',
   						'id' => '',
   					),
-  					'return_format' => 'url',
+  					'return_format' => 'array',
   					'preview_size' => 'thumbnail',
   					'library' => 'all',
   					'min_width' => '',
@@ -1818,7 +1818,7 @@ if( function_exists('acf_add_local_field_group') ):
   		array(
   			'key' => 'field_603ad9f9c336c',
   			'label' => 'Category 1 Locations',
-  			'name' => 'category_1_Locations',
+  			'name' => 'category_1_locations',
   			'type' => 'group',
   			'instructions' => '',
   			'required' => 0,
@@ -1874,7 +1874,7 @@ if( function_exists('acf_add_local_field_group') ):
   					'key' => 'field_603c2f0fa91c9',
   					'label' => 'Address',
   					'name' => 'address',
-  					'type' => 'google_map',
+  					'type' => 'wysiwyg',
   					'instructions' => '',
   					'required' => 0,
   					'conditional_logic' => 0,
@@ -1883,17 +1883,18 @@ if( function_exists('acf_add_local_field_group') ):
   						'class' => '',
   						'id' => '',
   					),
-  					'center_lat' => '',
-  					'center_lng' => '',
-  					'zoom' => '',
-  					'height' => '',
+            'default_value' => '',
+            'tabs' => 'all',
+            'toolbar' => 'full',
+            'media_upload' => 1,
+            'delay' => 0,
   				),
   			),
   		),
   		array(
   			'key' => 'field_60402b4f6fef9',
-  			'label' => 'Category 2 Name',
-  			'name' => 'category_2_name',
+  			'label' => 'Category 2 Locations',
+        'name' => 'category_2_locations',
   			'type' => 'group',
   			'instructions' => '',
   			'required' => 0,
@@ -1928,7 +1929,7 @@ if( function_exists('acf_add_local_field_group') ):
   					'key' => 'field_60402b4f6fefd',
   					'label' => 'Address',
   					'name' => 'address',
-  					'type' => 'google_map',
+  					'type' => 'wysiwyg',
   					'instructions' => '',
   					'required' => 0,
   					'conditional_logic' => 0,
@@ -1937,10 +1938,11 @@ if( function_exists('acf_add_local_field_group') ):
   						'class' => '',
   						'id' => '',
   					),
-  					'center_lat' => '',
-  					'center_lng' => '',
-  					'zoom' => '',
-  					'height' => '',
+  					'default_value' => '',
+              'tabs' => 'all',
+              'toolbar' => 'full',
+              'media_upload' => 1,
+              'delay' => 0,
   				),
   				array(
   					'key' => 'field_60402b4f6fefe',
@@ -1967,8 +1969,8 @@ if( function_exists('acf_add_local_field_group') ):
   		),
   		array(
   			'key' => 'field_60402b576feff',
-  			'label' => 'Category 2 Locations',
-  			'name' => 'category_2_locations',
+  			'label' => 'Category 2 Name',
+  			'name' => 'category_2_name',
   			'type' => 'group',
   			'instructions' => '',
   			'required' => 0,
@@ -2174,23 +2176,120 @@ if( function_exists('acf_add_local_field_group') ):
   	'active' => true,
   	'description' => '',
   ));
+?>
 
-  endif;
-
-
-  function my_acf_init() {
-    acf_update_setting('google_api_key', 'AIzaSyBXIsJLL3X3SPSIH3pSoTtiBK4iTeMyu10');
-  }
-  add_action('acf/init', 'my_acf_init');
-
-  function google_maps_scripts() {
-    if (!is_admin()) {
-      wp_register_script('googlemapsapi', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBXIsJLL3X3SPSIH3pSoTtiBK4iTeMyu10', array(), '', false);
-        wp_enqueue_script('googlemapsapi');
-        
-        wp_register_script('gmaps-init', get_stylesheet_directory_uri().'/js/google-maps.js', array(), '', false);
-        wp_enqueue_script('gmaps-init');
-    } 
-  }
+<?php
+  function firstRow($num) {
+    if (have_rows('category_'.$num.'_locations')) : //have rows goes through parent category
+      while (have_rows('category_'.$num.'_locations')) : the_row(); //have rows goes through parent category again
   
-  add_action('wp_enqueue_scripts', 'google_maps_scripts', 100);
+        $c2PhoneNumber = get_sub_field('phone_number'); //var
+        $c2Address = get_sub_field('address'); //var
+        $c2LocationName = get_sub_field('location_name'); //var image
+  
+      endwhile; //end while
+    else : //else
+    // no rows found
+    endif; //end if
+
+    if (have_rows('category_'.$num.'_name')) : //have rows goes through parent category
+      while (have_rows('category_'.$num.'_name')) : the_row(); //have rows goes through parent category again
+  
+        $count = count(get_field('category_'.$num.'_name')); //Counts the number of fields in the group.
+        $i = 1; //var to count loops
+        $titleC1 = get_sub_field('title'); //var
+        $category_descriptionC1 = get_sub_field('category_discription');
+?>
+      <div class="row mt-5 no-gutters">
+
+        <div class="col-lg-6 left-side">
+          <!-- title of description -->
+          <h3 class="mb-4"><?php echo $titleC1; ?></h3>
+
+          <!-- description of category -->
+          <p class="mb-4"><?php echo $category_descriptionC1; ?></p>
+
+          <?php while ($i <= ($count/2)-1) : //Loop and logic to remove unnecessary looping 
+
+            $c1URLTITLE = get_sub_field('location_'.$i.'_title');
+            $c1URL = get_sub_field('location_'.$i.'');
+          ?>
+            <h4><a href="<?php echo $c1URL; ?>"><?php echo $c1URLTITLE; ?></a></h4>
+            <?php $i++; ?><!-- increment loop counter -->
+          <?php endwhile ?>
+        </div> <!-- End Col -->
+
+        <div class="col-lg-6 right-side">
+          <h3 class="mb-4"><?php echo $c2LocationName; ?></h3>
+          <!-- call the description text of the right side -->
+          <p class="mb-4"><?php echo $c2PhoneNumber; ?></p>
+          <p class="mb-4"><?php echo $c2Address; ?></p>
+
+        </div><!-- end col -->
+      </div>
+    <?php endwhile ?>
+  <?php endif?>
+<?php
+  }
+?>
+
+
+
+<?php
+  function secondRow($num){
+  
+    if (have_rows('category_'.$num.'_locations')) : //have rows goes through parent category
+      while (have_rows('category_'.$num.'_locations')) : the_row(); //have rows goes through parent category again
+  
+        $c3PhoneNumber = get_sub_field('phone_number'); //var
+        $where = get_sub_field('address'); //var
+        $c3LocationName = get_sub_field('location_name'); //var image
+  
+      endwhile; //end while
+    else : //else
+    // no rows found
+    endif; //end if
+    //Elise
+
+    if (have_rows('category_'.$num.'_name')) : //have rows goes through parent category
+      while (have_rows('category_'.$num.'_name')) : the_row();  //have rows goes through parent category again
+  
+        $count = count(get_field('category_'.$num.'_name')); //Counts the number of fields in the group.
+        $i = 1; //var to count loops
+        $titleC4 = get_sub_field('title'); //var
+        $category_descriptionC4 = get_sub_field('category_discription'); //var
+?>
+        <div class="row no-gutters">
+
+        <div class="col-lg-6 right-side">
+          <h3 class="mb-4"><?php echo $c3LocationName; ?></h3>
+          
+          <!-- call the description text of the right side -->
+          <p class="mb-4"><?php echo $c3PhoneNumber; ?></p>
+          <p class="mb-4"><?php echo $where; ?></p>
+
+        </div><!-- end col -->
+
+        <div class="col-lg-6 left-side">
+          <!-- title of description -->
+          <h3 class="mb-4"><?php echo $titleC4; ?></h3>
+
+          <!-- description of category -->
+          <p class="mb-4"><?php echo $category_descriptionC4; ?></p>
+
+          <?php while ($i <= ($count/2)-1) : //Loop and logic to remove unnecessary looping 
+
+            $c4URLTITLE = get_sub_field('location_'.$i.'_title');
+            $c4URL = get_sub_field('location_'.$i.''); ?>
+
+            <h4><a href="<?php echo $c4URL; ?>"><?php echo $c4URLTITLE; ?></a></h4>
+
+            <?php $i++; ?> <!-- increment loop counter -->
+          <?php endwhile ?>
+        </div> <!-- End Col -->
+      </div>
+    <?php endwhile ?>
+  <?php endif ?>
+<?php
+  }
+?>
