@@ -1657,8 +1657,8 @@ if( function_exists('acf_add_local_field_group') ):
   		),
   		array(
   			'key' => 'field_603ac1c96a35a',
-  			'label' => 'Category 1',
-  			'name' => 'category_1',
+  			'label' => 'Category 1 Name',
+  			'name' => 'category_1_name',
   			'type' => 'group',
   			'instructions' => '',
   			'required' => 0,
@@ -1817,8 +1817,8 @@ if( function_exists('acf_add_local_field_group') ):
   		),
   		array(
   			'key' => 'field_603ad9f9c336c',
-  			'label' => 'Category 2',
-  			'name' => 'category_2',
+  			'label' => 'Category 1 Locations',
+  			'name' => 'category_1_Locations',
   			'type' => 'group',
   			'instructions' => '',
   			'required' => 0,
@@ -1892,8 +1892,8 @@ if( function_exists('acf_add_local_field_group') ):
   		),
   		array(
   			'key' => 'field_60402b4f6fef9',
-  			'label' => 'Category 3',
-  			'name' => 'category_3',
+  			'label' => 'Category 2 Name',
+  			'name' => 'category_2_name',
   			'type' => 'group',
   			'instructions' => '',
   			'required' => 0,
@@ -1967,8 +1967,8 @@ if( function_exists('acf_add_local_field_group') ):
   		),
   		array(
   			'key' => 'field_60402b576feff',
-  			'label' => 'Category 4',
-  			'name' => 'category_4',
+  			'label' => 'Category 2 Locations',
+  			'name' => 'category_2_locations',
   			'type' => 'group',
   			'instructions' => '',
   			'required' => 0,
