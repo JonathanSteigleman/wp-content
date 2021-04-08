@@ -106,7 +106,6 @@ acf_add_local_field_group('Page Template Category Heading');
 
 
 
-
   <div class="col-lg-6 col-md-auto col-sm-auto">
       <div class="card">
 
@@ -116,11 +115,11 @@ acf_add_local_field_group('Page Template Category Heading');
 
             <img class="contact_image" src="<?php echo $contact_image['url'] ?>" title="<?php echo ($contact_image['title']); ?>" alt="<?php echo ($contact_image['alt']); ?>" />
 
-            <ul> <!-- Unordered list to provide spacing -->
-                <li> <p><?php echo $contact_name ?></p> </li>                 <!-- display's contact name -->
-                <li> <p><?php echo $contact_street_address ?></p> </li>       <!-- display contact address -->
-                <li> <p><?php echo $contact_city_zip_state ?></p> </li>       <!-- display's conatact address -->
-                <li> <p><?php echo $contact_number ?></p> </li>               <!-- should display phone number when fixed -->
+            <ul class= "no-bullets">> <!-- Unordered list to provide spacing -->
+                <li> <?php echo $contact_name ?> </li>                 <!-- display's contact name -->
+                <li> <?php echo $contact_street_address ?> </li>       <!-- display contact address -->
+                <li> <?php echo $contact_city_zip_state ?> </li>       <!-- display's conatact address -->
+                <li> <?php echo $contact_number ?> </li>               <!-- should display phone number when fixed -->
             </ul> <!-- Unordered list to provide spacing -->
 
           </div><!-- end card body div -->
