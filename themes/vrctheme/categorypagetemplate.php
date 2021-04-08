@@ -115,7 +115,7 @@ acf_add_local_field_group('Page Template Category Heading');
 
             <img class="contact_image" src="<?php echo $contact_image['url'] ?>" title="<?php echo ($contact_image['title']); ?>" alt="<?php echo ($contact_image['alt']); ?>" />
 
-            <ul class= "no-bullets">> <!-- Unordered list to provide spacing -->
+            <ul class= "no-bullets"> <!-- Unordered list to provide spacing -->
                 <li> <?php echo $contact_name ?> </li>                 <!-- display's contact name -->
                 <li> <?php echo $contact_street_address ?> </li>       <!-- display contact address -->
                 <li> <?php echo $contact_city_zip_state ?> </li>       <!-- display's conatact address -->
