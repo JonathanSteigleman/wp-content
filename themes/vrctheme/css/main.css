@@ -229,12 +229,20 @@ div.col-lg-6.right-side {
     padding: 10rem 5rem 8rem 5rem;
 }
 
-img.col-md-2.align-center.pr-0.credit_card {
-    min-width: 50px;
-    max-width: 60px;
-    height: auto;
+ul.credit.pt-2 {
+    list-style-type: none;
+    padding-left: 0px;
 }
 
+ul.credit li {
+    display: inline;
+}
+
+img.col-md-2.align-center.credit_card {
+    width: 50px;
+    height: auto;
+    padding: 5px;
+}
 /* End Front Page Styling*/
 
 
