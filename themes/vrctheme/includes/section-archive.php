@@ -1,5 +1,7 @@
 <!--pull content from the database if there is content to pull-->
-<?php if( have_posts() ): while( have_posts() ): the_post();?>
+<?php 
+
+if( have_posts() ): while( have_posts() ): the_post();?>
 
     <!-- style the archives with bootstrap -->
     <div class="card mb-3">

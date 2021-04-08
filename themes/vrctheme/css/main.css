@@ -439,6 +439,27 @@ p.post_details {
     color:#707070;
 }
 
+a.page-numbers {
+    color: #212529;
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: .25rem;
+    padding: 5px 15px;
+}
+
+a.page-numbers:hover {
+    background-color: #e8e8e8;
+    text-decoration: none;
+}
+
+span.page-numbers.current {
+    color: #1E3B7C;
+    background-color: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    border-radius: .25rem;
+    padding: 5px 15px;
+}
+
 /*
 ** Contact image control, no large images
 */
