@@ -89,8 +89,8 @@ acf_add_local_field_group('Page Template Category Heading');
             $contact_info = get_sub_field('contact_info'); //puts contact info (the contact header) into a variable
             $contact_image = get_sub_field('image'); //var
             $contact_name = get_sub_field('name'); //var
-            $contact_address = get_sub_field('address'); //var
-            $contact_image = get_sub_field('image'); //var image
+            $contact_street_address = get_sub_field('street_address'); //var
+            $contact_city_zip_state = get_sub_field('city_zip_state'); //var
             $contact_number = get_sub_field('number'); //var
             //number field will go here, the field is the wrong type, currently
             //this needs to be fixed at some point
@@ -105,7 +105,6 @@ acf_add_local_field_group('Page Template Category Heading');
 
 
 
-
   <div class="col-lg-6 col-md-auto col-sm-auto">
       <div class="card">
 
@@ -115,10 +114,12 @@ acf_add_local_field_group('Page Template Category Heading');
 
             <img class="contact_image" src="<?php echo $contact_image['url'] ?>" title="<?php echo ($contact_image['title']); ?>" alt="<?php echo ($contact_image['alt']); ?>" />
 
-            <ul> <!-- Unordered list to provide spacing -->
-                <p><?php echo $contact_name ?></p>      <!-- display's contact name -->
-                <p><?php echo $contact_address ?></p>      <!-- display's conatact address -->
-                <p><?php echo $contact_number ?></p>       <!-- should display phone number when fixed -->
+
+            <ul class= "no-bullets"> <!-- Unordered list to provide spacing -->
+                <li> <?php echo $contact_name ?> </li>                 <!-- display's contact name -->
+                <li> <?php echo $contact_street_address ?> </li>       <!-- display contact address -->
+                <li> <?php echo $contact_city_zip_state ?> </li>       <!-- display's conatact address -->
+                <li> <?php echo $contact_number ?> </li>               <!-- should display phone number when fixed -->
             </ul> <!-- Unordered list to provide spacing -->
 
           </div><!-- end card body div -->
@@ -130,7 +131,6 @@ acf_add_local_field_group('Page Template Category Heading');
 </div><!-- end container -->
 
 <?php
-
 $fields = count(acf_get_fields('group_6045119685af7'));
 $tracker = 1;
 for($i = 1; $i < $fields; $i++){
@@ -142,7 +142,6 @@ for($i = 1; $i < $fields; $i++){
     }
     $tracker++;
   }
-
 ?>
       
   <!-- end content section -->

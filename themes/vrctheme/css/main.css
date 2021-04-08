@@ -482,10 +482,13 @@ img.contact_image
 FOR THE LIST OF CONTACT FIELD (no more bullets)
 **
 */
-.page-categorypagetemplate
+ul.no-bullets
 {
     list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
+
 /* ----------------- */
 
 .acf-map {
@@ -658,10 +661,6 @@ FOR THE LIST OF CONTACT FIELD (no more bullets)
     div #announcements p {
         font-size: .90rem;
     }
-
-    /*header div.jumbotron-fluid .row {
-        padding: 100px 50px 75px 50px !important;
-    }*/
 
     div.jumbotron-fluid .row {
         padding: 100px 25px 25px 25px !important;

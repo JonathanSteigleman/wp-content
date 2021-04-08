@@ -231,6 +231,10 @@ function relevanssi_populate_array( $matches, $blog_id = -1 ) {
 		$blog_id = get_current_blog_id();
 	}
 
+	if ( -1 === $blog_id ) {
+		$blog_id = get_current_blog_id();
+	}
+
 	// Doing this makes life faster.
 	wp_suspend_cache_addition( true );
 
