@@ -495,12 +495,16 @@ img.contact_image
 /*
 FOR THE LIST OF CONTACT FIELD (no more bullets)
 **
-*/
+
 .page-categorypagetemplate
+*/
+ul.no-bullets
 {
-    list-style-type: none ;
-    padding-left: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
+
 /* ----------------- */
 
 .acf-map {
