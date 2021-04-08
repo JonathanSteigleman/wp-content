@@ -296,21 +296,8 @@ img.col-md-2.align-center.credit_card {
   /* IE 10+ */
   color: #707070;
 }
-
-@media screen and (max-width: 600px){
-  .contact-form{
-    flex-direction: column;
-  }
-  .contact-form .msg textarea{
-    height: 80px;
-  }
-  .contact-form .input-fields,
-  .msg{
-    width: 100%;
-  }
-}
-/* End Contact Form Appearance*/
-
+/* end contact-form
+** see media queries for other stylings*/
 
 button.btn.btn-default {
     border: 2px solid #162c5a;
@@ -588,7 +575,6 @@ FOR THE LIST OF CONTACT FIELD (no more bullets)
         position: absolute;
         top: 0;
         right: 0;
-        /*box-shadow: -2px 0px 10px 0 #707070;*/
         z-index: 999;
     }
 
