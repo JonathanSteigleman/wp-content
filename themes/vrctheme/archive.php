@@ -10,16 +10,9 @@ get_header();
 <div class="page-wrap pb-5">
 <div class="container">
 
-    <h2><?php get_the_archive_title();?></h2>
+    <h2><?php single_cat_title();?></h2>
     <!-- get the content of the page -->
     <?php get_template_part('includes/section', 'archive');?>
-
-    <?php
-
-//    previous_posts_link();
-  //  next_posts_link();
-
-    ?>
 
     <div class="row justify-content-center">
         <div class="col-md-auto">
