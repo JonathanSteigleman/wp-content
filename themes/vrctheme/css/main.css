@@ -1,5 +1,5 @@
 
-/* 
+/*
 ** Styles for the entire site
 ** Allows all styling to be in one area and keeps the code cleaner
 */
@@ -8,7 +8,7 @@
 h1 {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 4rem;
-    font-weight: 600;
+    font-weight: 400;
     color: #1E3B7C;
 }
 
@@ -21,14 +21,14 @@ h2 {
 
 h3 {
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight: 500;
     color: #0F9647;
 }
 
 h4 {
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 500;
     color: #0F9647;
 }
@@ -48,13 +48,13 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: medium;
 }
-/* End styles for entire site */ 
+/* End styles for entire site */
 
 /* Styling for the site header */
 header {
-    background: #F5F5F5;
+    background: #FFFFFF;
     width: 100%;
-    height: 60px;
+    height: 110px;
     box-shadow: 0px 2px 2px #DEDCDC;
 }
 
@@ -70,16 +70,27 @@ header .main-menu {
     display: flex;
 }
 
+
 header .container{
     height: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+header div.container {
+    align-items: center;
+}
+
+header div.container div.menu-main-menu-container{
+    background-color: #ffffff;
+    height: auto;
     align-items: center;
 }
 
 header .main-menu li a {
     display: block;
-    padding:1rem 1rem;
+    padding:.6rem 1.5rem;
     color: #707070;
     text-decoration: none;
     border-bottom: solid transparent;
@@ -87,7 +98,6 @@ header .main-menu li a {
 
 header .main-menu li a:hover{
     color: #1E3B7C;
-    background-color: #e8e8e8;
     border-bottom: solid #1E3B7C;
 }
 
@@ -98,14 +108,15 @@ header .main-menu li{
 header .main-menu li .sub-menu {
     display: none;
     position: absolute;
+    z-index: 99999;
     top: 100%;
     left: 0;
-    background-color: #e8e8e8;
+    background-color: #FFFFFF;
     box-shadow: 2px 2px 2px #DEDCDC;
     padding: .25rem 1rem;
     list-style-type: none;
     width: 300px;
-    border-radius: 0px 20px 9px;
+    border: 1px solid #DEDCDC;
 }
 
 header .main-menu li .sub-menu a{
@@ -117,113 +128,23 @@ header .main-menu li .sub-menu a{
 header .main-menu li .sub-menu a:hover{
     border-bottom: solid 1px #DEDCDC;
     color: #1E3B7C;
+    font-weight: 600;
 }
 
 header .main-menu .menu-item-has-children:hover .sub-menu {
-    display: block;  
-}
-
-
-/*Header Logo Styles*/
-.site-logo {
-    margin-right: auto;
-}
-
-.site-logo .custom-logo-link {
-    border-radius: 4px;
-    box-sizing: content-box;
-    box-shadow: 0 0 0 0 transparent;
     display: block;
-    height: 50px;
-    overflow: hidden;
-}
-  
-.site-logo .custom-logo-link .custom-logo {
-    max-height: 50px;
-    width: inherit;
-}
-  
-.site-logo .custom-logo-link:hover, .site-logo .custom-logo-link:active, .site-logo .custom-logo-link:focus {
-    cursor: pointer;
 }
 
-/*Makes the responsive menu invisible when the screen is over 1200px wide*/
-@media (min-width: 1200px) {
-  .main-menu-responsive {
-      display: none;
-  }
-
-  a.icon {
-      display: none;
-  }
+.main-menu li.current_page_item  a {
+    color: #1E3B7C;
+    border-bottom: solid 3px #1E3B7C;
 }
 
-/*Responsive Navigation Menu*/
-@media (max-width: 1200px) {
-    header .main-menu {
-        display: none;
-    }
-
-    #responsiveMenu {
-        display: none;
-        width: 75%;
-        height: 100%;
-        padding: 50px 0px 50px 50px;
-        text-align: left;
-        background-color: #DEDCDC;
-        position: absolute;
-        top: 0;
-        right: 0;
-        box-shadow: -2px 0px 10px 0 #707070;
-        z-index: 999;
-    }
-
-    #responsiveMenu li {
-        position: relative;
-        list-style-type: none;
-    }
-
-    #responsiveMenu a {
-        display: inline-block;
-        left: 0;
-        color: #1E3B7C;
-        padding: 1rem 2rem;
-        width: 100%;
-        text-decoration: none;
-        border-bottom: solid 1px #ccc;
-    }
-
-    #responsiveMenu a:hover {
-        box-shadow: -2px -2px 5px 0 #ccc, 2px 2px 5px 0 #707070;
-        border-bottom: solid 2px transparent;
-    }
-
-    #responsiveMenu a:active {
-        box-shadow: inset -2px -2px 5px 0 #f5f5f5, inset 2px 2px 5px 0 #ccc, -2px -2px 5px 0 #ccc, 2px 2px 5px 0 #f5f5f5;
-        border-bottom: solid 2px transparent;
-    }
-    
-    a.icon {
-      position: absolute;
-      z-index: 1000;
-      color: #1E3B7C;
-      background-color: #F5F5F5;
-      border-radius: 2px;
-      padding: .5rem .75rem;
-      text-decoration: none;
-      box-shadow: 2px 2px 5px 0 #DEDCDC, -2px -2px 5px 0 #ccc;
-    }
-
-    a.icon:hover {
-      background-color: #e8e8e8;
-      box-shadow: inset -2px -2px 5px 0 #DEDCDC 20%, inset 2px 2px 5px 0 #707070 70%, -2px -2px 5px 0 #707070 70%, 2px 2px 5px 0 #DEDCDC 20%;
-      cursor: pointer;
-    }
-
-    a.icon:active {
-        box-shadow: -2px -2px 5px 0 #ccc, 2px 2px 5px 0 #F5F5F5;
-    }
+.main-menu-responsive li.current_page_item a {
+    color: #1E3B7C;
+    background-color: #F5F5F5;
 }
+
 
 /*
 ** Footer Styling
@@ -245,7 +166,7 @@ footer ul{
 }
 
 footer li{
-    padding: .25rem; 
+    padding: .25rem;
 }
 
 .other-links li{
@@ -283,7 +204,7 @@ div #announcements {
     padding: 75px 25px 25px 25px;
     border-radius: 5px;
     background: rgba( 232, 232, 232, .6);
-    backdrop-filter: blur(10px); 
+    backdrop-filter: blur(10px);
     box-shadow: 2px 0px 10px 0 #707070;
 }
 
@@ -308,6 +229,20 @@ div.col-lg-6.right-side {
     padding: 10rem 5rem 8rem 5rem;
 }
 
+ul.credit.pt-2 {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+ul.credit li {
+    display: inline;
+}
+
+img.col-md-2.align-center.credit_card {
+    width: 50px;
+    height: auto;
+    padding: 5px;
+}
 /* End Front Page Styling*/
 
 
@@ -361,44 +296,71 @@ div.col-lg-6.right-side {
   /* IE 10+ */
   color: #707070;
 }
+/* end contact-form
+** see media queries for other stylings*/
 
-@media screen and (max-width: 600px){
-  .contact-form{
-    flex-direction: column;
-  }
-  .contact-form .msg textarea{
-    height: 80px;
-  }
-  .contact-form .input-fields,
-  .msg{
-    width: 100%;
-  }
+button.btn.btn-default {
+    border: 2px solid #162c5a;
+    width: 200px;
+    color: #162c5a;
 }
-/* End Contact Form Appearance*/
 
-button.btn.btn-primary {
+button.btn.btn-default:hover {
+    border: 2px solid #162c5a;
     background-color: #1E3B7C;
-    border: 1px solid #1E3B7C;
+    color: #F5F5F5;
 }
 
-button.btn.btn-primary:hover {
-    background-color: #162c5a;
-    border: 1px solid #162c5a;
-}
-
-/* Indicidual page template CSS
-    Jaxon Harvey (not being used currently)
+/*
+** STYLE SEARCH FORM
+** Resource: https://5balloons.info/customise-search-widget-wordpress/
+** Kali Crockett (Nowak)
 */
+form.search-form {
+	position: relative;
+}
 
-body 
-{
-    font-family: Arial;
-    padding: 20px;
-    background: #f1f1f1;
+form.search-form input.search-field {
+	width: 100%;
+	border: 1px solid #0F9647;
+    border-radius: 20px;
+	padding: 10px 15px;
+	padding-right: 55px;
+	font-size: 14px;
+}
+
+form.search-form input.search-field::placeholder{
+    color:#0F9647;
+}
+
+form.search-form input.search-field:focus{
+    border: 1.5px solid #0F9647;
+    border-radius: 20px;
+}
+
+footer form.search-form button.search-submit {
+    height: 100%;
+}
+
+form.search-form button.search-submit {
+	position: absolute;
+	height: 100%;
+	right: 0;
+	top: 0;
+	border: none;
+	width: 50px;
+	color: #0F9647;
+	background-color: transparent;
+	cursor: pointer;
+	-webkit-transform: rotateY(180deg);
+	        transform: rotateY(180deg);
+}
+.bg-cover {
+    background-size: cover !important;
 }
 
 /* Header Title */
-.header 
+.header
 {
     padding: 30px;
     font-size: 40px;
@@ -408,21 +370,21 @@ body
 
 /* Create two unequal columns that floats next to each other */
 /* Left column */
-.leftColumn 
+.leftColumn
 {
     float: left;
     padding-left: 20px;
 }
 
   /* Right column */
-.rightColumn 
+.rightColumn
 {
     float: right;
     padding-right: 20px;
 }
 
 /* Fake image */
-.fakeImage 
+.fakeImage
 {
     background-color: #aaa;
     width: 100%;
@@ -430,32 +392,35 @@ body
 }
 
 /* Add a card effect for articles */
-.card 
+.card
 {
     background-color: white;
     padding: 20px;
     margin-top: 20px;
 }
-  
+
 /* Clear floats after the columns */
-.row:after 
+.row:after
 {
     content: "";
     display: table;
     clear: both;
 }
-  
+
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) 
+/* THIS IS AUTO DONE WITH THE COLUMNS AND ROWS OF BOOTSTRAP
+** MESS WITH THE COL-MD AND COL-SM TO DO THIS WITHOUT HAVING TO UPDATE HERE
+*/
+@media screen and (max-width: 800px)
 {
-    .leftColumn, .rightColumn 
+    .leftColumn, .rightColumn
     {
     width: 100%;
     padding: 0;
     }
 }
 
-.column 
+.column
 {
     width: 50%;
 }
@@ -474,12 +439,33 @@ p.post_details {
     color:#707070;
 }
 
+a.page-numbers {
+    color: #212529;
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: .25rem;
+    padding: 5px 15px;
+}
+
+a.page-numbers:hover {
+    background-color: #e8e8e8;
+    text-decoration: none;
+}
+
+span.page-numbers.current {
+    color: #1E3B7C;
+    background-color: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    border-radius: .25rem;
+    padding: 5px 15px;
+}
+
 /*
 ** Contact image control, no large images
 */
 img.contact_image
 {
-    width: 25%;
+    width: 20%;
     height: auto;
 }
 
@@ -495,8 +481,6 @@ img.contact_image
 /*
 FOR THE LIST OF CONTACT FIELD (no more bullets)
 **
-
-.page-categorypagetemplate
 */
 ul.no-bullets
 {
@@ -615,7 +599,6 @@ ul.no-bullets
         position: absolute;
         top: 0;
         right: 0;
-        /*box-shadow: -2px 0px 10px 0 #707070;*/
         z-index: 999;
     }
 
@@ -678,10 +661,6 @@ ul.no-bullets
     div #announcements p {
         font-size: .90rem;
     }
-
-    /*header div.jumbotron-fluid .row {
-        padding: 100px 50px 75px 50px !important;
-    }*/
 
     div.jumbotron-fluid .row {
         padding: 100px 25px 25px 25px !important;

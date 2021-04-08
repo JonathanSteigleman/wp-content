@@ -1,0 +1,19 @@
+# Apache 2.2
+<IfModule !mod_authz_core.c>
+	<IfModule mod_rewrite.c>
+		<FilesMatch "start\.php|proxy\.php|leaflet-api\.php|leaflet-download\.php|leaflet-fullscreen\.php|leaflet-geojson\.php|leaflet-georss\.php|leaflet-geositemap\.php|leaflet-kml\.php|leaflet-qr\.php|changelog\.php">
+		RewriteEngine On
+		Allow from all
+		</FilesMatch>
+	</IfModule>
+</IfModule>
+
+# Apache 2.4
+<IfModule mod_authz_core.c>
+	<IfModule mod_rewrite.c>
+		<FilesMatch "start\.php|proxy\.php|leaflet-api\.php|leaflet-download\.php|leaflet-fullscreen\.php|leaflet-geojson\.php|leaflet-georss\.php|leaflet-geositemap\.php|leaflet-kml\.php|leaflet-qr\.php|changelog\.php">
+		RewriteEngine On
+	    Require all granted
+		</FilesMatch>
+	</IfModule>
+</IfModule>

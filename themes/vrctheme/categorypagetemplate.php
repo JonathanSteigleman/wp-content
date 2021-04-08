@@ -91,7 +91,6 @@ acf_add_local_field_group('Page Template Category Heading');
             $contact_name = get_sub_field('name'); //var
             $contact_street_address = get_sub_field('street_address'); //var
             $contact_city_zip_state = get_sub_field('city_zip_state'); //var
-            // $contact_image = get_sub_field('image'); // Repeating??
             $contact_number = get_sub_field('number'); //var
             //number field will go here, the field is the wrong type, currently
             //this needs to be fixed at some point
@@ -115,6 +114,7 @@ acf_add_local_field_group('Page Template Category Heading');
 
             <img class="contact_image" src="<?php echo $contact_image['url'] ?>" title="<?php echo ($contact_image['title']); ?>" alt="<?php echo ($contact_image['alt']); ?>" />
 
+
             <ul class= "no-bullets"> <!-- Unordered list to provide spacing -->
                 <li> <?php echo $contact_name ?> </li>                 <!-- display's contact name -->
                 <li> <?php echo $contact_street_address ?> </li>       <!-- display contact address -->
@@ -131,123 +131,6 @@ acf_add_local_field_group('Page Template Category Heading');
 </div><!-- end container -->
 
 <?php
-  function firstRow($num) {
-    if (have_rows('category_'.$num.'_locations')) : //have rows goes through parent category
-      while (have_rows('category_'.$num.'_locations')) : the_row(); //have rows goes through parent category again
-  
-        $c2PhoneNumber = get_sub_field('phone_number'); //var
-        $c2Address = get_sub_field('address'); //var
-        $c2LocationName = get_sub_field('location_name'); //var image
-  
-      endwhile; //end while
-    else : //else
-    // no rows found
-    endif; //end if
-
-    if (have_rows('category_'.$num.'_name')) : //have rows goes through parent category
-      while (have_rows('category_'.$num.'_name')) : the_row(); //have rows goes through parent category again
-  
-        $count = count(get_field('category_'.$num.'_name')); //Counts the number of fields in the group.
-        $i = 1; //var to count loops
-        $titleC1 = get_sub_field('title'); //var
-        $category_descriptionC1 = get_sub_field('category_discription');
-?>
-      <div class="row mt-5 no-gutters">
-
-        <div class="col-lg-6 left-side">
-          <!-- title of description -->
-          <h3 class="mb-4"><?php echo $titleC1; ?></h3>
-
-          <!-- description of category -->
-          <p class="mb-4"><?php echo $category_descriptionC1; ?></p>
-
-          <?php while ($i <= ($count/2)-1) : //Loop and logic to remove unnecessary looping 
-
-            $c1URLTITLE = get_sub_field('location_'.$i.'_title');
-            $c1URL = get_sub_field('location_'.$i.'');
-          ?>
-            <h4><a href="<?php echo $c1URL; ?>"><?php echo $c1URLTITLE; ?></a></h4>
-            <?php $i++; ?><!-- increment loop counter -->
-          <?php endwhile ?>
-        </div> <!-- End Col -->
-
-        <div class="col-lg-6 right-side">
-          <h3 class="mb-4"><?php echo $c2LocationName; ?></h3>
-          <!-- call the description text of the right side -->
-          <p class="mb-4"><?php echo $c2PhoneNumber; ?></p>
-          <p class="mb-4"><?php echo $c2Address; ?></p>
-
-        </div><!-- end col -->
-      </div>
-    <?php endwhile ?>
-  <?php endif?>
-<?php
-  }
-?>
-
-
-
-<?php
-  function secondRow($num){
-  
-    if (have_rows('category_'.$num.'_locations')) : //have rows goes through parent category
-      while (have_rows('category_'.$num.'_locations')) : the_row(); //have rows goes through parent category again
-  
-        $c3PhoneNumber = get_sub_field('phone_number'); //var
-        $where = get_sub_field('address'); //var
-        $c3LocationName = get_sub_field('location_name'); //var image
-  
-      endwhile; //end while
-    else : //else
-    // no rows found
-    endif; //end if
-    //Elise
-
-    if (have_rows('category_'.$num.'_name')) : //have rows goes through parent category
-      while (have_rows('category_'.$num.'_name')) : the_row();  //have rows goes through parent category again
-  
-        $count = count(get_field('category_'.$num.'_name')); //Counts the number of fields in the group.
-        $i = 1; //var to count loops
-        $titleC4 = get_sub_field('title'); //var
-        $category_descriptionC4 = get_sub_field('category_discription'); //var
-?>
-        <div class="row no-gutters">
-
-        <div class="col-lg-6 right-side">
-          <h3 class="mb-4"><?php echo $c3LocationName; ?></h3>
-          
-          <!-- call the description text of the right side -->
-          <p class="mb-4"><?php echo $c3PhoneNumber; ?></p>
-          <p class="mb-4"><?php echo $where; ?></p>
-
-        </div><!-- end col -->
-
-        <div class="col-lg-6 left-side">
-          <!-- title of description -->
-          <h3 class="mb-4"><?php echo $titleC4; ?></h3>
-
-          <!-- description of category -->
-          <p class="mb-4"><?php echo $category_descriptionC4; ?></p>
-
-          <?php while ($i <= ($count/2)-1) : //Loop and logic to remove unnecessary looping 
-
-            $c4URLTITLE = get_sub_field('location_'.$i.'_title');
-            $c4URL = get_sub_field('location_'.$i.''); ?>
-
-            <h4><a href="<?php echo $c4URL; ?>"><?php echo $c4URLTITLE; ?></a></h4>
-
-            <?php $i++; ?> <!-- increment loop counter -->
-          <?php endwhile ?>
-        </div> <!-- End Col -->
-      </div>
-    <?php endwhile ?>
-  <?php endif ?>
-<?php
-  }
-?>
-
-<?php
-
 $fields = count(acf_get_fields('group_6045119685af7'));
 $tracker = 1;
 for($i = 1; $i < $fields; $i++){
@@ -259,7 +142,6 @@ for($i = 1; $i < $fields; $i++){
     }
     $tracker++;
   }
-
 ?>
       
   <!-- end content section -->

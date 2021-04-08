@@ -19,27 +19,7 @@
  -->
 
 <header>
-<div class="container">
-            
-            <div class="site-logo">
-                <!--Have the logo link to the home page of the website-->
-                <a class="home" href="<?php echo get_home_url(); ?>"> 
-                <?php 
-                    if ( function_exists( 'the_custom_logo' ) ) {
-                        the_custom_logo();
-                    }
-                ?>
-                </a>
-            </div>
-                
-            <?php
-                wp_nav_menu(        
-                    array(        
-                        'theme_location' => 'top-menu',        
-                        'menu_class' => 'main-menu'        
-                    )
-                );
-            ?>       
+<div class="container-xl pt-2">
         
         <a class="icon" onclick="showMobileNav()"><i class="fa fa-bars"></i></a>
         <!--<a class="closeIcon" onclick=""></a><i class="fa fa-times" aria-hidden="true"></i>-->
@@ -52,6 +32,34 @@
                 )
             );
         ?> 
+        
+        <div class="row">
+            <div class="site-logo small-screen-logo col-md-8 col-sm-12 col-12">
+                <!--Have the logo link to the home page of the website-->
+                <a class="home" href="<?php echo get_home_url(); ?>">
+                <?php 
+                    if ( function_exists( 'the_custom_logo' ) ) {
+                        the_custom_logo();
+                    }
+                ?>
+                </a>
+            </div>
+        <div class="col-md-4">
+            <?php get_search_form(); ?>
         </div>
-    
+        
+        </div>
+        
+        
+        <div class="container justify-content-center">
+        <?php
+                wp_nav_menu(        
+                    array(        
+                        'theme_location' => 'top-menu',        
+                        'menu_class' => 'main-menu'        
+                    )
+                );
+            ?>       
+        </div>
+    </div>
 </header>

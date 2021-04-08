@@ -21,8 +21,8 @@
 <!-- The Hero area at the top of the Page -->
 <div class="jumbotron-fluid" style="background:  linear-gradient(rgba(112, 112, 112, 0.45), rgba(245, 245, 245, 0.5)), url(<?php the_field('hero_image');?>); background-size:cover;">
     <div class="row align-items-start">
-        <div class="container">
-            <div class="col-lg-5 col-md-9 col-sm-12" id="announcements">
+        <div class="container-fluid">
+            <div class="col-lg-5 col-md-10 col-sm-12" id="announcements">
                 <!-- Place the Heading from the Home ACF group -->
                 <h3><?php the_field('hero_heading');?></h3>
 
@@ -55,13 +55,14 @@
                 $category = "category_".$catNum;
                 // set the current category to the ACF value with the name equal to $category
                 $currentCat = get_field($category);
+                $image = $currentCat['image'];
 
                 //if there is content in this category
                 if ($currentCat): ?>
                     <div class="col-lg-4 col-md-auto col-sm-auto">
                         <div class="card">
                             <!-- get the URL of the image added in this category -->
-                            <img class="card-img-top" src="<?php echo esc_url($currentCat['image']);?>"/>
+                            <img class="card-img-top" src="<?php echo esc_url($image['url']);?>" title="<?php echo ($image['title']); ?>" alt="<?php echo ($image['alt']); ?>"/>
                             <div class="card-body">
                                 <!-- get title added in this category -->
                                 <h4><?php echo $currentCat['title'];?></h4>
@@ -96,13 +97,14 @@
                 $category = "category_".$catNum;
                 // set the current category to the ACF value with the name equal to $category
                 $currentCat = get_field($category);
+                $image = $currentCat['image'];
 
                 //if there is content in this category
                 if ($currentCat): ?>
                     <div class="col-lg-4 col-md-auto col-sm-auto">
                         <div class="card">
                             <!-- get the URL of the image added in this category -->
-                            <img class="card-img-top" src="<?php echo esc_url($currentCat['image']);?>"/>
+                            <img class="card-img-top" src="<?php echo($image['url']);?>" title="<?php echo ($image['title']); ?>" alt="<?php echo ($image['alt']); ?>"/>
                             <div class="card-body">
                                 <!-- get title added in this category -->
                                 <h4><?php echo $currentCat['title'];?></h4>
@@ -133,7 +135,24 @@
                 <!-- call the description text of the left side -->
                 <p class="mb-4"><?php echo $left_side['description'];?></p>
                 <!-- call the button URL and text of the left side -->
-                <a href="<?php echo esc_url($left_side['button_link']);?>"><button class="btn btn-primary btn-block"><?php echo $left_side['button_text'];?></button></a>
+                <a href="<?php echo esc_url($left_side['button_link']);?>"><button class="btn btn-default"><?php echo $left_side['button_text'];?></button></a>
+
+                <?php
+                //section to display the credit card information below the buttons
+                $cardNum = 1;
+                $card_type = $left_side['card_types'];
+                ?>
+                <ul class = "credit pt-2">
+                <?php while($cardNum < 7):
+                    $currentCard = ("card_".$cardNum);
+                    if(!empty($card_type[$currentCard])):?>
+                    
+                    <li><img class="col-md-2 align-center credit_card" src="<?php echo esc_url($card_type[$currentCard]['url'])?>" alt="<?php echo $card_type[$currentCard]['alt'] ?>"/></li>
+                    <?php endif;
+                        $cardNum++;
+                endwhile;?>
+                </ul>
+                
             </div><!-- end col -->
             
             <div class="col-lg-6 right-side">
@@ -142,7 +161,25 @@
                 <!-- call the description text of the right side -->
                 <p class="mb-4"><?php echo $right_side['description'];?></p>
                 <!-- call the button URL and text for the right side -->
-                <a href="<?php echo esc_url($right_side['button_link']);?>"><button class="btn btn-primary btn-block"><?php echo $right_side['button_text'];?></button></a>
+                <a href="<?php echo esc_url($right_side['button_link']);?>"><button class="btn btn-default"><?php echo $right_side['button_text'];?></button></a>
+
+                
+                <?php
+                //section to display the credit card information below the buttons
+                $cardNum = 1;
+                $card_type = $right_side['card_types'];
+                ?>
+                <ul class = "credit pt-2 center">
+                <?php while($cardNum < 7):
+                    $currentCard = ("card_".$cardNum);
+                    if(!empty($card_type[$currentCard])):?>
+                    
+                    <li><img class="col-md-2 align-center pr-0 credit_card" src="<?php echo esc_url($card_type[$currentCard]['url'])?>" alt="<?php echo $card_type[$currentCard]['alt'] ?>"/></li>
+                    <?php endif;
+                        $cardNum++;
+                endwhile;?>
+                </ul>
+
             </div><!-- end col -->
         </div><!-- end row -->
 </div>
