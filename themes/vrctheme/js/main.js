@@ -16,13 +16,3 @@ function showMobileNav() {
 
 
 
-
-
-// Kali's attempt to get the icon to change font awesome classes
-// Is not working
-// Considering alternative options
-// I've got one that I think will work :)
-$('#responsiveMenu a').click(function(){
-    //$(this).next('ul').slideToggle('500');
-    $(this).find('i').toggleClass('fa fa-bars fa fa-times')
-});
