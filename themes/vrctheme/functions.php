@@ -181,7 +181,7 @@ add_action( 'after_setup_theme', 'wpt_setup' );
             register_nav_menu( 'primary', __( 'Primary navigation', 'wptuts' ) );
         }
     endif;
-
+    add_theme_support( 'title-tag' );
 
 /**
  * Register Custom Navigation Walker
