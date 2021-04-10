@@ -84,7 +84,6 @@ register_nav_menus(
 
     array(
 
-        'top-menu' => 'Main Menu Location',
         'footer-menu' => 'Footer Menu Location',
         'other-links-menu' => 'Other Links',
 
@@ -181,7 +180,7 @@ add_action( 'after_setup_theme', 'wpt_setup' );
             register_nav_menu( 'primary', __( 'Primary navigation', 'wptuts' ) );
         }
     endif;
-    add_theme_support( 'title-tag' );
+add_theme_support( 'title-tag' );
 
 /**
  * Register Custom Navigation Walker

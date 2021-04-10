@@ -26,7 +26,6 @@ $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 ?>
 
 <nav class="navbar navbar-expand-xl navbar-light bg-light" role="navigation">
-  <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -57,6 +56,5 @@ $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
             'walker'            => new WP_Bootstrap_Navwalker(),
         ) );
         ?>
-    </div>
 </nav>
 </header>
