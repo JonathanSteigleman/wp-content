@@ -19,6 +19,12 @@
  -->
 
 <header>
+<?php 
+//get the link of the custom logo for the website
+$custom_logo_id = get_theme_mod( 'custom_logo' );
+$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+?>
+
 <nav class="navbar navbar-expand-md navbar-light bg-light" role="navigation">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -27,10 +33,14 @@
     </button>
     <a class="navbar-brand" href="<?php echo get_home_url(); ?>"> 
     <?php 
-        if ( function_exists( 'the_custom_logo' ) ) {
-            the_custom_logo();
+        if ( $image ) {
+            //if the custom logo exists, display it
+            ?>
+            <img class="custom-logo" src="<?php echo $image[0]; ?>">
+            <?php
         }
         else {
+            //otherwise, show the name of the site
             get_bloginfo( 'name' );
         }
     ?>
