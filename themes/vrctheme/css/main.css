@@ -51,6 +51,19 @@ body {
 /* End styles for entire site */
 
 /* Styling for the site header */
+nav.navbar.navbar-expand-md.navbar-light.bg-light {
+    z-index: 1000;
+}
+
+a.navbar-brand img.custom-logo {
+    width: auto;
+    max-height: 60px;
+}
+
+.bg-light {
+    background-color: #fff !important;
+}
+/*
 header {
     background: #FFFFFF;
     width: 100%;
@@ -144,7 +157,7 @@ header .main-menu .menu-item-has-children:hover .sub-menu {
     color: #1E3B7C;
     background-color: #F5F5F5;
 }
-
+*/
 
 /*
 ** Footer Styling
@@ -511,7 +524,7 @@ ul.no-bullets
 
 /*Makes the responsive menu invisible when the screen is over 1200px wide*/
 @media (min-width: 1200px) {
-    div.container.main-menu-responsive {
+  /*  div.container.main-menu-responsive {
       display: none;
       width: 0px;
   }
@@ -522,10 +535,10 @@ ul.no-bullets
 
   a.icon {
       display: none;
-  }
+  }*/
 
   /*Header Logo Styles*/
-    .site-logo {
+ /*   .site-logo {
         margin-right: auto;
     }
 
@@ -545,12 +558,12 @@ ul.no-bullets
 
     .site-logo .custom-logo-link:hover, .site-logo .custom-logo-link:active, .site-logo .custom-logo-link:focus {
         cursor: pointer;
-    }
+    }*/
 }
 
 /*Responsive Navigation Menu*/
 @media (max-width: 1200px) {
-    header {
+   /* header {
 
         height: 60px;
     }
@@ -645,7 +658,7 @@ ul.no-bullets
 
     a.icon:active {
         box-shadow: -2px -2px 5px 0 #ccc, 2px 2px 5px 0 #F5F5F5;
-    }
+    }*/
 }
 /* End responsive Nav - - - move to end of file on clean-up*/
 
