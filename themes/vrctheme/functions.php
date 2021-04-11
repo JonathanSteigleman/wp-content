@@ -2694,7 +2694,7 @@ if( function_exists('acf_add_local_field_group') ):
 
         <div class="col-lg-6 left-side">
           <!-- title of description -->
-          <h3 class="mb-4"><?php echo $titleC1; ?></h3>
+          <h3 class="mb-4"><b><?php echo $titleC1; ?></b></h3>
 
           <!-- description of category -->
           <p class="mb-4"><?php echo $category_descriptionC1; ?></p>
@@ -2704,13 +2704,13 @@ if( function_exists('acf_add_local_field_group') ):
             $c1URLTITLE = get_sub_field('location_'.$i.'_title');
             $c1URL = get_sub_field('location_'.$i.'');
           ?>
-            <h4><a href="<?php echo $c1URL; ?>"><?php echo $c1URLTITLE; ?></a></h4>
+            <p><a href="<?php echo $c1URL; ?>"><?php echo $c1URLTITLE; ?></a></p>
             <?php $i++; ?><!-- increment loop counter -->
           <?php endwhile ?>
         </div> <!-- End Col -->
 
         <div class="col-lg-6 right-side">
-          <h3 class="mb-4"><?php echo $c2LocationName; ?></h3>
+          <h5 style="color:#1E3B7C;"><?php echo $c2LocationName; ?></h5>
           <!-- call the description text of the right side -->
           <p class="mb-4"><?php echo $c2PhoneNumber; ?></p>
           <p class="mb-4"><?php echo $c2Address; ?></p>
@@ -2752,7 +2752,7 @@ if( function_exists('acf_add_local_field_group') ):
         <div class="row no-gutters">
 
         <div class="col-lg-6 right-side">
-          <h3 class="mb-4"><?php echo $c3LocationName; ?></h3>
+          <h5 style="color:#1E3B7C;"><?php echo $c3LocationName; ?></h5>
 
           <!-- call the description text of the right side -->
           <p class="mb-4"><?php echo $c3PhoneNumber; ?></p>
@@ -2762,7 +2762,7 @@ if( function_exists('acf_add_local_field_group') ):
 
         <div class="col-lg-6 left-side">
           <!-- title of description -->
-          <h3 class="mb-4"><?php echo $titleC4; ?></h3>
+          <h3 class="mb-4"><b><?php echo $titleC4; ?></b></h3>
 
           <!-- description of category -->
           <p class="mb-4"><?php echo $category_descriptionC4; ?></p>
@@ -2772,7 +2772,7 @@ if( function_exists('acf_add_local_field_group') ):
             $c4URLTITLE = get_sub_field('location_'.$i.'_title');
             $c4URL = get_sub_field('location_'.$i.''); ?>
 
-            <h4><a href="<?php echo $c4URL; ?>"><?php echo $c4URLTITLE; ?></a></h4>
+            <p><a href="<?php echo $c4URL; ?>"><?php echo $c4URLTITLE; ?></a></p>
 
             <?php $i++; ?> <!-- increment loop counter -->
           <?php endwhile ?>
