@@ -121,8 +121,8 @@ div.jumbotron-fluid .row {
 div #announcements {
     padding: 75px 25px 25px 25px;
     border-radius: 5px;
-    background: rgba( 232, 232, 232, .6);
-    backdrop-filter: blur(10px);
+    background: rgba( 232, 232, 232, .8);
+    backdrop-filter: blur(30px);
     box-shadow: 2px 0px 10px 0 #707070;
 }
 
@@ -426,6 +426,11 @@ ul.no-bullets
 ** Media Queries moved to the bottom of the file
 **
 */
+@media (max-width: 1200px){
+    div.jumbotron-fluid .row {
+        padding: 100px 25px 25px 25px !important;
+    }
+}
 
 @media (max-width: 800px) {
     div #announcements h3 {
