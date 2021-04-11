@@ -2283,10 +2283,10 @@ if( function_exists('acf_add_local_field_group') ):
 
         <div class="col-lg-6 left-side">
           <!-- title of description -->
-          <h2><?php echo $titleC1; ?></h2>
+          <h2 class="mb-4"><?php echo $titleC1; ?></h2>
 
           <!-- description of category -->
-          <p class="mb-4"><?php echo $category_descriptionC1; ?></p>
+          <p align="justify"><?php echo $category_descriptionC1; ?></p>
 
           <?php while ($i <= ($count/2)-1) : //Loop and logic to remove unnecessary looping
 
@@ -2301,8 +2301,7 @@ if( function_exists('acf_add_local_field_group') ):
         <div class="col-lg-6 right-side">
           <h4 style="color:#1E3B7C;"><?php echo $c2LocationName; ?></h4>
           <!-- call the description text of the right side -->
-          <p class="mb-4"><?php echo $c2PhoneNumber; ?></p>
-          <p class="mb-4"><?php echo $c2Address; ?></p>
+          <p><?php echo $c2Address; ?></p>
 
         </div><!-- end col -->
       </div>
@@ -2350,10 +2349,10 @@ if( function_exists('acf_add_local_field_group') ):
 
         <div class="col-lg-6 left-side">
           <!-- title of description -->
-          <h2><?php echo $titleC4; ?></h2>
+          <h2 class="mb-4"><?php echo $titleC4; ?></h2>
 
           <!-- description of category -->
-          <p><?php echo $category_descriptionC4; ?></p>
+          <p align="justify"><?php echo $category_descriptionC4; ?></p>
 
           <?php while ($i <= ($count/2)-1) : //Loop and logic to remove unnecessary looping
 
