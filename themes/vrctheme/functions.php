@@ -2262,9 +2262,9 @@ endif;
     if (have_rows('category_'.$num.'_locations')) : //have rows goes through parent category
       while (have_rows('category_'.$num.'_locations')) : the_row(); //have rows goes through parent category again
 
-        $c2PhoneNumber = get_sub_field('phone_number'); //var
-        $c2Address = get_sub_field('address'); //var
-        $c2LocationName = get_sub_field('location_name'); //var image
+        $PhoneNumber = get_sub_field('phone_number'); //var
+        $Address = get_sub_field('address'); //var
+        $LocationName = get_sub_field('location_name'); //var image
 
       endwhile; //end while
     else : //else
@@ -2276,38 +2276,37 @@ endif;
 
         $count = count(get_field('category_'.$num.'_name')); //Counts the number of fields in the group.
         $i = 1; //var to count loops
-        $titleC1 = get_sub_field('title'); //var
-        $category_descriptionC1 = get_sub_field('category_discription');
+        $title = get_sub_field('title'); //var
+        $category_description = get_sub_field('category_discription');
 ?>
       <div class="row no-gutters">
 
         <div class="col-lg-6 left-side">
           <!-- title of description -->
-          <h2 class="mb-4"><?php echo $titleC1; ?></h2>
+          <h2 class="mb-4"><?php echo $title; ?></h2>
 
           <!-- description of category -->
-          <p align="justify"><?php echo $category_descriptionC1; ?></p>
+          <p align="justify"><?php echo $category_description; ?></p>
 
           <?php while ($i <= ($count/2)-1) : //Loop and logic to remove unnecessary looping
 
-            $c1URLTITLE = get_sub_field('location_'.$i.'_title');
-            $c1URL = get_sub_field('location_'.$i.'');
+            $URLTITLE = get_sub_field('location_'.$i.'_title');
+            $URL = get_sub_field('location_'.$i.'');
           ?>
-            <p><a href="<?php echo $c1URL; ?>"><?php echo $c1URLTITLE; ?></a></p>
+            <p><a href="<?php echo $URL; ?>"><?php echo $URLTITLE; ?></a></p>
             <?php $i++; ?><!-- increment loop counter -->
           <?php endwhile ?>
         </div> <!-- End Col -->
 
         <div class="col-lg-6 right-side">
-          <h4 style="color:#1E3B7C;"><b><?php echo $c2LocationName; ?></b></h4>
+          <h4 style="color:#1E3B7C;"><b><?php echo $LocationName; ?></b></h4>
           <!-- call the description text of the right side -->
-          <p><?php echo $c2Address; ?></p>
+          <p><?php echo $Address; ?></p>
 
         </div><!-- end col -->
       </div>
-    <?php endwhile ?>
-  <?php endif?>
-<?php
+    <?php endwhile; 
+      endif;
   }
 ?>
 
@@ -2319,9 +2318,9 @@ endif;
     if (have_rows('category_'.$num.'_locations')) : //have rows goes through parent category
       while (have_rows('category_'.$num.'_locations')) : the_row(); //have rows goes through parent category again
 
-        $c3PhoneNumber = get_sub_field('phone_number'); //var
-        $where = get_sub_field('address'); //var
-        $c3LocationName = get_sub_field('location_name'); //var image
+       $PhoneNumber = get_sub_field('phone_number'); //var
+       $Address = get_sub_field('address'); //var
+       $LocationName = get_sub_field('location_name'); //var image
 
       endwhile; //end while
     else : //else
@@ -2334,39 +2333,38 @@ endif;
 
         $count = count(get_field('category_'.$num.'_name')); //Counts the number of fields in the group.
         $i = 1; //var to count loops
-        $titleC4 = get_sub_field('title'); //var
-        $category_descriptionC4 = get_sub_field('category_discription'); //var
+        $title = get_sub_field('title'); //var
+        $category_description = get_sub_field('category_discription'); //var
 ?>
         <div class="row no-gutters">
 
         <div class="col-lg-6 right-side">
-          <h4 style="color:#1E3B7C;"><b><?php echo $c3LocationName; ?></b></h4>
+          <h4 style="color:#1E3B7C;"><b><?php echo $LocationName; ?></b></h4>
 
           <!-- call the description text of the right side -->
-          <p><?php echo $where; ?></p>
+          <p><?php echo $Address; ?></p>
 
         </div><!-- end col -->
 
         <div class="col-lg-6 left-side">
           <!-- title of description -->
-          <h2 class="mb-4"><?php echo $titleC4; ?></h2>
+          <h2 class="mb-4"><?php echo $title; ?></h2>
 
           <!-- description of category -->
-          <p align="justify"><?php echo $category_descriptionC4; ?></p>
+          <p align="justify"><?php echo $category_description; ?></p>
 
           <?php while ($i <= ($count/2)-1) : //Loop and logic to remove unnecessary looping
 
-            $c4URLTITLE = get_sub_field('location_'.$i.'_title');
-            $c4URL = get_sub_field('location_'.$i.''); ?>
+            $URLTITLE = get_sub_field('location_'.$i.'_title');
+            $URL = get_sub_field('location_'.$i.''); ?>
 
-            <p><a href="<?php echo $c4URL; ?>"><?php echo $c4URLTITLE; ?></a></p>
+            <p><a href="<?php echo $URL; ?>"><?php echo $URLTITLE; ?></a></p>
 
             <?php $i++; ?> <!-- increment loop counter -->
           <?php endwhile ?>
         </div> <!-- End Col -->
       </div>
-    <?php endwhile ?>
-  <?php endif ?>
-<?php
+    <?php endwhile;
+       endif;
   }
 ?>
