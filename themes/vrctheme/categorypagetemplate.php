@@ -21,9 +21,7 @@ acf_add_local_field_group('Page Template Category Heading');
       if( have_rows('header_area') ): //have rows goes through parent category
           while ( have_rows('header_area') ) : the_row(); //have rows goes through parent category again
             $bg_image = get_sub_field('background_header_image'); //var
-            $category_description = get_sub_field('category_description'); //var
             $title_color = get_sub_field('header_title_color'); //var
-            $desc_color = get_sub_field('header_description_color'); //var
           endwhile; //end while
       else : //else
           // no rows found
@@ -38,7 +36,6 @@ acf_add_local_field_group('Page Template Category Heading');
     <div class="container py-5 text-center">
         <h1 style="color: <?php echo $title_color ?>" class="display-4 font-weight-bold"><?php single_post_title(); ?></h1> <!--https://stackoverflow.com/questions/27653694/how-to-get-page-title-in-wordpress-->
         <!--Grab description from ACF and display on picture for category heading.-->
-        <p class="font-italic mb-0" style="color:<?php echo $desc_color ?>"><?php echo $category_description ?></p>
     </div>
 </div>
 
