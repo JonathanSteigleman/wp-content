@@ -128,14 +128,14 @@ acf_add_local_field_group('Page Template Category Heading');
 </div><!-- end container -->
 
 <?php
-$fields = count(acf_get_fields('group_6045119685af7'));
-$tracker = 1;
-for($i = 1; $i < $fields; $i++){
+$fields = count(acf_get_fields('group_6045119685af7')); //Gets the id of the category page field group
+$tracker = 1; //loop counter
+for($i = 1; $i < $fields; $i++){ //loops through the category page fields
     if(round($tracker % 2) == 1){
-      firstRow($tracker);
+      firstRow($tracker); //gets the first row from functions.php
     }
     else{
-      secondRow($tracker);
+      secondRow($tracker); //gets the second row from functions.php
     }
     $tracker++;
   }
