@@ -24,4 +24,8 @@ https://developer.wordpress.org/reference/functions/get_search_form/
 */?>
 </div>
 </div>
+<br>
+<br>
+<br>
+<br>
 <?php get_footer();?>
