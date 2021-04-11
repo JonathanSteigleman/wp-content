@@ -176,7 +176,7 @@ add_action( 'widgets_init', 'arphabet_widgets_init' );
 /* Theme setup */
 add_action( 'after_setup_theme', 'wpt_setup' );
     if ( ! function_exists( 'wpt_setup' ) ):
-        function wpt_setup() {  
+        function wpt_setup() {
             register_nav_menu( 'primary', __( 'Primary navigation', 'wptuts' ) );
         }
     endif;
@@ -2664,7 +2664,7 @@ if( function_exists('acf_add_local_field_group') ):
       'active' => true,
       'description' => '',
     ));
-    
+
     endif;
 ?>
 
@@ -2672,11 +2672,11 @@ if( function_exists('acf_add_local_field_group') ):
   function firstRow($num) {
     if (have_rows('category_'.$num.'_locations')) : //have rows goes through parent category
       while (have_rows('category_'.$num.'_locations')) : the_row(); //have rows goes through parent category again
-  
+
         $c2PhoneNumber = get_sub_field('phone_number'); //var
         $c2Address = get_sub_field('address'); //var
         $c2LocationName = get_sub_field('location_name'); //var image
-  
+
       endwhile; //end while
     else : //else
     // no rows found
@@ -2684,13 +2684,13 @@ if( function_exists('acf_add_local_field_group') ):
 
     if (have_rows('category_'.$num.'_name')) : //have rows goes through parent category
       while (have_rows('category_'.$num.'_name')) : the_row(); //have rows goes through parent category again
-  
+
         $count = count(get_field('category_'.$num.'_name')); //Counts the number of fields in the group.
         $i = 1; //var to count loops
         $titleC1 = get_sub_field('title'); //var
         $category_descriptionC1 = get_sub_field('category_discription');
 ?>
-      <div class="row mt-5 no-gutters">
+      <div class="row no-gutters">
 
         <div class="col-lg-6 left-side">
           <!-- title of description -->
@@ -2699,7 +2699,7 @@ if( function_exists('acf_add_local_field_group') ):
           <!-- description of category -->
           <p class="mb-4"><?php echo $category_descriptionC1; ?></p>
 
-          <?php while ($i <= ($count/2)-1) : //Loop and logic to remove unnecessary looping 
+          <?php while ($i <= ($count/2)-1) : //Loop and logic to remove unnecessary looping
 
             $c1URLTITLE = get_sub_field('location_'.$i.'_title');
             $c1URL = get_sub_field('location_'.$i.'');
@@ -2727,14 +2727,14 @@ if( function_exists('acf_add_local_field_group') ):
 
 <?php
   function secondRow($num){
-  
+
     if (have_rows('category_'.$num.'_locations')) : //have rows goes through parent category
       while (have_rows('category_'.$num.'_locations')) : the_row(); //have rows goes through parent category again
-  
+
         $c3PhoneNumber = get_sub_field('phone_number'); //var
         $where = get_sub_field('address'); //var
         $c3LocationName = get_sub_field('location_name'); //var image
-  
+
       endwhile; //end while
     else : //else
     // no rows found
@@ -2743,7 +2743,7 @@ if( function_exists('acf_add_local_field_group') ):
 
     if (have_rows('category_'.$num.'_name')) : //have rows goes through parent category
       while (have_rows('category_'.$num.'_name')) : the_row();  //have rows goes through parent category again
-  
+
         $count = count(get_field('category_'.$num.'_name')); //Counts the number of fields in the group.
         $i = 1; //var to count loops
         $titleC4 = get_sub_field('title'); //var
@@ -2753,7 +2753,7 @@ if( function_exists('acf_add_local_field_group') ):
 
         <div class="col-lg-6 right-side">
           <h3 class="mb-4"><?php echo $c3LocationName; ?></h3>
-          
+
           <!-- call the description text of the right side -->
           <p class="mb-4"><?php echo $c3PhoneNumber; ?></p>
           <p class="mb-4"><?php echo $where; ?></p>
@@ -2767,7 +2767,7 @@ if( function_exists('acf_add_local_field_group') ):
           <!-- description of category -->
           <p class="mb-4"><?php echo $category_descriptionC4; ?></p>
 
-          <?php while ($i <= ($count/2)-1) : //Loop and logic to remove unnecessary looping 
+          <?php while ($i <= ($count/2)-1) : //Loop and logic to remove unnecessary looping
 
             $c4URLTITLE = get_sub_field('location_'.$i.'_title');
             $c4URL = get_sub_field('location_'.$i.''); ?>
