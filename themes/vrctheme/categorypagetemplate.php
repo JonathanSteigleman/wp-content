@@ -21,9 +21,7 @@ acf_add_local_field_group('Page Template Category Heading');
       if( have_rows('header_area') ): //have rows goes through parent category
           while ( have_rows('header_area') ) : the_row(); //have rows goes through parent category again
             $bg_image = get_sub_field('background_header_image'); //var
-            $category_description = get_sub_field('category_description'); //var
             $title_color = get_sub_field('header_title_color'); //var
-            $desc_color = get_sub_field('header_description_color'); //var
           endwhile; //end while
       else : //else
           // no rows found
@@ -38,7 +36,6 @@ acf_add_local_field_group('Page Template Category Heading');
     <div class="container py-5 text-center">
         <h1 style="color: <?php echo $title_color ?>" class="display-4 font-weight-bold"><?php single_post_title(); ?></h1> <!--https://stackoverflow.com/questions/27653694/how-to-get-page-title-in-wordpress-->
         <!--Grab description from ACF and display on picture for category heading.-->
-        <p class="font-italic mb-0" style="color:<?php echo $desc_color ?>"><?php echo $category_description ?></p>
     </div>
 </div>
 
@@ -56,8 +53,8 @@ acf_add_local_field_group('Page Template Category Heading');
 <!-- https://www.advancedcustomfields.com/resources/get_sub_field/ -->
       <?php
       //ALL SUBFIELDS HAVE TO GO THROUGH HAVE_ROWS() . I JUST LEARNED THIS - ELISE
-            if( have_rows('category_10') ): //have rows goes through parent category
-                while ( have_rows('category_10') ) : the_row(); //have rows goes through parent category again
+            if( have_rows('description_group') ): //have rows goes through parent category
+                while ( have_rows('description_group') ) : the_row(); //have rows goes through parent category again
                   $category_description_title = get_sub_field('title'); //var
                   $category_description = get_sub_field('category_description'); //var
                   //^^^^^^^^^^^^^^^^^^^^^^
@@ -84,8 +81,8 @@ acf_add_local_field_group('Page Template Category Heading');
 <!--Beginning of column two -->
 <?php
 //ALL SUBFIELDS HAVE TO GO THROUGH HAVE_ROWS() . I JUST LEARNED THIS - ELISE
-      if( have_rows('category_9') ): //have rows goes through parent category
-          while ( have_rows('category_9') ) : the_row(); //have rows goes through parent category again
+      if( have_rows('contact_group') ): //have rows goes through parent category
+          while ( have_rows('contact_group') ) : the_row(); //have rows goes through parent category again
             $contact_info = get_sub_field('contact_info'); //puts contact info (the contact header) into a variable
             $contact_image = get_sub_field('image'); //var
             $contact_name = get_sub_field('name'); //var
@@ -143,7 +140,7 @@ for($i = 1; $i < $fields; $i++){
     $tracker++;
   }
 ?>
-      
+
   <!-- end content section -->
 
   <?php
