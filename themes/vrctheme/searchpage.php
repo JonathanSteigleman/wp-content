@@ -13,7 +13,7 @@ Template Name: Search Page
 <div class="container">
 
     <h1><?php the_title();?></h1>
-
+<br>
 
     <?php get_search_form(); ?>
     <?php get_template_part('includes/section', 'content');?>
