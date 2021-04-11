@@ -19,48 +19,45 @@
 
  -->
 
-<header>
-<div class="container-xl pt-2">
-        
-        <a class="icon" onclick="showMobileNav()"><i class="fa fa-bars"></i></a>
-        <!--<a class="closeIcon" onclick=""></a><i class="fa fa-times" aria-hidden="true"></i>-->
-        <?php
-            wp_nav_menu(
-                array(
-                    'theme_location' => 'top-menu',
-                    'menu_class' => 'main-menu-responsive',
-                    'menu_id' => 'responsiveMenu'
-                )
-            );
-        ?> 
-        
-        <div class="row">
-            <div class="site-logo small-screen-logo col-md-8 col-sm-6">
-                <!--Have the logo link to the home page of the website-->
-                <a class="home" href="<?php echo get_home_url(); ?>"> 
-                <?php 
-                    if ( function_exists( 'the_custom_logo' ) ) {
-                        the_custom_logo();
-                    }
-                ?>
-                </a>
-            </div>
+ <header>
+<?php 
+//get the link of the custom logo for the website
+$custom_logo_id = get_theme_mod( 'custom_logo' );
+$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+?>
 
-            <div class="col-md-4">
-                <?php get_search_form(); ?>
-            </div>
-        </div>
-        
-        
-        <div class="container justify-content-center">
+<nav class="navbar navbar-expand-xl navbar-light bg-light" role="navigation">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="<?php echo get_home_url(); ?>"> 
+    <?php 
+        if ( $image ) {
+            //if the custom logo exists, display it
+            ?>
+            <img class="custom-logo" src="<?php echo $image[0]; ?>">
+            <?php
+        }
+        else {
+            //otherwise, show the name of the site
+            ?><h1 class="navbar-brand"><?php echo get_bloginfo('name');?></h1><?php
+        }
+    ?>
+    </a>
         <?php
-                wp_nav_menu(        
-                    array(        
-                        'theme_location' => 'top-menu',        
-                        'menu_class' => 'main-menu'        
-                    )
-                );
-            ?>       
-        </div>
+        wp_nav_menu( array(
+            'theme_location'    => 'primary',
+            'depth'             => 2,
+            'container'         => 'div',
+            'container_class'   => 'collapse navbar-collapse',
+            'container_id'      => 'bs-example-navbar-collapse-1',
+            'menu_class'        => 'nav navbar-nav',
+            'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+            'walker'            => new WP_Bootstrap_Navwalker(),
+        ) );
+        ?>
     </div>
+</nav>
 </header>

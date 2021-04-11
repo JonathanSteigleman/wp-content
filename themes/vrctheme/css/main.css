@@ -51,100 +51,18 @@ body {
 /* End styles for entire site */
 
 /* Styling for the site header */
-header {
-    background: #FFFFFF;
-    width: 100%;
-    height: 110px;
-    box-shadow: 0px 2px 2px #DEDCDC;
+nav.navbar.navbar-expand-md.navbar-light.bg-light {
+    z-index: 1000;
 }
 
-.page-wrap{
-    padding: 2rem 0 0 0;
-    margin-bottom: 0;
+a.navbar-brand img.custom-logo {
+    width: auto;
+    max-height: 60px;
 }
 
-header .main-menu {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+.bg-light {
+    background-color: #fff !important;
 }
-
-
-header .container{
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-header div.container {
-    align-items: center;
-}
-
-header div.container div.menu-main-menu-container{
-    background-color: #ffffff;
-    height: auto;
-    align-items: center;
-}
-
-header .main-menu li a {
-    display: block;
-    padding:.6rem 1.5rem;
-    color: #707070;
-    text-decoration: none;
-    border-bottom: solid transparent;
-}
-
-header .main-menu li a:hover{
-    color: #1E3B7C;
-    border-bottom: solid #1E3B7C;
-}
-
-header .main-menu li{
-    position: relative;
-}
-
-header .main-menu li .sub-menu {
-    display: none;
-    position: absolute;
-    z-index: 99999;
-    top: 100%;
-    left: 0;
-    background-color: #FFFFFF;
-    box-shadow: 2px 2px 2px #DEDCDC;
-    padding: .25rem 1rem;
-    list-style-type: none;
-    width: 300px;
-    border: 1px solid #DEDCDC;
-}
-
-header .main-menu li .sub-menu a{
-    padding: .25rem;
-    line-height: 2rem;
-    border-bottom: solid 1px transparent;
-}
-
-header .main-menu li .sub-menu a:hover{
-    border-bottom: solid 1px #DEDCDC;
-    color: #1E3B7C;
-    font-weight: 600;
-}
-
-header .main-menu .menu-item-has-children:hover .sub-menu {
-    display: block;
-}
-
-.main-menu li.current_page_item  a {
-    color: #1E3B7C;
-    border-bottom: solid 3px #1E3B7C;
-}
-
-.main-menu-responsive li.current_page_item a {
-    color: #1E3B7C;
-    background-color: #F5F5F5;
-}
-
 
 /*
 ** Footer Styling
@@ -203,8 +121,8 @@ div.jumbotron-fluid .row {
 div #announcements {
     padding: 75px 25px 25px 25px;
     border-radius: 5px;
-    background: rgba( 232, 232, 232, .6);
-    backdrop-filter: blur(10px);
+    background: rgba( 232, 232, 232, .8);
+    backdrop-filter: blur(30px);
     box-shadow: 2px 0px 10px 0 #707070;
 }
 
@@ -508,152 +426,13 @@ ul.no-bullets
 ** Media Queries moved to the bottom of the file
 **
 */
-
-/*Makes the responsive menu invisible when the screen is over 1200px wide*/
-@media (min-width: 1200px) {
-    div.container.main-menu-responsive {
-      display: none;
-      width: 0px;
-  }
-
-  .main-menu-responsive{
-      display: none;
-  }
-
-  a.icon {
-      display: none;
-  }
-
-  /*Header Logo Styles*/
-    .site-logo {
-        margin-right: auto;
-    }
-
-    .site-logo .custom-logo-link {
-        border-radius: 4px;
-        box-sizing: content-box;
-        box-shadow: 0 0 0 0 transparent;
-        display: block;
-        height: 50px;
-        overflow: hidden;
-    }
-
-    .site-logo .custom-logo-link .custom-logo {
-        max-height: 50px;
-        width: inherit;
-    }
-
-    .site-logo .custom-logo-link:hover, .site-logo .custom-logo-link:active, .site-logo .custom-logo-link:focus {
-        cursor: pointer;
+@media (max-width: 1200px){
+    div.jumbotron-fluid .row {
+        padding: 100px 25px 25px 25px !important;
     }
 }
-
-/*Responsive Navigation Menu*/
-@media (max-width: 1200px) {
-    header {
-
-        height: 60px;
-    }
-
-    header .main-menu {
-        display: none;
-    }
-
-    header div.row{
-        display: flex;
-    }
-
-    .site-logo.small-screen-logo {
-        display: flex;
-        max-height: 50px;
-        width: inherit;
-
-    }
-
-    .site-logo.small-screen-logo .custom-logo-link {
-        border-radius: 4px;
-        box-sizing: content-box;
-        box-shadow: 0 0 0 0 transparent;
-        display: block;
-        height: 50px;
-        overflow: hidden;
-    }
-
-    .site-logo.small-screen-logo a{
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .site-logo.small-screen-logo .custom-logo-link .custom-logo{
-        max-height: 50px;
-        width: inherit;
-    }
-
-    #responsiveMenu {
-        display: none;
-        width: 100%;
-        height: 100%;
-        padding: 50px 50px 50px 50px;
-        text-align: left;
-        background-color: #DEDCDC;
-        position: absolute;
-        top: 0;
-        right: 0;
-        z-index: 999;
-    }
-
-    #responsiveMenu li {
-        position: relative;
-        list-style-type: none;
-    }
-
-    #responsiveMenu a {
-        display: inline-block;
-        left: 0;
-        color: #1E3B7C;
-        padding: 1rem 2rem;
-        width: 100%;
-        text-decoration: none;
-        border-bottom: solid 1px #ccc;
-    }
-
-    #responsiveMenu a:hover {
-        background-color: #e8e8e8;
-        border-bottom: solid 2px #1E3B7C;
-    }
-
-    #responsiveMenu a:active {
-        background-color: #bcbcbc;
-        border-bottom: solid 2px #1E3B7C;
-    }
-
-    a.icon {
-      position: absolute;
-      z-index: 1000;
-      color: #1E3B7C;
-      background-color: #FFFFFF;
-      border-radius: 2px;
-      border: solid 1.5px #1E3B7C;
-      padding: .5rem .75rem;
-      text-decoration: none;
-    }
-
-    a.icon:hover {
-      background-color: #e8e8e8;
-      cursor: pointer;
-    }
-
-    a.icon:active {
-        box-shadow: -2px -2px 5px 0 #ccc, 2px 2px 5px 0 #F5F5F5;
-    }
-}
-/* End responsive Nav - - - move to end of file on clean-up*/
 
 @media (max-width: 800px) {
-    .search-form{
-        display: none;
-    }
-
     div #announcements h3 {
         font-size: 1.75rem;
     }
