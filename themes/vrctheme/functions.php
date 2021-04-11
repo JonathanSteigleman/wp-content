@@ -2713,7 +2713,7 @@ if( function_exists('acf_add_local_field_group') ):
 
         <div class="col-lg-6 left-side">
           <!-- title of description -->
-          <h3 class="mb-4"><b><?php echo $titleC1; ?></b></h3>
+          <h2 class="mb-4"><?php echo $titleC1; ?></h2>
 
           <!-- description of category -->
           <p class="mb-4"><?php echo $category_descriptionC1; ?></p>
@@ -2729,7 +2729,7 @@ if( function_exists('acf_add_local_field_group') ):
         </div> <!-- End Col -->
 
         <div class="col-lg-6 right-side">
-          <h5 style="color:#1E3B7C;"><?php echo $c2LocationName; ?></h5>
+          <h4 style="color:#1E3B7C;"><?php echo $c2LocationName; ?></h4>
           <!-- call the description text of the right side -->
           <p class="mb-4"><?php echo $c2PhoneNumber; ?></p>
           <p class="mb-4"><?php echo $c2Address; ?></p>
@@ -2771,7 +2771,7 @@ if( function_exists('acf_add_local_field_group') ):
         <div class="row no-gutters">
 
         <div class="col-lg-6 right-side">
-          <h5 style="color:#1E3B7C;"><?php echo $c3LocationName; ?></h5>
+          <h3 style="color:#1E3B7C;"><?php echo $c3LocationName; ?></h3>
 
           <!-- call the description text of the right side -->
           <p class="mb-4"><?php echo $c3PhoneNumber; ?></p>
@@ -2781,7 +2781,7 @@ if( function_exists('acf_add_local_field_group') ):
 
         <div class="col-lg-6 left-side">
           <!-- title of description -->
-          <h3 class="mb-4"><b><?php echo $titleC4; ?></b></h3>
+          <h2 class="mb-4"><b><?php echo $titleC4; ?></b></h2>
 
           <!-- description of category -->
           <p class="mb-4"><?php echo $category_descriptionC4; ?></p>
