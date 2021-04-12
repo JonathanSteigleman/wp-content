@@ -230,52 +230,13 @@ button.btn.btn-default:hover {
     color: #F5F5F5;
 }
 
-/*
-** STYLE SEARCH FORM
-** Resource: https://5balloons.info/customise-search-widget-wordpress/
-** Kali Crockett (Nowak)
-*/
-form.search-form {
-	position: relative;
+button.btn.btn-primary {
+    background-color: #1E3B7C !important;
+    border-color: #1E3B7C;
 }
 
-form.search-form input.search-field {
-	width: 100%;
-	border: 1px solid #0F9647;
-    border-radius: 20px;
-	padding: 10px 15px;
-	padding-right: 55px;
-	font-size: 14px;
-}
-
-form.search-form input.search-field::placeholder{
-    color:#0F9647;
-}
-
-form.search-form input.search-field:focus{
-    border: 1.5px solid #0F9647;
-    border-radius: 20px;
-}
-
-footer form.search-form button.search-submit {
-    height: 100%;
-}
-
-form.search-form button.search-submit {
-	position: absolute;
-	height: 100%;
-	right: 0;
-	top: 0;
-	border: none;
-	width: 50px;
-	color: #0F9647;
-	background-color: transparent;
-	cursor: pointer;
-	-webkit-transform: rotateY(180deg);
-	        transform: rotateY(180deg);
-}
-.bg-cover {
-    background-size: cover !important;
+button.btn.btn-primary:hover {
+    background-color: #007bff !important;
 }
 
 /* Header Title */
@@ -448,14 +409,7 @@ ul.no-bullets
 }
 
 @media screen and (max-width: 600px){
-    .contact-form{
-      flex-direction: column;
-    }
-    .contact-form .msg textarea{
-      height: 80px;
-    }
-    .contact-form .input-fields,
-    .msg{
-      width: 100%;
-    }
+    /*nav.navbar.navbar-expand-xl.navbar-light.bg-light form.search-form{
+        text-align: center;
+    }*/
 }
