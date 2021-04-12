@@ -248,6 +248,11 @@ a.btn.btn-primary:hover {
     background-color: #007bff !important;
 }
 
+.input-group-btn .btn.btn-primary {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
 /* Header Title */
 .header
 {
