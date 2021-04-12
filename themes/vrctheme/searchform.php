@@ -12,9 +12,11 @@
 
 ?>
 
-
-<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-	<input type="search"  class="search-field" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'unica-wp' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
-	<button type="submit" class="search-submit"><i class="fas fa-search"></i></button>
+<form role="search" method="get" class="form-inline search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+	<div class="input-group md-form">
+		<input type="text"  class="form-control" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'unica-wp' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+		<span class = "input-group-btn">
+			<button type="submit" value="search" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></button>
+		</span>
+	</div>
 </form>
-
