@@ -2329,7 +2329,7 @@ endif;
         $count = count(get_field('category_'.$num.'_name')); //Counts the number of fields in the group.
         $i = 1; //var to count loops
         $title = get_sub_field('title'); //var
-        $category_description = get_sub_field('category_discription');?> //var
+        $category_description = get_sub_field('category_discription'); //var?> 
 
         <div class="row no-gutters">
 
