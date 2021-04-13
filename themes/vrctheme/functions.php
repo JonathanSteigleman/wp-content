@@ -2255,9 +2255,7 @@ acf_add_local_field_group(array(
 ));
 
 endif;
-?>
 
-<?php
   function firstRow($num) {
     if (have_rows('category_'.$num.'_locations')) : //have rows goes through parent category
       while (have_rows('category_'.$num.'_locations')) : the_row(); //have rows goes through parent category again
@@ -2277,8 +2275,8 @@ endif;
         $count = count(get_field('category_'.$num.'_name')); //Counts the number of fields in the group.
         $i = 1; //var to count loops
         $title = get_sub_field('title'); //var
-        $category_description = get_sub_field('category_discription');
-?>
+        $category_description = get_sub_field('category_discription');?>
+
       <div class="row no-gutters">
 
         <div class="col-lg-6 left-side">
@@ -2291,11 +2289,11 @@ endif;
           <?php while ($i <= ($count/2)-1) : //Loop and logic to remove unnecessary looping
 
             $URLTITLE = get_sub_field('location_'.$i.'_title');
-            $URL = get_sub_field('location_'.$i.'');
-          ?>
+            $URL = get_sub_field('location_'.$i.'');?>
+          
             <p><a href="<?php echo $URL; ?>"><?php echo $URLTITLE; ?></a></p>
-            <?php $i++; ?><!-- increment loop counter -->
-          <?php endwhile ?>
+            <?php $i++; //increment loop counter
+            endwhile ?>
         </div> <!-- End Col -->
 
         <div class="col-lg-6 right-side">
@@ -2308,11 +2306,8 @@ endif;
     <?php endwhile; 
       endif;
   }
-?>
 
 
-
-<?php
   function secondRow($num){
 
     if (have_rows('category_'.$num.'_locations')) : //have rows goes through parent category
@@ -2334,8 +2329,8 @@ endif;
         $count = count(get_field('category_'.$num.'_name')); //Counts the number of fields in the group.
         $i = 1; //var to count loops
         $title = get_sub_field('title'); //var
-        $category_description = get_sub_field('category_discription'); //var
-?>
+        $category_description = get_sub_field('category_discription');?> //var
+
         <div class="row no-gutters">
 
         <div class="col-lg-6 right-side">
@@ -2360,11 +2355,10 @@ endif;
 
             <p><a href="<?php echo $URL; ?>"><?php echo $URLTITLE; ?></a></p>
 
-            <?php $i++; ?> <!-- increment loop counter -->
-          <?php endwhile ?>
+            <?php $i++; //increment loop counter
+          endwhile ?>
         </div> <!-- End Col -->
       </div>
     <?php endwhile;
-       endif;
+    endif;
   }
-?>
