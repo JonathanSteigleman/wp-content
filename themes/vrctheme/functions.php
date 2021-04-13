@@ -2286,7 +2286,7 @@ endif;
           <h2 class="mb-4"><?php echo $title; ?></h2>
 
           <!-- description of category -->
-          <p align="justify"><?php echo $category_description; ?></p>
+          <p class="text-left"><?php echo $category_description; ?></p>
 
           <?php while ($i <= ($count/2)-1) : //Loop and logic to remove unnecessary looping
 
@@ -2351,7 +2351,7 @@ endif;
           <h2 class="mb-4"><?php echo $title; ?></h2>
 
           <!-- description of category -->
-          <p align="justify"><?php echo $category_description; ?></p>
+          <p class="text-left"><?php echo $category_description; ?></p>
 
           <?php while ($i <= ($count/2)-1) : //Loop and logic to remove unnecessary looping
 
